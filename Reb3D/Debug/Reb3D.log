@@ -1,0 +1,26 @@
+﻿Build started 2014.01.04. 17:58:32.
+     1>Project "D:\win7prog\Rebeka\Rebeka\Reb3D\Reb3D.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\win7prog\Rebeka\Rebeka\glm /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebmatrix.cpp
+         Rebmatrix.cpp
+     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(118): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(119): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(120): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\win7prog\Rebeka\Rebeka\Debug\Reb3D.lib" /NOLOGO Debug\Rebaabb.obj
+         Debug\Rebcpu.obj
+         Debug\RebGLTrans.obj
+         Debug\Rebmatrix.obj
+         Debug\Rebobb.obj
+         Debug\Rebplane.obj
+         Debug\Rebpolygon.obj
+         Debug\Rebquat.obj
+         Debug\Rebray.obj
+         Debug\Rebvector.obj
+         Reb3D.vcxproj -> D:\win7prog\Rebeka\Rebeka\Debug\Reb3D.lib
+     1>Done Building Project "D:\win7prog\Rebeka\Rebeka\Reb3D\Reb3D.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.31

@@ -1,0 +1,4 @@
+LIBRARY "RebSFML.dll"
+EXPORTS
+CreateAudioDevice
+ReleaseAudioDevice

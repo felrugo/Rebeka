@@ -1,0 +1,18 @@
+﻿Build started 2014.01.08. 20:00:03.
+     1>Project "D:\win7prog\Rebeka\Rebeka\RebEntitySystem\RebEntitySystem.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\win7prog\Rebeka\Rebeka\bullet-2.82-r2704\src" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp
+         CompInput.cpp
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\win7prog\Rebeka\Rebeka\Debug\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"D:\win7prog\Rebeka\Rebeka\bullet-2.82-r2704\lib" /NOLOGO Debug\CompInput.obj
+         Debug\CompPhysic.obj
+         Debug\CompVisual.obj
+         Debug\RebEntity.obj
+         Debug\RebEntitySystem.obj
+     1>BulletCollision_vs2010_debug.lib(btBroadphaseProxy.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+         RebEntitySystem.vcxproj -> D:\win7prog\Rebeka\Rebeka\Debug\RebEntitySystem.lib
+     1>Done Building Project "D:\win7prog\Rebeka\Rebeka\RebEntitySystem\RebEntitySystem.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.55

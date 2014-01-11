@@ -1,0 +1,14 @@
+﻿Build started 2014.01.08. 19:48:52.
+     1>Project "D:\win7prog\Rebeka\Rebeka\RebSDL\RebSDL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp
+         RebMEH.cpp
+       Link:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\win7prog\Rebeka\Rebeka\Debug\RebSDL.dll" /INCREMENTAL /NOLOGO /LIBPATH:"D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\lib\x86" SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXPO.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\win7prog\Rebeka\Rebeka\Debug\RebSDL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\win7prog\Rebeka\Rebeka\Debug\RebSDL.lib" /MACHINE:X86 /DLL Debug\RebMEH.obj
+         Debug\RebSDL.obj
+         RebSDL.vcxproj -> D:\win7prog\Rebeka\Rebeka\Debug\RebSDL.dll
+     1>Done Building Project "D:\win7prog\Rebeka\Rebeka\RebSDL\RebSDL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.99

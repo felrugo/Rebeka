@@ -1,0 +1,12 @@
+﻿Build started 2014.01.08. 20:00:08.
+     1>Project "D:\win7prog\Rebeka\Rebeka\Launcher\Launcher.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\win7prog\Rebeka\Rebeka\Debug\Launcher.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\win7prog\Rebeka\Rebeka\Debug RebRenderer.lib RebAudio.lib RebWindowSystem.lib RebEntitySystem.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\win7prog\Rebeka\Rebeka\Debug\Launcher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\win7prog\Rebeka\Rebeka\Debug\Launcher.lib" /MACHINE:X86 Debug\Launcher.res
+         Debug\Source.obj
+            Creating library D:\win7prog\Rebeka\Rebeka\Debug\Launcher.lib and object D:\win7prog\Rebeka\Rebeka\Debug\Launcher.exp
+         Launcher.vcxproj -> D:\win7prog\Rebeka\Rebeka\Debug\Launcher.exe
+     1>Done Building Project "D:\win7prog\Rebeka\Rebeka\Launcher\Launcher.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.46

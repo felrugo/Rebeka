@@ -1,0 +1,13 @@
+﻿Build started 2014.01.03. 22:45:07.
+     1>Project "D:\win7prog\Rebeka\Rebeka\RebAudio\RebAudio.vcxproj" on node 3 (Rebuild target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebAudioSystem.cpp
+         RebAudioSystem.cpp
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\win7prog\Rebeka\Rebeka\Debug\RebAudio.lib" /NOLOGO Debug\RebAudioSystem.obj
+         RebAudio.vcxproj -> D:\win7prog\Rebeka\Rebeka\Debug\RebAudio.lib
+     1>Done Building Project "D:\win7prog\Rebeka\Rebeka\RebAudio\RebAudio.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:12.73

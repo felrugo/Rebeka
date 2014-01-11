@@ -1,0 +1,11 @@
+﻿Build started 2013.10.20. 14:51:28.
+     1>Project "C:\Users\FELRUGO\Desktop\Rebeka\assimp--3.0.1270-sdk\workspaces\vc9\assimp.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\..\contrib\unzip /ZI /nologo /W3 /WX- /Od /Oy- /D DEBUG /D _SCL_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D _HAS_ITERATOR_DEBUGGING=0 /D _SECURE_SCL=0 /Gm- /EHsc /RTCc /RTC1 /MDd /GS /Gy /fp:fast /Zc:wchar_t /Zc:forScope /Yc"AssimpPCH.h" /Fp"./../../obj/assimp_Debug_Win32\assimp.pch" /Fo"./../../obj/assimp_Debug_Win32\\" /Fd"./../../obj/assimp_Debug_Win32\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\code\AssimpPCH.cpp
+         AssimpPCH.cpp
+     1>c:\users\felrugo\desktop\rebeka\assimp--3.0.1270-sdk\code\assimppch.h(123): fatal error C1083: Cannot open include file: 'boost/pointer_cast.hpp': No such file or directory
+     1>Done Building Project "C:\Users\FELRUGO\Desktop\Rebeka\assimp--3.0.1270-sdk\workspaces\vc9\assimp.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.69
