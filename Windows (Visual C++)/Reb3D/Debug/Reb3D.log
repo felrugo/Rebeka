@@ -1,14 +1,25 @@
-﻿Build started 2014.01.04. 17:58:32.
-     1>Project "D:\win7prog\Rebeka\Rebeka\Reb3D\Reb3D.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014.01.12. 10:44:21.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Reb3D\Reb3D.vcxproj" on node 4 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\win7prog\Rebeka\Rebeka\glm /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebmatrix.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\win7prog\Rebeka\Rebeka\glm /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebaabb.cpp Rebcpu.cpp RebGLTrans.cpp Rebmatrix.cpp Rebobb.cpp Rebplane.cpp Rebpolygon.cpp Rebquat.cpp Rebray.cpp Rebvector.cpp
+         Rebvector.cpp
+         Rebray.cpp
+         Rebquat.cpp
+         Rebpolygon.cpp
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebpolygon.cpp(179): warning C4018: '<' : signed/unsigned mismatch
+         Rebplane.cpp
+         Rebobb.cpp
          Rebmatrix.cpp
-     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
-     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(118): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
-     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(119): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
-     1>d:\win7prog\rebeka\rebeka\reb3d\rebmatrix.cpp(120): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(118): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(119): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(120): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+         RebGLTrans.cpp
+         Rebcpu.cpp
+         Rebaabb.cpp
+         Generating Code...
        Lib:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\win7prog\Rebeka\Rebeka\Debug\Reb3D.lib" /NOLOGO Debug\Rebaabb.obj
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\Reb3D.lib" /NOLOGO Debug\Rebaabb.obj
          Debug\Rebcpu.obj
          Debug\RebGLTrans.obj
          Debug\Rebmatrix.obj
@@ -18,9 +29,9 @@
          Debug\Rebquat.obj
          Debug\Rebray.obj
          Debug\Rebvector.obj
-         Reb3D.vcxproj -> D:\win7prog\Rebeka\Rebeka\Debug\Reb3D.lib
-     1>Done Building Project "D:\win7prog\Rebeka\Rebeka\Reb3D\Reb3D.vcxproj" (Build target(s)).
+         Reb3D.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\Reb3D.lib
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Reb3D\Reb3D.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.31
+Time Elapsed 00:00:03.00
