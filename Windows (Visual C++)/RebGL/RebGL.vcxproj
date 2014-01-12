@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\glew-1.10.0\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -53,15 +54,19 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;REBGL_EXPORTS;GLEXP;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\win7prog\Rebeka\Rebeka\glew-1.10.0\include;D:\Program Files\Assimp\include;D:\win7prog\Rebeka\Rebeka\FreeImage\Dist;D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Assimp\include;..\glew-1.10.0\include;D:\Program Files\Assimp\include;..\FreeImage\Dist;..\SDL2-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\win7prog\Rebeka\Rebeka\Debug;D:\Program Files\Assimp\lib\x86;D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\lib\x86;D:\win7prog\Rebeka\Rebeka\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\Debug;..\Assimp\lib\x86;D:\Program Files\Assimp\lib\x86;..\SDL2-2.0.0\lib\x86;..\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>EXP.def</ModuleDefinitionFile>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

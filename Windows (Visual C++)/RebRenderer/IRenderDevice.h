@@ -49,24 +49,24 @@ public:
       
    };
 
-class IVertexChacheManager
+class IVertexCacheManager
 {
 public:
-	virtual void CreateChache(std::string name, std::vector<RebVertexBuffer> RVB) = 0;
+	virtual void CreateCache(std::string name, std::vector<RebVertexBuffer> RVB) = 0;
 
-	virtual void DeleteChache(UINT CID) = 0;
+	virtual void DeleteCache(UINT CID) = 0;
 
-	virtual RebVertexChache * GetVertexChache(std::string cname) = 0;
+	virtual RebVertexCache * GetVertexCache(std::string cname) = 0;
 
-	virtual RebVertexChache * GetVCByFile(std::string filename) = 0; /*if VC doesn't exists return 0 */
+	virtual RebVertexCache * GetVCByFile(std::string filename) = 0; /*if VC doesn't exists return 0 */
 
-	virtual void CreateChacheFromFile(std::string cname, std::string filename) = 0;
+	virtual void CreateCacheFromFile(std::string cname, std::string filename) = 0;
 
 	virtual void Render() = 0;
 
 	virtual void Release() = 0;
 
-	virtual ~IVertexChacheManager() {}
+	virtual ~IVertexCacheManager() {}
 };
 
 
@@ -86,7 +86,7 @@ class IRenderDevice
 
 	virtual ISkinManager * GetSkinManager() = 0;
 
-	virtual IVertexChacheManager * GetVertexChacheManager()= 0;
+	virtual IVertexCacheManager * GetVertexCacheManager()= 0;
 
 	virtual IShaderSystem * GetShaderSystem() = 0;
 

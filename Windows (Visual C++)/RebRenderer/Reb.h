@@ -109,7 +109,7 @@ struct RebVertexBuffer
 };
 
 
-struct RebVertexChache
+struct RebVertexCache
 {
 
 	std::vector<RebVertexBuffer> RVBs;
@@ -117,7 +117,7 @@ struct RebVertexChache
 	std::string name;
 	std::string filename;
 
-	RebVertexChache()
+	RebVertexCache()
 	{
 		RVBs.clear();
 		transf.Identity();
@@ -148,7 +148,7 @@ struct RebVertexChache
 			RVBs[VBID].Renderable = false;
 	}
 
-	~RebVertexChache()
+	~RebVertexCache()
 	{
 		RVBs.clear();
 	}

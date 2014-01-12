@@ -10,11 +10,11 @@ CompPhyModel::CompPhyModel(btDynamicsWorld * SDW, IRenderDevice * SIRD, std::str
 
 void CompPhyModel::LoadPhysic()
 {
-	RebVertexChache * RVC = IRD->GetVertexChacheManager()->GetVCByFile(mf);
+	RebVertexCache * RVC = IRD->GetVertexCacheManager()->GetVCByFile(mf);
 	if(RVC == 0)
 	{
-		IRD->GetVertexChacheManager()->CreateChacheFromFile(mf, mf);
-		RVC = IRD->GetVertexChacheManager()->GetVCByFile(mf);
+		IRD->GetVertexCacheManager()->CreateCacheFromFile(mf, mf);
+		RVC = IRD->GetVertexCacheManager()->GetVCByFile(mf);
 		if(RVC == 0)
 		{
 			return;

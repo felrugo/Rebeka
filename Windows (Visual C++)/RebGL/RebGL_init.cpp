@@ -60,7 +60,7 @@ glShadeModel( GL_SMOOTH );
 	skinman = new RebGLSkinManager;
 	skinmanruning = true;
 
-	VCM = new RebVertexChacheManager(this);
+	VCM = new RebVertexCacheManager(this);
 	VCMRunning = true;
 
 	ISS = new RebShaderSystem;
@@ -114,7 +114,7 @@ ISkinManager * RebGL::GetSkinManager()
 	return skinman;
 }
 
-IVertexChacheManager * RebGL::GetVertexChacheManager()
+IVertexCacheManager * RebGL::GetVertexCacheManager()
 {
 	return VCM;
 }

@@ -7,31 +7,31 @@
 #include "assimp\postprocess.h"
 #include "assimp\scene.h"
 
-class RebVertexChacheManager : public IVertexChacheManager
+class RebVertexCacheManager : public IVertexCacheManager
 {
-	std::vector<RebVertexChache*> RVCs;
+	std::vector<RebVertexCache*> RVCs;
 
 	IRenderDevice * prd;
 
 public:
 
-	RebVertexChacheManager(IRenderDevice * srd);
+	RebVertexCacheManager(IRenderDevice * srd);
 
-	void CreateChache(std::string name, std::vector<RebVertexBuffer> RVB);
+	void CreateCache(std::string name, std::vector<RebVertexBuffer> RVB);
 
-	void DeleteChache(UINT CID);
+	void DeleteCache(UINT CID);
 
-	RebVertexChache * GetVertexChache(std::string cname);
+	RebVertexCache * GetVertexCache(std::string cname);
 
-	RebVertexChache * GetVCByFile(std::string filename); /* return 0 if VC doesn1t exists */
+	RebVertexCache * GetVCByFile(std::string filename); /* return 0 if VC doesn1t exists */
 
-	void CreateChacheFromFile(std::string cname, std::string filename);
+	void CreateCacheFromFile(std::string cname, std::string filename);
 
 	void Render();
 
 	void Release();
 
-	~RebVertexChacheManager();
+	~RebVertexCacheManager();
 };
 
 #endif

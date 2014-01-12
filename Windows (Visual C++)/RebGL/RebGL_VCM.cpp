@@ -1,17 +1,17 @@
 #include "RebGL_VCM.h"
 
 
-void RebVertexChacheManager::CreateChache(std::string name, std::vector<RebVertexBuffer> RVB)
+void RebVertexCacheManager::CreateCache(std::string name, std::vector<RebVertexBuffer> RVB)
 {
-	RebVertexChache * RVC = new RebVertexChache;
+	RebVertexCache * RVC = new RebVertexCache;
 	RVC->name = name;
 	RVC->RVBs = RVB;
 	RVCs.push_back(RVC);
 }
 
-void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string filename)
+void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string filename)
 {
-	RebVertexChache * rvc = new RebVertexChache;
+	RebVertexCache * rvc = new RebVertexCache;
 	RebVertexBuffer rvb;
 	
 	const aiScene* scene = aiImportFile (filename.c_str(), aiProcess_Triangulate); // TRIANGLES!
@@ -70,7 +70,7 @@ void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string
     aiReleaseImport (scene);
 }
 
-	void RebVertexChacheManager::DeleteChache(UINT CID)
+	void RebVertexCacheManager::DeleteCache(UINT CID)
 	{
 		if (CID < RVCs.size())
 		{
@@ -78,7 +78,7 @@ void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string
 		}
 	}
 
-	RebVertexChache * RebVertexChacheManager::GetVertexChache(std::string cname)
+	RebVertexCache * RebVertexCacheManager::GetVertexCache(std::string cname)
 	{
 		for (unsigned int i = 0; i < RVCs.size(); i++)
 		{
@@ -90,7 +90,7 @@ void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string
 		return 0;
 	}
 
-	RebVertexChache * RebVertexChacheManager::GetVCByFile(std::string filename) /* if VC doesn't exists return 0 */
+	RebVertexCache * RebVertexCacheManager::GetVCByFile(std::string filename) /* if VC doesn't exists return 0 */
 	{
 		for (unsigned int i = 0; i < RVCs.size(); i++)
 		{
@@ -102,7 +102,7 @@ void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string
 		return 0;
 	}
 
-	void RebVertexChacheManager::Render()
+	void RebVertexCacheManager::Render()
 	{
 		unsigned int i2;
 		for (UINT i3 = 0; i3 < RVCs.size(); i3++)
@@ -133,14 +133,14 @@ void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string
 	}
 
 	
-	RebVertexChacheManager::RebVertexChacheManager(IRenderDevice * srd)
+	RebVertexCacheManager::RebVertexCacheManager(IRenderDevice * srd)
 	{
 		prd = srd;
 		RVCs.clear();
 	}
 	
 
-	void RebVertexChacheManager::Release()
+	void RebVertexCacheManager::Release()
 	{
 		for (unsigned int i = 0; i < RVCs.size(); i++)
 		{
@@ -149,7 +149,7 @@ void RebVertexChacheManager::CreateChacheFromFile(std::string cname, std::string
 	RVCs.clear();
 	}
 
-	RebVertexChacheManager::~RebVertexChacheManager()
+	RebVertexCacheManager::~RebVertexCacheManager()
 	{
 		Release();
 	}

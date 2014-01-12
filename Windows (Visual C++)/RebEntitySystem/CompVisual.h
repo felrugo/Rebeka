@@ -9,7 +9,7 @@ class CompVisual : public Component
 {
 protected:
 	IRenderDevice * IRD;
-	RebVertexChache * rvc;
+	RebVertexCache * rvc;
 public:
 
 	std::string GetType()

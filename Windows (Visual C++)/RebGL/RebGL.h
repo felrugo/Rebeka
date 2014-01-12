@@ -25,7 +25,7 @@ class RebGL : public IRenderDevice
 
 	ISkinManager * skinman;
 
-	IVertexChacheManager * VCM;
+	IVertexCacheManager * VCM;
 
 	IShaderSystem * ISS;
 
@@ -65,7 +65,7 @@ public:
 
 	ISkinManager * GetSkinManager();
 
-	IVertexChacheManager * GetVertexChacheManager();
+	IVertexCacheManager * GetVertexCacheManager();
 
 	IShaderSystem * GetShaderSystem();
 

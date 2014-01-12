@@ -84,7 +84,7 @@ int WINAPI WinMain( HINSTANCE hInstance,HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	points.Set(0.0f, 1.0f, 0.0f);
 	rvbtri.vertices.push_back(points);
 	buffs.push_back(rvbtri);
-	rd->GetVertexChacheManager()->CreateChache("trianglech", buffs);
+	rd->GetVertexCacheManager()->CreateCache("trianglech", buffs);
 
 
 
@@ -102,7 +102,7 @@ int WINAPI WinMain( HINSTANCE hInstance,HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			break;
 		}
 		rd->Color(1.0f, 0.0f, 0.0f);
-		rd->GetVertexChacheManager()->Render();
+		rd->GetVertexCacheManager()->Render();
 		rd->Swap(window);
    }
 	winm->TrapMouse(false);

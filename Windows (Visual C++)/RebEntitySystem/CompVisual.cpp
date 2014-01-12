@@ -10,8 +10,8 @@ CompVisModel::CompVisModel(IRenderDevice * sird, std::string smf)
 
 void CompVisModel::LoadModel(std::string filename)
 	{
-		IRD->GetVertexChacheManager()->CreateChacheFromFile(GetOwner()->GetID(), filename);
-		rvc = IRD->GetVertexChacheManager()->GetVertexChache(GetOwner()->GetID());
+		IRD->GetVertexCacheManager()->CreateCacheFromFile(GetOwner()->GetID(), filename);
+		rvc = IRD->GetVertexCacheManager()->GetVertexCache(GetOwner()->GetID());
 	}
 
 
