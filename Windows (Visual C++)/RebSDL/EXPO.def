@@ -1,6 +1,0 @@
-LIBRARY "RebSDL.dll"
-EXPORTS
-CreateWindowManager
-ReleaseWindowManager
-CreateMEH
-ReleaseMEH

@@ -1,0 +1,15 @@
+﻿Build started 2014.01.12. 11:38:23.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\RebAudio\RebAudio.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebAudioSystem.cpp
+         RebAudioSystem.cpp
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebAudio.lib" /NOLOGO Debug\RebAudioSystem.obj
+         RebAudio.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebAudio.lib
+       BscMake:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebAudio.bsc" /n Debug\RebAudioSystem.sbr
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\RebAudio\RebAudio.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.72

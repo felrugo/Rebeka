@@ -1,0 +1,39 @@
+﻿Build started 2014.01.12. 11:38:17.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Reb3D\Reb3D.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\win7prog\Rebeka\Rebeka\glm /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Rebaabb.cpp Rebcpu.cpp RebGLTrans.cpp Rebmatrix.cpp Rebobb.cpp Rebplane.cpp Rebpolygon.cpp Rebquat.cpp Rebray.cpp Rebvector.cpp
+         Rebvector.cpp
+         Rebray.cpp
+         Rebquat.cpp
+         Rebpolygon.cpp
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebpolygon.cpp(179): warning C4018: '<' : signed/unsigned mismatch
+         Rebplane.cpp
+         Rebobb.cpp
+         Rebmatrix.cpp
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(118): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(119): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\reb3d\rebmatrix.cpp(120): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+         RebGLTrans.cpp
+         Rebcpu.cpp
+         Rebaabb.cpp
+         Generating Code...
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\Reb3D.lib" /NOLOGO Debug\Rebaabb.obj
+         Debug\Rebcpu.obj
+         Debug\RebGLTrans.obj
+         Debug\Rebmatrix.obj
+         Debug\Rebobb.obj
+         Debug\Rebplane.obj
+         Debug\Rebpolygon.obj
+         Debug\Rebquat.obj
+         Debug\Rebray.obj
+         Debug\Rebvector.obj
+         Reb3D.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\Reb3D.lib
+       BscMake:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\Reb3D.bsc" /n Debug\Rebaabb.sbr Debug\Rebcpu.sbr Debug\RebGLTrans.sbr Debug\Rebmatrix.sbr Debug\Rebobb.sbr Debug\Rebplane.sbr Debug\Rebpolygon.sbr Debug\Rebquat.sbr Debug\Rebray.sbr Debug\Rebvector.sbr
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Reb3D\Reb3D.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.82

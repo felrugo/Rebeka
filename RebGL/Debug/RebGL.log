@@ -1,0 +1,26 @@
+﻿Build started 2014.01.12. 11:38:23.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\RebGL\RebGL.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I"D:\Program Files\Assimp\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D GLEXP /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebGL_draw.cpp RebGL_init.cpp RebGL_skinmanager.cpp RebGL_VCM.cpp RebGL_SS.cpp
+         RebGL_SS.cpp
+     1>d:\users\felrugo\documents\github\rebeka\windows (visual c++)\rebgl\rebgl_ss.cpp(103): warning C4018: '<' : signed/unsigned mismatch
+         RebGL_VCM.cpp
+         RebGL_skinmanager.cpp
+         RebGL_init.cpp
+         RebGL_draw.cpp
+         Generating Code...
+       Link:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\Debug /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"D:\Program Files\Assimp\lib\x86" /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\FreeImage\Dist SDL2.lib SDL2main.lib glu32.lib OpenGL32.lib FreeImage.lib glew32.lib assimp.lib Reb3D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.lib" /MACHINE:X86 /DLL Debug\RebGL_draw.obj
+         Debug\RebGL_init.obj
+         Debug\RebGL_skinmanager.obj
+         Debug\RebGL_VCM.obj
+         Debug\RebGL_SS.obj
+            Creating library D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.lib and object D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.exp
+         RebGL.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.dll
+       BscMake:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\Debug\RebGL.bsc" /n Debug\RebGL_draw.sbr Debug\RebGL_init.sbr Debug\RebGL_skinmanager.sbr Debug\RebGL_VCM.sbr Debug\RebGL_SS.sbr
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Windows (Visual C++)\RebGL\RebGL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.87
