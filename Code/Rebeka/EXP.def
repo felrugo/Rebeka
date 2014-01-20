@@ -1,0 +1,4 @@
+LIBRARY "Rebeka.dll"
+EXPORTS
+CreateGameDLL
+ReleaseGameDLL

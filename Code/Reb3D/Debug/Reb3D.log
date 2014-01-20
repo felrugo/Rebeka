@@ -1,0 +1,19 @@
+﻿Build started 2014.01.19. 16:43:11.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" on node 3 (Build target(s)).
+     1>Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\Reb3D.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\Rebaabb.obj
+         Debug\Rebcpu.obj
+         Debug\RebGLTrans.obj
+         Debug\Rebmatrix.obj
+         Debug\Rebobb.obj
+         Debug\Rebplane.obj
+         Debug\Rebpolygon.obj
+         Debug\Rebquat.obj
+         Debug\Rebray.obj
+         Debug\Rebvector.obj
+         Reb3D.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\..\Libs\x32\Reb3D.lib
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.16

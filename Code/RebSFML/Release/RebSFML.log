@@ -1,0 +1,15 @@
+﻿Build started 2014.01.14. 17:58:57.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\RebSFML\RebSFML.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBSFML_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebSFML_init.cpp RebSFML_MusicPlayer.cpp RebSFML_SoundSource.cpp
+         RebSFML_init.cpp
+     1>d:\users\felrugo\documents\github\rebeka\rebsfml\RebSFML.h(5): fatal error C1083: Cannot open include file: 'SFML\Audio.hpp': No such file or directory
+         RebSFML_MusicPlayer.cpp
+     1>d:\users\felrugo\documents\github\rebeka\rebsfml\RebSFML.h(5): fatal error C1083: Cannot open include file: 'SFML\Audio.hpp': No such file or directory
+         RebSFML_SoundSource.cpp
+     1>d:\users\felrugo\documents\github\rebeka\rebsfml\RebSFML.h(5): fatal error C1083: Cannot open include file: 'SFML\Audio.hpp': No such file or directory
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\RebSFML\RebSFML.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.91

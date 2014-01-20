@@ -1,0 +1,12 @@
+﻿Build started 2014.01.19. 17:01:07.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\RebAudio.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebAudio.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebAudioSystem.obj
+         RebAudio.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\..\Libs\x32\RebAudio.lib
+       BscMake:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebAudio.bsc" /n Debug\RebAudioSystem.sbr
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\RebAudio.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.52

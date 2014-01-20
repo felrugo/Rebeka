@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <Lib32>..\Libs\x32</Lib32>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(Lib32)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Lib>
+      <AdditionalLibraryDirectories>..\Libs\x32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="Lib32">
+      <Value>$(Lib32)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

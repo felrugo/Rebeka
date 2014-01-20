@@ -1,0 +1,10 @@
+﻿Build started 2014.01.19. 17:07:32.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\IGameDLL\IGameDLL.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\IGameDLL.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebGDL.obj
+         IGameDLL.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\IGameDLL\..\Libs\x32\IGameDLL.lib
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\IGameDLL\IGameDLL.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.10

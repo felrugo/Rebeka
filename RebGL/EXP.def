@@ -1,4 +1,0 @@
-LIBRARY "RebGL.dll"
-EXPORTS
-CreateRenderDevice
-ReleaseRenderDevice
