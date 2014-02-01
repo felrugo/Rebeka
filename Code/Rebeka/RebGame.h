@@ -6,17 +6,23 @@
 #include "..\RebWindowSystem\RebWindowSystem.h"
 #include "..\RebAudio\RebAudioSystem.h"
 #include "..\RebEntitySystem\RebEntitySystem.h"
+#include "..\RebSupport\RebGDC.h"
+#include "..\RebSupport\RebFileSystem.h"
 
 class RebGame : public IGameDLL
 {
+public:
 	Renderer rend;
 	RebAudioSystem ras;
 	RebWindowSystem winsys;
 	IWindowManager * winm;
-	void* window;
 	IRenderDevice * rd;
-	RebEntitySystem res;
-public:
+	RebEntitySystem * res;
+	RebFileSystem rfs;
+	void * window;
+	
+
+RebGDC * mGDC;
 void Init();
 
 void GameLoop();

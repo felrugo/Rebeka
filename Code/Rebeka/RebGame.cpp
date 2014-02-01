@@ -28,9 +28,8 @@ void RebGame::Init()
 
 	ras.GetAudioDevice()->GetMusicPlayer()->Play();
 
-	
+	rfs.GetAllFiles("..\\..");
 
-	
 
 	winsys.CreateManager();
 	winm = winsys.GetManager();
@@ -41,14 +40,20 @@ void RebGame::Init()
 	rend.GetDevice()->Init(winm, 800, 600);
 	rd = rend.GetDevice();
 
-	
+		mGDC = new RebGDC;
+	mGDC->rd = rd;
+	mGDC->window = window;
+	mGDC->winm = winm;
+	mGDC->meh = winsys.GetMEH();
+	res = new RebEntitySystem(mGDC);
+	res->GetTemplateManager()->LoadTComps();
 	std::vector<TComponent*> tcomps;
 	TComponent * viewcompt = new TCompVisViewport(rd);
 	TComponent * inpconp = new TCompInpBasicControl(winsys.GetMEH());
 	tcomps.push_back(viewcompt);
 	tcomps.push_back(inpconp);
-	res.GetTemplateManager()->CreateEntTemp("tviewport", tcomps);
-	Entity * ent = res.GetTemplateManager()->CreateEntByTemp("testviwe", "tviewport");
+	res->GetTemplateManager()->CreateEntTemp("tviewport", tcomps);
+	Entity * ent = res->GetTemplateManager()->CreateEntByTemp("testviwe", "tviewport");
 	ent->SetPos(RebVector(0.0f, 0.0f, 0.0f));
 	static_cast<CompVisViewport*>(ent->GetComponent("CompVisViewport"))->SetActiveViewport();
 
@@ -85,6 +90,7 @@ void RebGame::Init()
 
 	bool pressed = false;
 	winm->TrapMouse(true);
+	
 }
 
 void RebGame::GameLoop()
@@ -95,7 +101,7 @@ while(1)
 		rd->Clear(1, 1);
 		rd->ResetMatrix();
 	winsys.GetMEH()->TranslateEvent(&Event);
-	res.Update();
+	res->Update();
 		if(Event.Type == WE_QUIT)
 		{
 			break;
@@ -109,7 +115,8 @@ while(1)
 void RebGame::Release()
 {
 	winm->TrapMouse(false);
-	res.Release();
+	delete mGDC;
+	res->Release();
 	ras.GetAudioDevice()->GetMusicPlayer()->Stop();
 	rend.GetDevice()->Release();
 	winm->DisableRender("hello world");
@@ -117,5 +124,6 @@ void RebGame::Release()
 	winm->ReleaseManager();
 	winsys.DeleteManager();
 	rend.ReleaseDevice();
+	delete res;
 	ras.ReleaseAudioDevice();
 }

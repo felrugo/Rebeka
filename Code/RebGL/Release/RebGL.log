@@ -1,19 +1,72 @@
-﻿Build started 2014.01.14. 17:58:56.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\RebGL\RebGL.vcxproj" on node 4 (Build target(s)).
+﻿Build started 2014.01.26. 21:33:41.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebGL_draw.cpp RebGL_init.cpp RebGL_skinmanager.cpp RebGL_VCM.cpp RebGL_SS.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I"D:\Program Files\Assimp\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebGL_draw.cpp RebGL_init.cpp RebGL_skinmanager.cpp RebGL_VCM.cpp RebGL_SS.cpp
          RebGL_draw.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebgl\RebGL.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
          RebGL_init.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebgl\RebGL.h(4): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
          RebGL_skinmanager.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebgl\RebGL_skinmanager.h(11): fatal error C1083: Cannot open include file: 'FreeImage.h': No such file or directory
          RebGL_VCM.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebgl\RebGL_VCM.h(5): fatal error C1083: Cannot open include file: 'assimp\Importer.hpp': No such file or directory
          RebGL_SS.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebgl\RebGL_SS.h(7): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\RebGL\RebGL.vcxproj" (Build target(s)) -- FAILED.
+     1>RebGL_SS.cpp(103): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebGL.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"..\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\FreeImage\Dist /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebGL.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebGL.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebGL_draw.obj
+         Release\RebGL_init.obj
+         Release\RebGL_skinmanager.obj
+         Release\RebGL_VCM.obj
+         Release\RebGL_SS.obj
+            Creating library ..\..\Bin32\RebGL.lib and object ..\..\Bin32\RebGL.exp
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glTexCoord2f@8
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glEnd@0
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glBindTexture@8
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glBegin@4
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glLoadMatrixf@4
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glPopMatrix@0
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glPushMatrix@0
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glRotatef@16
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glScalef@12
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glVertex3f@12
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glMatrixMode@4
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glTranslatef@12
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glFlush@0
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glColor3f@12
+     1>RebGL_draw.obj : error LNK2001: unresolved external symbol __imp__glLoadIdentity@0
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glClearDepth@8
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glDepthFunc@4
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glClear@4
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glClearColor@16
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol _gluPerspective@32
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glShadeModel@4
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol "public: void __thiscall RebMatrix::Identity(void)" (?Identity@RebMatrix@@QAEXXZ)
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glEnable@4
+     1>RebGL_init.obj : error LNK2001: unresolved external symbol __imp__glHint@8
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_GetHeight@4
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_GetWidth@4
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_GetBits@4
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_Load@12
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_Unload@4
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__glTexImage2D@36
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__glGetError@0
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__glTexParameteri@12
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_GetFileType@8
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__FreeImage_ConvertTo32Bits@4
+     1>RebGL_skinmanager.obj : error LNK2001: unresolved external symbol __imp__glGenTextures@8
+     1>RebGL_VCM.obj : error LNK2001: unresolved external symbol _aiImportFile
+     1>RebGL_VCM.obj : error LNK2001: unresolved external symbol "public: class RebMatrix __thiscall RebMatrix::operator*(class RebMatrix const &)const " (??DRebMatrix@@QBE?AV0@ABV0@@Z)
+     1>RebGL_VCM.obj : error LNK2001: unresolved external symbol _aiReleaseImport
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewGetShaderInfoLog
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp__glewInit@0
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewLinkProgramARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewCompileShaderARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewAttachObjectARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewCreateProgramObjectARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewUseProgramObjectARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewCreateShaderObjectARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewDeleteObjectARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewShaderSourceARB
+     1>RebGL_SS.obj : error LNK2001: unresolved external symbol __imp____glewGetShaderiv
+     1>..\..\Bin32\RebGL.dll : fatal error LNK1120: 49 unresolved externals
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:03.11
+Time Elapsed 00:00:08.26

@@ -46,11 +46,10 @@ class TCompPhyModel : public TComponent
 	IRenderDevice * IRD;
 	std::string mf;
 public:
-	TCompPhyModel(btDynamicsWorld * SDW, IRenderDevice * SIRD, std::string smf)
+	TCompPhyModel(btDynamicsWorld * SDW, IRenderDevice * SIRD)
 	{
 		DW = SDW;
 		IRD = SIRD;
-		mf = smf;
 	}
 	std::string GetID()
 	{

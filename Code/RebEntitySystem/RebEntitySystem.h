@@ -5,6 +5,7 @@
 #include "CompVisual.h"
 #include "CompPhysic.h"
 #include "CompInput.h"
+#include "..\RebSupport\RebGDC.h"
 #include <map>
 
 class RebEntitySystem;
@@ -12,8 +13,9 @@ class RebEntitySystem;
 class TemplateManager
 {
 	std::vector<TEntity*> temps;
-	std::map<std::string, void *> ctemps;
+	std::map<std::string, TComponent *> ctemps;
 	RebEntitySystem * res;
+	bool Loaded;
 public:
 	TemplateManager(RebEntitySystem * sres);
 
@@ -37,9 +39,9 @@ class RebEntitySystem
 {
 	std::vector<Entity*> ents;
 	TemplateManager * tm;
-	IRenderDevice * IRD;
 public:
-	RebEntitySystem();
+	RebGDC * GameData;
+	RebEntitySystem(RebGDC * sgd);
 
 	void AddEntity(Entity * ent);
 	

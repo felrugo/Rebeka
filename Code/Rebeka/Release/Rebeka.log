@@ -1,5 +1,28 @@
-﻿Build started 2014.01.14. 17:55:15.
+﻿Build started 2014.01.26. 21:33:36.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBEKA_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebGame.cpp
+         RebGame.cpp
+       Link:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\Rebeka.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\Libs\x32 RebRenderer.lib RebAudio.lib RebWindowSystem.lib RebEntitySystem.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Rebeka.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Rebeka.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebGame.obj
+     1>RebRenderer.lib(RebRenderer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in RebGame.obj
+     1>RebRenderer.lib(RebRenderer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in RebGame.obj
+     1>RebRenderer.lib(RebRenderer.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:ICF' specification
+     1>RebAudio.lib(RebAudioSystem.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in RebGame.obj
+     1>RebAudio.lib(RebAudioSystem.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in RebGame.obj
+     1>RebEntitySystem.lib(CompInput.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in RebGame.obj
+     1>RebEntitySystem.lib(CompInput.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in RebGame.obj
+     1>RebEntitySystem.lib(RebEntity.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in RebGame.obj
+     1>RebEntitySystem.lib(RebEntity.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in RebGame.obj
+     1>RebEntitySystem.lib(RebEntitySystem.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in RebGame.obj
+     1>RebEntitySystem.lib(RebEntitySystem.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in RebGame.obj
+     1>RebEntitySystem.lib(CompVisual.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '2' doesn't match value '0' in RebGame.obj
+     1>RebEntitySystem.lib(CompVisual.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MDd_DynamicDebug' doesn't match value 'MD_DynamicRelease' in RebGame.obj
+            Creating library ..\..\Bin32\Rebeka.lib and object ..\..\Bin32\Rebeka.exp
+     1>LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>..\..\Bin32\Rebeka.dll : fatal error LNK1319: 12 mismatches detected
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:12.24

@@ -1,12 +1,26 @@
-﻿Build started 2014.01.14. 17:58:54.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Reb3D\Reb3D.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2014.01.26. 21:33:35.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebcpu.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebaabb.cpp Rebcpu.cpp RebGLTrans.cpp Rebmatrix.cpp Rebobb.cpp Rebplane.cpp Rebpolygon.cpp Rebquat.cpp Rebray.cpp Rebvector.cpp
+         Rebaabb.cpp
          Rebcpu.cpp
      1>Rebcpu.cpp(186): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  D:\win7prog\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Reb3D\Reb3D.vcxproj" (Build target(s)) -- FAILED.
+         RebGLTrans.cpp
+         Rebmatrix.cpp
+     1>Rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
+     1>Rebmatrix.cpp(118): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>Rebmatrix.cpp(119): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+     1>Rebmatrix.cpp(120): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+         Rebobb.cpp
+         Rebplane.cpp
+         Rebpolygon.cpp
+     1>Rebpolygon.cpp(179): warning C4018: '<' : signed/unsigned mismatch
+         Rebquat.cpp
+         Rebray.cpp
+         Rebvector.cpp
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.85
+Time Elapsed 00:00:04.80

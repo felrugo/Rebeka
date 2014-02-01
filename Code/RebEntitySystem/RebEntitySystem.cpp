@@ -46,16 +46,19 @@ void TemplateManager::CreateEntTemp(std::string tname, std::vector<TComponent*> 
 
 void TemplateManager::LoadTComps()
 {
-	ctemps["CompVisModel"];
+	if(res->GameData->rd != 0)
+	ctemps["CompVisModel"] = new TCompVisViewport(res->GameData->rd);
+	if(res->GameData->meh != 0)
+	ctemps["CompInpBasicControl"] = new TCompInpBasicControl(res->GameData->meh);
 }
 
 
 TemplateManager::TemplateManager(RebEntitySystem * sres)
 {
+	Loaded = false;
 	res = sres;
 	temps.clear();
 	ctemps.clear();
-	LoadTComps();
 }
 
 
@@ -68,7 +71,7 @@ TemplateManager::~TemplateManager()
 	temps.clear();
 
 
-	for(std::map<std::string, void *>::iterator it = ctemps.begin(); it != ctemps.end(); ++it) {
+	for(std::map<std::string, TComponent *>::iterator it = ctemps.begin(); it != ctemps.end(); ++it) {
 		delete ctemps[(it->first)];
 }
 	ctemps.clear();
@@ -76,9 +79,10 @@ TemplateManager::~TemplateManager()
 
 
 
-RebEntitySystem::RebEntitySystem()
+RebEntitySystem::RebEntitySystem(RebGDC * sgd)
 {
 	ents.clear();
+	GameData = sgd;
 	tm = new TemplateManager(this);
 }
 
@@ -112,7 +116,6 @@ Entity * RebEntitySystem::GetEntity(std::string name)
 		return 0;
 	}
 
-	
 
 void RebEntitySystem::Release()
 {

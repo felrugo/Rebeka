@@ -1,13 +1,19 @@
-﻿Build started 2014.01.14. 17:58:56.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\RebSDL\RebSDL.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2014.01.26. 21:33:39.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSDL\RebSDL.vcxproj" on node 4 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp RebSDL.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\SDL2-2.0.0\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp RebSDL.cpp
          RebMEH.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebsdl\RebMEH.h(4): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
          RebSDL.cpp
-     1>d:\users\felrugo\documents\github\rebeka\rebsdl\RebSDL.h(3): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\RebSDL\RebSDL.vcxproj" (Build target(s)) -- FAILED.
+     1>RebSDL.cpp(61): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebSDL.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXPO.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebSDL.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebSDL.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebMEH.obj
+         Release\RebSDL.obj
+            Creating library ..\..\Bin32\RebSDL.lib and object ..\..\Bin32\RebSDL.exp
+         Generating code
+         Finished generating code
+         RebSDL.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSDL\..\..\Bin32\RebSDL.dll
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSDL\RebSDL.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.18
+Time Elapsed 00:00:03.12

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 #include "..\RebRenderer\IRenderDevice.h"
 #include "..\RebWindowSystem\IMEH.h"
 
@@ -15,6 +16,8 @@ class Component
 {
 protected:
 	Entity * parent;
+
+	std::map<std::string, void*> Params;
 public:
 	virtual std::string GetType() = 0;
 
@@ -26,6 +29,26 @@ public:
 	}
 
 	virtual void update() {}
+
+	void AddParams(std::map<std::string, void*> spars)
+	{
+		Params = spars;
+	}
+
+	void SetParam(std::string paramname, void* paramvalue)
+	{
+		Params[paramname] = paramvalue;
+	}
+
+	void* GetParam(std::string paramname)
+	{
+		for(std::map<std::string, void*>::iterator it = Params.begin(); it != Params.end(); it++) {
+			if(it->first == paramname)
+			{
+				return Params[paramname];
+			}
+		}
+	}
 
 	void SetOwner(Entity * so)
 	{
@@ -43,10 +66,14 @@ public:
 class TComponent
 {
 public:
+
+	std::map<std::string, void*> TParams;
+
 	TComponent() {};
 	virtual ~TComponent() {};
 
 	virtual std::string GetID() = 0;
+
 
 	virtual std::string GetType() = 0;
 
