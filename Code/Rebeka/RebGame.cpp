@@ -30,6 +30,13 @@ void RebGame::Init()
 
 	rfs.GetAllFiles("..\\..");
 
+	RebFile model;
+
+	rfs.GetFile("tea.obj", &model);
+
+	std::vector<std::string> read;
+
+	read = rfs.Read(model.rpath);
 
 	winsys.CreateManager();
 	winm = winsys.GetManager();
@@ -54,6 +61,7 @@ void RebGame::Init()
 	tcomps.push_back(inpconp);
 	res->GetTemplateManager()->CreateEntTemp("tviewport", tcomps);
 	Entity * ent = res->GetTemplateManager()->CreateEntByTemp("testviwe", "tviewport");
+
 	ent->SetPos(RebVector(0.0f, 0.0f, 0.0f));
 	static_cast<CompVisViewport*>(ent->GetComponent("CompVisViewport"))->SetActiveViewport();
 

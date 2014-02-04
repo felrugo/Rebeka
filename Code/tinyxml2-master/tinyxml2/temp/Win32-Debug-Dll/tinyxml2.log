@@ -1,0 +1,31 @@
+﻿Build started 2014.02.04. 16:13:37.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\tinyxml2.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\".
+       InitializeBuildStatus:
+         Creating "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D TINYXML2_EXPORT /D _DEBUG /D _CONSOLE /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\\" /Fd"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\tinyxml2.cpp
+         tinyxml2.cpp
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.embed.manifest.res" D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2_manifest.rc 
+       Link:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.lib" /MACHINE:X86 /DLL "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.embed.manifest.res"
+         "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.obj"
+            Creating library D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.lib and object D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.exp
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.embed.manifest" /manifest "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.embed.manifest.res" D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2_manifest.rc 
+       LinkEmbedManifest:
+         d:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.lib" /MACHINE:X86 /DLL "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.dll.embed.manifest.res"
+         "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.obj"
+            Creating library D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.lib and object D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.exp
+         tinyxml2.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\bin\Win32-Debug-Dll\tinyxml2.dll
+       FinalizeBuildStatus:
+         Deleting file "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.unsuccessfulbuild".
+         Touching "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\temp\Win32-Debug-Dll\tinyxml2.lastbuildstate".
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\tinyxml2-master\tinyxml2\tinyxml2.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.91

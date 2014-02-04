@@ -1,15 +1,15 @@
-﻿Build started 2014.01.30. 17:42:55.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebRenderer\RebRenderer.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 2014.02.03. 19:08:40.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebRenderer\RebRenderer.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebRenderer.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebRenderer.cpp
          RebRenderer.cpp
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebRenderer.lib" Reb3D.lib /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebRenderer.obj
          RebRenderer.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebRenderer\..\Libs\x32\RebRenderer.lib
        BscMake:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebRenderer.bsc" /n Debug\RebRenderer.sbr
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebRenderer\RebRenderer.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebRenderer\RebRenderer.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.13
+Time Elapsed 00:00:05.99

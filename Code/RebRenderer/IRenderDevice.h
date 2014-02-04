@@ -54,7 +54,7 @@ class IVertexCacheManager
 public:
 	virtual void CreateCache(std::string name, std::vector<RebVertexBuffer> RVB) = 0;
 
-	virtual void DeleteCache(UINT CID) = 0;
+	virtual void DeleteCache(RebVertexCache * rvc) = 0;
 
 	virtual RebVertexCache * GetVertexCache(std::string cname) = 0;
 

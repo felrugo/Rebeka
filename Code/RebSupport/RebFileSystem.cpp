@@ -82,6 +82,7 @@ std::string ret;
 	  else{
 	  RebFile rf;
 	  rf.fname = ret;
+	  rf.rpath = dir + "\\" + ret;
 	  rf.path = GetPath(dir, ret);
 	  rf.type = GetType(ret);
 	  Files.push_back(rf);
@@ -97,3 +98,33 @@ std::string ret;
 #elif __linux__
 #endif
 
+bool RebFileSystem::GetFile(std::string name, RebFile* out)
+{
+	for (unsigned int i = 0; i < Files.size(); i++)
+	{
+		if(Files[i].fname == name)
+		{
+			*out = Files[i];
+			return true;
+		}
+	}
+	return false;
+}
+
+std::vector<std::string> RebFileSystem::Read(std::string path) //relative path needed
+{
+	std::ifstream in;
+	in.open(path.c_str(), std::ifstream::in);
+	std::vector<std::string> ret;
+	std::string get;
+	if (in.is_open())
+	{
+	while (std::getline(in, get))
+{
+	ret.push_back(get);
+	get = "";
+}
+	in.close();
+	}
+	return ret;
+}

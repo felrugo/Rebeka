@@ -1,5 +1,5 @@
-﻿Build started 2014.01.26. 21:33:57.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014.02.02. 18:02:53.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
@@ -11,8 +11,8 @@
          Generating code
          Finished generating code
          Launcher.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\..\..\Bin32\Launcher.exe
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.44
+Time Elapsed 00:00:01.06

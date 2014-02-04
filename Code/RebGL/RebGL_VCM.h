@@ -19,7 +19,7 @@ public:
 
 	void CreateCache(std::string name, std::vector<RebVertexBuffer> RVB);
 
-	void DeleteCache(UINT CID);
+	void DeleteCache(RebVertexCache* rvc);
 
 	RebVertexCache * GetVertexCache(std::string cname);
 

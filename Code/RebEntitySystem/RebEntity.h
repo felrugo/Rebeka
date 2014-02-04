@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <typeinfo>
+#include "..\RebSupport\RebString.h"
 #include "..\RebRenderer\IRenderDevice.h"
 #include "..\RebWindowSystem\IMEH.h"
 
@@ -12,12 +14,72 @@ class Entity;
 
 class TemplateManager;
 
+class Param
+{
+public:
+	void* Data;
+	std::string Type;
+
+	Param()
+	{
+		Data = 0;
+		Type = typeid(Data).name();
+	}
+
+	void DeleteData()
+	{
+		if(Data != 0)
+		{
+			delete Data;
+			Data = 0;
+		}
+	}
+	template <class T>
+	 T operator = (T equ)
+	 {
+		 DeleteData();
+		 Data = new T;
+		 *(T*)Data = equ;
+		 Type = typeid(T).name();
+		 return equ;
+	 }
+
+	 template <class T>
+	 operator T ()
+	 {
+		 T ret;
+		 ret = *(T*)Data;
+		 return ret;
+	 }
+
+
+	 template <class T>
+	 bool operator == (T equ)
+	 {
+		 if(typeid(T).name() == Type)
+		 {
+			 if(*(T*)Data == equ)
+			 {
+				 return true;
+			 }
+			 return false;
+		 }
+		 return false;
+	 }
+
+	~Param()
+	{
+		DeleteData();
+	}
+};
+
+
 class Component
 {
 protected:
 	Entity * parent;
 
-	std::map<std::string, void*> Params;
+	std::map<std::string, Param> Params;
 public:
 	virtual std::string GetType() = 0;
 
@@ -30,19 +92,20 @@ public:
 
 	virtual void update() {}
 
-	void AddParams(std::map<std::string, void*> spars)
+	void AddParams(std::map<std::string, Param> spars)
 	{
 		Params = spars;
 	}
 
-	void SetParam(std::string paramname, void* paramvalue)
+	template <class T>
+	void SetParam(std::string paramname, T paramvalue)
 	{
 		Params[paramname] = paramvalue;
 	}
 
-	void* GetParam(std::string paramname)
+	Param GetParam(std::string paramname)
 	{
-		for(std::map<std::string, void*>::iterator it = Params.begin(); it != Params.end(); it++) {
+		for(std::map<std::string, Param>::iterator it = Params.begin(); it != Params.end(); it++) {
 			if(it->first == paramname)
 			{
 				return Params[paramname];
@@ -67,7 +130,7 @@ class TComponent
 {
 public:
 
-	std::map<std::string, void*> TParams;
+	std::map<std::string, Param> TParams;
 
 	TComponent() {};
 	virtual ~TComponent() {};

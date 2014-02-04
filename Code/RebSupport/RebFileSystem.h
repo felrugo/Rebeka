@@ -9,6 +9,7 @@
 #elif __linux__
 #endif
 
+#include <fstream>
 
 struct RebFile
 {
@@ -16,6 +17,7 @@ public:
 	std::string fname;
 	std::string path;
 	std::string type;
+	std::string rpath;
 };
 
 
@@ -33,9 +35,11 @@ public:
 
 	void GetAllFiles(std::string dir = "\\");
 
-	std::vector<std::string> Read(std::string path);
+	bool RebFileSystem::GetFile(std::string name, RebFile* out);
 
-	void Write(std::vector<std::string> writable);
+	static std::vector<std::string> Read(std::string path);
+
+	static void Write(std::vector<std::string> writable, std::string path);
 };
 
 

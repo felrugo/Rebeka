@@ -70,11 +70,20 @@ void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string f
     aiReleaseImport (scene);
 }
 
-	void RebVertexCacheManager::DeleteCache(UINT CID)
+void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 	{
+		UINT CID;
+		for(CID = 0; CID < RVCs.size(); CID++)
+		{
+			if(RVCs[CID] == rvc)
+			{
+				break;
+			}
+		}
 		if (CID < RVCs.size())
 		{
 		RVCs.erase(RVCs.begin() + CID);
+		delete RVCs[CID];
 		}
 	}
 

@@ -1,6 +1,6 @@
 
-#ifndef ZFXD3D_SKINMAN_H
-#define ZFXD3D_SKINMAN_H
+#ifndef SKINMAN_H
+#define SKINMAN_H
 
 
 #include "../RebRenderer/IRenderDevice.h"

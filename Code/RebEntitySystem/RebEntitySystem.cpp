@@ -47,7 +47,8 @@ void TemplateManager::CreateEntTemp(std::string tname, std::vector<TComponent*> 
 void TemplateManager::LoadTComps()
 {
 	if(res->GameData->rd != 0)
-	ctemps["CompVisModel"] = new TCompVisViewport(res->GameData->rd);
+	ctemps["CompVisViewport"] = new TCompVisViewport(res->GameData->rd);
+	ctemps["CompVisModel"] = new TCompVisModel(res->GameData->rd);
 	if(res->GameData->meh != 0)
 	ctemps["CompInpBasicControl"] = new TCompInpBasicControl(res->GameData->meh);
 }

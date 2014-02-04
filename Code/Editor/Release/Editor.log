@@ -1,5 +1,5 @@
-﻿Build started 2014.01.26. 21:33:40.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" on node 5 (Build target(s)).
+﻿Build started 2014.02.02. 18:02:26.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" on node 3 (Rebuild target(s)).
      1>CustomBuild:
          Moc'ing editor.h...
          Uic'ing editor.ui...
@@ -20,8 +20,8 @@
          Release\moc_editor.obj
          Release\main.obj
          Editor.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\Editor.exe
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.28
+Time Elapsed 00:00:05.25

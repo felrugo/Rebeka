@@ -1,6 +1,8 @@
 #ifndef REBGAME_H
 #define REBGAME_H
 
+
+
 #include "..\IGameDLL\IGameDLL.h"
 #include "../RebRenderer/IRenderer.h"
 #include "..\RebWindowSystem\RebWindowSystem.h"
@@ -8,6 +10,7 @@
 #include "..\RebEntitySystem\RebEntitySystem.h"
 #include "..\RebSupport\RebGDC.h"
 #include "..\RebSupport\RebFileSystem.h"
+#include "..\RebSupport\RebString.h"
 
 class RebGame : public IGameDLL
 {

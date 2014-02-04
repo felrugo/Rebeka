@@ -21,9 +21,11 @@ public:
 
 class CompVisModel : public CompVisual
 {
-	std::string mf;
+	
 public:
-	CompVisModel(IRenderDevice * sird, std::string smf);
+	CompVisModel(IRenderDevice * sird);
+
+	void update();
 
 	void LoadModel(std::string filename);
 
@@ -37,9 +39,8 @@ public:
 class TCompVisModel : public TComponent
 {
 	IRenderDevice * IRD;
-	std::string ModelFile;
 public:
-	TCompVisModel(IRenderDevice * sird, std::string mf);
+	TCompVisModel(IRenderDevice * sird);
 
 	std::string GetID()
 	{
@@ -53,7 +54,7 @@ public:
 
 	Component * MakeComponent()
 	{
-		CompVisModel * cvt = new CompVisModel(IRD, ModelFile);
+		CompVisModel * cvt = new CompVisModel(IRD);
 		return cvt;
 	}
 };

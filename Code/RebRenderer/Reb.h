@@ -75,6 +75,7 @@ struct RebVertexBuffer
 	std::string name;
 	Methold met;
 	UINT ID;
+	RebSkin skin;
 	
 	UINT readpoint;
 

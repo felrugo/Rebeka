@@ -1,11 +1,9 @@
-﻿Build started 2014.01.26. 21:33:35.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014.02.02. 18:02:26.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebaabb.cpp Rebcpu.cpp RebGLTrans.cpp Rebmatrix.cpp Rebobb.cpp Rebplane.cpp Rebpolygon.cpp Rebquat.cpp Rebray.cpp Rebvector.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rebaabb.cpp Rebcpu.cpp RebGLTrans.cpp Rebmatrix.cpp Rebobb.cpp Rebplane.cpp Rebpolygon.cpp Rebquat.cpp Rebray.cpp Rebvector.cpp
          Rebaabb.cpp
          Rebcpu.cpp
-     1>Rebcpu.cpp(186): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 D:\win7prog\Microsoft Visual Studio 11.0\VC\include\stdio.h(357) : see declaration of 'sprintf'
          RebGLTrans.cpp
          Rebmatrix.cpp
      1>Rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
@@ -19,8 +17,20 @@
          Rebquat.cpp
          Rebray.cpp
          Rebvector.cpp
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" (Build target(s)) -- FAILED.
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\Reb3D.lib" /LIBPATH:..\Libs\x32\ /NOLOGO /LTCG Release\Rebaabb.obj
+         Release\Rebcpu.obj
+         Release\RebGLTrans.obj
+         Release\Rebmatrix.obj
+         Release\Rebobb.obj
+         Release\Rebplane.obj
+         Release\Rebpolygon.obj
+         Release\Rebquat.obj
+         Release\Rebray.obj
+         Release\Rebvector.obj
+         Reb3D.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\..\Libs\x32\Reb3D.lib
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" (Rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:04.80
+Time Elapsed 00:00:01.76

@@ -1,24 +1,16 @@
-﻿Build started 2014.01.30. 17:37:36.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 3 (Rebuild target(s)).
+﻿Build started 2014.02.03. 19:09:21.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\Launcher.res" Launcher.rc 
        Link:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\Launcher.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\Libs\x32 IGameDLL.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Launcher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Launcher.lib" /MACHINE:X86 Debug\Launcher.res
          Debug\Source.obj
-         IGameDLL.lib(RebGDL.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
-     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
-     1>Source.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         Generating code
-         Finished generating code
          Launcher.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\..\..\Bin32\Launcher.exe
        BscMake:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\Launcher.bsc" /n Debug\Source.sbr
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.55
+Time Elapsed 00:00:04.37
