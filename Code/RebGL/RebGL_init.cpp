@@ -15,6 +15,13 @@ void ReleaseRenderDevice(IRenderDevice **LPRenderDevice)
 }
 
 
+
+void * RebGL::tm()
+{
+
+	return 0;
+}
+
 void RebGL::Init(IWindowManager * siwm, int width, int height)
 {
 glShadeModel( GL_SMOOTH );
@@ -68,8 +75,11 @@ glShadeModel( GL_SMOOTH );
 	MatViewport.Identity();
 }
 
+
+
 void RebGL::Release()
 {
+
 	if(skinmanruning)
 	{
 	delete skinman;

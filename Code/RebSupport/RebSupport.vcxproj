@@ -158,15 +158,16 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\tinyxml2-master\tinyxml2.h" />
-    <ClInclude Include="RebMultFS.h" />
     <ClInclude Include="RebFileSystem.h" />
     <ClInclude Include="RebGDC.h" />
     <ClInclude Include="RebString.h" />
+    <ClInclude Include="RebTimer.h" />
+    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\tinyxml2-master\tinyxml2.cpp" />
     <ClCompile Include="RebFileSystem.cpp" />
+    <ClCompile Include="RebTimer.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

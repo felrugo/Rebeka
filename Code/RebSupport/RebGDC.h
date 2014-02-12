@@ -5,6 +5,7 @@
 #include "..\RebWindowSystem\RebWindowSystem.h"
 #include "..\RebAudio\RebAudioSystem.h"
 #include "..\RebEntitySystem\RebEntitySystem.h"
+#include "..\RebSupport\RebFileSystem.h"
 
 class RebGDC
 {
@@ -13,12 +14,14 @@ public:
 	IRenderDevice * rd;
 	IMEH * meh;
 	void * window;
+	RebFileSystem * rfs;
 	RebGDC()
 	{
 		winm = 0;
 		rd = 0;
 		meh = 0;
 		window = 0;
+		rfs = 0;
 	}
 };
 

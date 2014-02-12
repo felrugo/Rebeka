@@ -9,7 +9,7 @@
 #include "RebGL_skinmanager.h"
 #include "RebGL_VCM.h"
 #include "RebGL_SS.h"
-
+#include <thread>
 
 
 
@@ -34,8 +34,11 @@ class RebGL : public IRenderDevice
 	RebMatrix MatViewport;
 
 	void * ViewportID;
+	
 
 public:
+
+	void * tm();
 	
 	void Init(IWindowManager * siwm, int width, int height);
 

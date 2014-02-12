@@ -24,6 +24,9 @@ public:
 class RebFileSystem
 {
 	std::vector<RebFile> Files;
+	std::vector<RebFile> Objects;
+	std::vector<RebFile> Entities;
+
 public:
 	RebFileSystem();
 
@@ -34,6 +37,12 @@ public:
 	std::string Search(std::string filename);
 
 	void GetAllFiles(std::string dir = "\\");
+
+	std::vector<RebFile> * GetObjects();
+
+	std::vector<RebFile> * GetEntities();
+
+	void Categorize();
 
 	bool RebFileSystem::GetFile(std::string name, RebFile* out);
 

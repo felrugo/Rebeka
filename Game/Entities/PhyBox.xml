@@ -1,0 +1,5 @@
+<Entity name="Box">
+<Component name="CompVisModel">
+<Param name="model" value="Box.obj"/>
+</Component>
+</Entity>

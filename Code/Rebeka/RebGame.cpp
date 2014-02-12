@@ -27,23 +27,16 @@ void RebGame::Init()
 	ras.GetAudioDevice()->GetMusicPlayer()->SetSource("test.ogg");
 
 	ras.GetAudioDevice()->GetMusicPlayer()->Play();
-
-	rfs.GetAllFiles("..\\..");
-
-	RebFile model;
-
-	rfs.GetFile("tea.obj", &model);
-
-	std::vector<std::string> read;
-
-	read = rfs.Read(model.rpath);
-
+	rfs = new RebFileSystem;
+	rfs->GetAllFiles("..\\..");
+	rfs->Categorize();
 	winsys.CreateManager();
 	winm = winsys.GetManager();
 	winm->InitManager();
 	winm->CreateWin("hello world", 800, 600, 100, 100);
 	winm->EnableRender("hello world");
 	window = winm->GetWindow("hello world");
+
 	rend.GetDevice()->Init(winm, 800, 600);
 	rd = rend.GetDevice();
 
@@ -52,8 +45,8 @@ void RebGame::Init()
 	mGDC->window = window;
 	mGDC->winm = winm;
 	mGDC->meh = winsys.GetMEH();
+	mGDC->rfs = rfs;
 	res = new RebEntitySystem(mGDC);
-	res->GetTemplateManager()->LoadTComps();
 	std::vector<TComponent*> tcomps;
 	TComponent * viewcompt = new TCompVisViewport(rd);
 	TComponent * inpconp = new TCompInpBasicControl(winsys.GetMEH());
@@ -69,7 +62,18 @@ void RebGame::Init()
 
 	double err = cos(3.14159265 / 2);
 
+	RebTimer rt;
 
+	rt.Start();
+
+	float tim;
+
+	Sleep(2000000);
+
+	tim = rt.GetCurrent();
+
+	rt.Start();
+	tim = rt.GetCurrent();
 	m1.Identity();
 	m2.Identity();
 
@@ -133,5 +137,6 @@ void RebGame::Release()
 	winsys.DeleteManager();
 	rend.ReleaseDevice();
 	delete res;
+	delete rfs;
 	ras.ReleaseAudioDevice();
 }

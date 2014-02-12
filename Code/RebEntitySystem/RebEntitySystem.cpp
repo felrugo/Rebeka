@@ -44,13 +44,23 @@ void TemplateManager::CreateEntTemp(std::string tname, std::vector<TComponent*> 
 	temps.push_back(nte);
 }
 
-void TemplateManager::LoadTComps()
+
+TComponent * TemplateManager::BuiltinComps(std::string cn, RebGDC * GameData)
 {
-	if(res->GameData->rd != 0)
-	ctemps["CompVisViewport"] = new TCompVisViewport(res->GameData->rd);
-	ctemps["CompVisModel"] = new TCompVisModel(res->GameData->rd);
-	if(res->GameData->meh != 0)
-	ctemps["CompInpBasicControl"] = new TCompInpBasicControl(res->GameData->meh);
+	TComponent * ret = 0;
+	if(cn == "CompVisModel")
+		ret = new TCompVisModel(GameData->rd);
+		return ret;
+}
+
+TComponent * TemplateManager::TCFactory(std::string compname)
+{
+	TComponent * ret = 0;
+	for (unsigned int i = 0; i < CTFF.size(); i++)
+	{
+		ret = CTFF[i](compname, res->GameData);
+	}
+	return ret;
 }
 
 
@@ -59,7 +69,41 @@ TemplateManager::TemplateManager(RebEntitySystem * sres)
 	Loaded = false;
 	res = sres;
 	temps.clear();
-	ctemps.clear();
+	CTFF.clear();
+	CTFF.push_back(BuiltinComps);
+	LoadEntTemps();
+}
+
+
+void TemplateManager::LoadEntTemps()
+{
+	tinyxml2::XMLDocument xd;
+	for (unsigned int i = 0; i < res->GameData->rfs->GetEntities()->size(); i++)
+	{
+		xd.LoadFile(res->GameData->rfs->GetEntities()->at(i).rpath.c_str());
+		std::string name = xd.FirstChild()->ToElement()->Attribute("name");
+		TEntity * nt = new TEntity(name);
+		tinyxml2::XMLNode * xn = xd.FirstChild()->FirstChild();
+		while(xn->ToElement()->Name() == std::string("Component"))
+		{
+			tinyxml2::XMLElement * xe = xn->ToElement()->FirstChildElement();
+			std::string compn = xn->ToElement()->Attribute("name");
+			TComponent * tc = TCFactory(compn);
+			if(tc == 0) break;
+		while(xe->Name() == std::string("Param"))
+		{
+			tc->TParams[xe->Attribute("name")] = xe->Attribute("value");
+			xe = xe->NextSiblingElement();
+			if(xe == 0)
+				break;
+		}
+		nt->AddTemplate(tc);
+		xn = xn->NextSibling();
+		if(xn == 0)
+			break;
+		}
+		temps.push_back(nt);
+	}
 }
 
 
@@ -71,11 +115,7 @@ TemplateManager::~TemplateManager()
 	}
 	temps.clear();
 
-
-	for(std::map<std::string, TComponent *>::iterator it = ctemps.begin(); it != ctemps.end(); ++it) {
-		delete ctemps[(it->first)];
-}
-	ctemps.clear();
+	CTFF.clear();
 }
 
 

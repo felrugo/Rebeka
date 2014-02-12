@@ -6,6 +6,7 @@
 #include "CompPhysic.h"
 #include "CompInput.h"
 #include "..\RebSupport\RebGDC.h"
+#include "..\RebSupport\tinyxml2.h"
 #include <map>
 
 class RebEntitySystem;
@@ -13,13 +14,17 @@ class RebEntitySystem;
 class TemplateManager
 {
 	std::vector<TEntity*> temps;
-	std::map<std::string, TComponent *> ctemps;
+	std::vector<TComponent* (*)(std::string, RebGDC*)> CTFF;
 	RebEntitySystem * res;
 	bool Loaded;
 public:
 	TemplateManager(RebEntitySystem * sres);
 
-	void LoadTComps();
+	void LoadEntTemps();
+
+	static TComponent * BuiltinComps(std::string cn, RebGDC * GameData);
+
+	TComponent * TCFactory(std::string compname);
 
 	void AddTamplate(TEntity * toadd);
 

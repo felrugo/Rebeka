@@ -10,6 +10,7 @@
 #include "..\RebEntitySystem\RebEntitySystem.h"
 #include "..\RebSupport\RebGDC.h"
 #include "..\RebSupport\RebFileSystem.h"
+#include "..\RebSupport\RebTimer.h"
 #include "..\RebSupport\RebString.h"
 
 class RebGame : public IGameDLL
@@ -21,7 +22,7 @@ public:
 	IWindowManager * winm;
 	IRenderDevice * rd;
 	RebEntitySystem * res;
-	RebFileSystem rfs;
+	RebFileSystem * rfs;
 	void * window;
 	
 

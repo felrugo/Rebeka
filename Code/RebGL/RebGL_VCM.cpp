@@ -14,6 +14,21 @@ void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string f
 	RebVertexCache * rvc = new RebVertexCache;
 	RebVertexBuffer rvb;
 	
+	//find in obs
+
+	for(unsigned int fi = 0; fi < obs.size(); fi++)
+	{
+		if(obs[fi]->filename == filename)
+		{
+			rvc = obs[fi];
+			rvc->name = cname;
+			RVCs.push_back(rvc);
+			return;
+		}
+	}
+
+
+
 	const aiScene* scene = aiImportFile (filename.c_str(), aiProcess_Triangulate); // TRIANGLES!
   if (!scene) {
 	  delete rvc;
@@ -66,6 +81,7 @@ void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string f
   rvc->name = cname;
   rvc->filename = filename;
   rvc->transf.Identity();
+  obs.push_back(new RebVertexCache(*rvc));
   RVCs.push_back(rvc);
     aiReleaseImport (scene);
 }

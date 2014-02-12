@@ -24,13 +24,13 @@
     <ClInclude Include="RebFileSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RebMultFS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RebString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\tinyxml2-master\tinyxml2.h">
+    <ClInclude Include="RebTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +38,10 @@
     <ClCompile Include="RebFileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\tinyxml2-master\tinyxml2.cpp">
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RebTimer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

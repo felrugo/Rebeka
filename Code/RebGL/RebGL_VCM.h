@@ -11,6 +11,8 @@ class RebVertexCacheManager : public IVertexCacheManager
 {
 	std::vector<RebVertexCache*> RVCs;
 
+	std::vector<RebVertexCache*> obs;
+
 	IRenderDevice * prd;
 
 public:
