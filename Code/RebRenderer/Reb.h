@@ -33,34 +33,41 @@ typedef struct RebColor
 	};
 } REBCOLOR;
 
+struct RebTexture;
+
 struct RebMaterial
 {
 	UINT id;
-	RebColor cDiffuse;
-	RebColor cAmbient;
-	RebColor cSpecular;
-	RebColor cEmissive;
-	float fPower;
+	std::string name;
+	RebColor amb;
+	RebColor dif;
+	RebColor spe;
+	RebColor emi;
+	std::vector<RebTexture> ambtextures;
+	std::vector<RebTexture> diftextures;
+	std::vector<RebTexture> spetextures;
+	std::vector<RebTexture> emitextures;
 };
 
 struct RebTexture
 {
 	UINT id;
-	float fAlpha;
-	std::string chName;
-	void * pData;
-	RebColor * ColKeys;
-	DWORD nColors;
-
+	std::string filename;
 };
 
 struct RebSkin
 {
-	UINT id;
-	bool bAlpha;
-	UINT nMaterial;
-	UINT nTexture[8];
+	std::vector<RebMaterial> materials;
 };
+
+
+struct RebLight
+{
+	RebVector pos;
+	RebColor color;
+};
+
+
 
 struct RebVertexBuffer
 {
@@ -75,7 +82,7 @@ struct RebVertexBuffer
 	std::string name;
 	Methold met;
 	UINT ID;
-	RebSkin skin;
+	UINT materialid;
 	
 	UINT readpoint;
 
@@ -116,6 +123,7 @@ struct RebVertexCache
 	std::vector<RebVertexBuffer> RVBs;
 	RebMatrix transf;
 	std::string name;
+	RebSkin skin;
 	std::string filename;
 
 	RebVertexCache()

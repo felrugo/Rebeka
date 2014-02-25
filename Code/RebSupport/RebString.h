@@ -13,7 +13,7 @@ public:
 		data = 0;
 	}
 
-		void erease()
+		void erase()
 	{
 		if (data != 0)
 		{
@@ -33,7 +33,7 @@ public:
 
 	const char* operator = (const char * e)
 	{
-		erease();
+		erase();
 		data = (char*)e;
 		return e;
 	}
@@ -50,7 +50,7 @@ public:
 
 	~RebString()
 	{
-		erease();
+		erase();
 	}
 
 };

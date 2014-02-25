@@ -27,6 +27,8 @@ public:
 
 	RebVertexCache * GetVCByFile(std::string filename); /* return 0 if VC doesn1t exists */
 
+	void CreateTerrain(std::string file, std::string cname, RebVertexCache * link = 0);
+
 	void CreateCacheFromFile(std::string cname, std::string filename);
 
 	void Render();

@@ -318,6 +318,23 @@ __declspec(naked) void MatrixMult(float *src1, float *src2, float *dst) {
    }
 /*----------------------------------------------------------------*/
 
+
+
+inline void RebMatrix::RotaWorld(float x, float y, float z)
+{
+	RebMatrix ret, mrx;
+		ret.Identity();
+		mrx.Identity();
+		mrx.RotaArbi(RebVector(1, 0, 0), -x * PI/180);
+		ret = mrx;
+		mrx.RotaArbi(RebVector(0, 1, 0) * mrx, -y * PI/180);
+		ret = ret * mrx;
+		mrx.RotaArbi(RebVector(0, 0, 1) * mrx, -z * PI/180);
+		*this = ret * mrx;
+}
+
+
+
 // multiply two matrices
 RebMatrix RebMatrix::operator * (const RebMatrix &m) const {
    RebMatrix mResult;

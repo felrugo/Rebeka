@@ -4,68 +4,11 @@
              // return values and stuff
 
 
-bool RebGLSkinManager::sforvecid(UINT id, UINT * fid)
-{
-	for (unsigned int i = 0; i < vTextures.size(); i++)
-	{
-		if (vTextures[i].id == id)
-		{
-			if (fid != 0)
-			{
-			*fid = i;
-			}
-			return 1;
-		}
-	}
-	return 0;
-}
 
- bool RebGLSkinManager::textureisex(std::string filename)
- {
-	 for (unsigned int i = 0; i < vTextures.size(); i++)
-	 {
-		 if (vTextures[i].chName == filename)
-		 {
-			 return true;
-		 }
-	 }
-	 return false;
- }
-
- bool RebGLSkinManager::matidex(UINT * matid)
- {
-	 for (unsigned int i = 0; i < vMaterials.size(); i++)
-	 {
-		 if(vMaterials[i].id == *matid)
-		 {
-			 return true;
-		 }
-	 }
-	 return false;
- }
-
- bool RebGLSkinManager::skiidex(UINT * skiid)
- {
-	 for (unsigned int i = 0; i < vSkins.size(); i++)
-	 {
-		 if(vSkins[i].id == *skiid)
-		 {
-			 return true;
-		 }
-	 }
-	 return false;
- }
 
 bool RebGLSkinManager::AddTexture(std::string filename, UINT * textid)
 {
-	if(sforvecid(*textid, 0))
-	{
-		return false;
-	}
-	if (textureisex(filename))
-	{
-		return false;
-	}
+	
 	// elvalasz
 	FREE_IMAGE_FORMAT formato = FreeImage_GetFileType(filename.c_str(),0);//Automatocally detects the format(from over 20 formats!)
 	FIBITMAP* imagen = FreeImage_Load(formato, filename.c_str());
@@ -103,9 +46,8 @@ bool RebGLSkinManager::AddTexture(std::string filename, UINT * textid)
 		return false;
 	}
 	RebTexture rt;
-	rt.chName = filename;
+	rt.filename = filename;
 	rt.id = *textid;
-	vTextures.push_back(rt);
  
 	//elv
 
@@ -113,42 +55,38 @@ bool RebGLSkinManager::AddTexture(std::string filename, UINT * textid)
 	
 }
 
-
-bool RebGLSkinManager::AddMaterial(RebColor *ambient, RebColor *diffuse, RebColor *specular, RebColor *emissive, float * power, UINT * matid)
+void * RebGLSkinManager::LoadTexture(std::string filename)
 {
-	if(matidex(matid) == false)
-	{
-	RebMaterial rm;
-	rm.cAmbient = *ambient;
-	rm.cDiffuse = *diffuse;
-	rm.cEmissive = *emissive;
-	rm.cSpecular = *specular;
-	rm.fPower = *power;
-	rm.id = * matid;
-	vMaterials.push_back(rm);
-	return true;
-	}
-	return false;
+	FREE_IMAGE_FORMAT formato = FreeImage_GetFileType(filename.c_str(),0);//Automatocally detects the format(from over 20 formats!)
+	FIBITMAP* imagen = FreeImage_Load(formato, filename.c_str());
+ 
+	FIBITMAP* temp = imagen;
+	imagen = FreeImage_ConvertTo32Bits(imagen);
+	FreeImage_Unload(temp);
+	return imagen;
 }
 
-
-bool RebGLSkinManager::CreateSkin(UINT * matid, UINT * texid[8], UINT * skiid, bool alpha)
+RebColor RebGLSkinManager::GetPixelColor(void * data, unsigned int x, unsigned int y)
 {
-	if(skiidex(skiid) == false)
-	{
-	RebSkin rs;
-	rs.bAlpha = alpha;
-	rs.id = *skiid;
-	rs.nMaterial = *matid;
-	for (int i = 0; i < 8; i++)
-	{
-	rs.nTexture[i] = *texid[i];
-	}
-	vSkins.push_back(rs);
-	return true;
-	}
-	return false;
+	FIBITMAP * img = (FIBITMAP*)data;
+	RGBQUAD col;
+	FreeImage_GetPixelColor(img, x, y, &col);
+	RebColor ret;
+	ret.fA = col.rgbReserved / 256;
+	ret.fB = col.rgbBlue / 256;
+	ret.fG = col.rgbGreen / 256;
+	ret.fR = col.rgbRed / 256;
+	return ret;
 }
+
+unsigned int RebGLSkinManager::GetHigh(void * data)
+{
+	FIBITMAP * img = (FIBITMAP*)data;
+	unsigned int ret;
+	ret = FreeImage_GetWidth(img);
+	return ret;
+}
+
 
 
 

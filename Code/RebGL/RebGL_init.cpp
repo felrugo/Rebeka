@@ -72,6 +72,8 @@ glShadeModel( GL_SMOOTH );
 
 	ISS = new RebShaderSystem;
 	ISS->Init();
+
+	ILS = new RebGLLightSystem();
 	MatViewport.Identity();
 }
 
@@ -83,6 +85,7 @@ void RebGL::Release()
 	if(skinmanruning)
 	{
 	delete skinman;
+	delete ILS;
 	skinmanruning = false;
 	}
 

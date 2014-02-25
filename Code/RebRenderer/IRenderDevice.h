@@ -18,6 +18,15 @@
  
 // S T R U C T S /////////////////////////////////////////////////// 
 
+
+class ILightSystem
+{
+public:
+	virtual ~ILightSystem() {}
+};
+
+
+
 class IShaderSystem
 {
 	public:
@@ -44,8 +53,12 @@ public:
 	virtual ~ISkinManager() {};
    
 	virtual bool AddTexture(std::string filename, UINT * textid) = 0;
-	  virtual bool AddMaterial(RebColor *ambient, RebColor *diffuse, RebColor *specular, RebColor *emissive, float * power, UINT * matid) = 0;
-	 virtual bool CreateSkin(UINT * matid, UINT * texid[8], UINT * skiid, bool alpha) = 0;
+
+	virtual void * LoadTexture(std::string filename) = 0;
+
+	virtual RebColor GetPixelColor(void * data, unsigned int x, unsigned int y) = 0;
+
+	virtual unsigned int GetHigh(void * data) = 0;
       
    };
 
@@ -105,6 +118,10 @@ class IRenderDevice
 	virtual void BindTexture(UINT id) = 0;
 
 	virtual void Color(float r, float g, float b) = 0;
+
+	virtual void Normal(RebVector RV) = 0;
+
+	virtual void MaterialSetup(RebMaterial rm) = 0;
 
 	virtual void ChangeMatrixMode(MatrixMode mm) = 0;
 

@@ -9,6 +9,7 @@
 #include "RebGL_skinmanager.h"
 #include "RebGL_VCM.h"
 #include "RebGL_SS.h"
+#include "RebGL_LightSystem.h"
 #include <thread>
 
 
@@ -28,6 +29,8 @@ class RebGL : public IRenderDevice
 	IVertexCacheManager * VCM;
 
 	IShaderSystem * ISS;
+
+	ILightSystem * ILS;
 
 	IWindowManager * iwm;
 
@@ -51,6 +54,10 @@ public:
 	void Vertex3(float x, float y, float z);
 
 	void Vertex3(RebVector RV);
+
+	void Normal(RebVector RV);
+
+	void MaterialSetup(RebMaterial rm);
 
 	void TextCoord2(float s, float t);
 

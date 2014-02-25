@@ -34,7 +34,7 @@ public:
 
 	void CreateDir(std::string dirname, std::string path);
 
-	std::string Search(std::string filename);
+	RebFile Search(std::string filename, std::string dir = "");
 
 	void GetAllFiles(std::string dir = "\\");
 

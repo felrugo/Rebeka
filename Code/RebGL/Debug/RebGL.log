@@ -1,22 +1,20 @@
-﻿Build started 2014.02.09. 17:32:16.
+﻿Build started 2014.02.23. 12:50:47.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I"D:\Program Files\Assimp\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D GLEXP /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebGL_draw.cpp RebGL_init.cpp
-         RebGL_init.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I"D:\Program Files\Assimp\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D GLEXP /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebGL_draw.cpp
          RebGL_draw.cpp
        Link:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebGL.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"..\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\FreeImage\Dist /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib glu32.lib OpenGL32.lib FreeImage.lib glew32.lib assimp.lib Reb3D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebGL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebGL.lib" /MACHINE:X86 /DLL Debug\RebGL_draw.obj
          Debug\RebGL_init.obj
+         Debug\RebGL_LightSystem.obj
          Debug\RebGL_skinmanager.obj
          Debug\RebGL_VCM.obj
          Debug\RebGL_SS.obj
          RebGL.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\..\..\Bin32\RebGL.dll
        BscMake:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\RebGL.bsc" /n Debug\RebGL_draw.sbr Debug\RebGL_init.sbr Debug\RebGL_skinmanager.sbr Debug\RebGL_VCM.sbr Debug\RebGL_SS.sbr
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\RebGL.bsc" /n Debug\RebGL_draw.sbr Debug\RebGL_init.sbr Debug\RebGL_LightSystem.sbr Debug\RebGL_skinmanager.sbr Debug\RebGL_VCM.sbr Debug\RebGL_SS.sbr
      1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:09.11
+Time Elapsed 00:00:08.88

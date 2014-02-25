@@ -164,3 +164,25 @@ std::vector<std::string> RebFileSystem::Read(std::string path) //relative path n
 	}
 	return ret;
 }
+
+RebFile RebFileSystem::Search(std::string filename, std::string dir)
+{
+	for (unsigned int i = 0; i < Files.size(); i++)
+	{
+		if(dir == "")
+		{
+			if(Files[i].fname == filename)
+			{
+				return Files[i];
+			}
+		}
+		else
+		{
+			if(Files[i].fname == filename && Files[i].path.find(dir) != std::string::npos)
+			{
+				return Files[i];
+			}
+		}
+	}
+	return RebFile();
+}

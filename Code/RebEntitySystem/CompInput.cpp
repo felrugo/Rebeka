@@ -51,7 +51,9 @@ void CompInpBasicControl::update()
 	}
 	if(keypressedmap[REBK_a])
 	{
-		GetOwner()->SetOri(GetOwner()->GetOri() + RebVector(0.0f, 0.01f, 0.0f));
+		RebVector v(-0.001f, 0.0f,	0.0f);
+		v = v * moovmat;
+		GetOwner()->SetPos(GetOwner()->GetPos() + v);
 	}
 	if(keypressedmap[REBK_s])
 	{
@@ -61,7 +63,9 @@ void CompInpBasicControl::update()
 	}
 	if(keypressedmap[REBK_d])
 	{
-		GetOwner()->SetOri(GetOwner()->GetOri() + RebVector(0.0f, -0.01f, 0.0f));
+		RebVector v(0.001f, 0.0f, 0.0f);
+		v = v * moovmat;
+		GetOwner()->SetPos(GetOwner()->GetPos() + v);
 	}
 }
 

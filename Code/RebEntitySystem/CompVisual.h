@@ -101,4 +101,22 @@ public:
 
 };
 
+
+class CompVisTerrain : public CompVisual
+{
+	std::string curloaded;
+public:
+	CompVisTerrain(IRenderDevice * sird);
+
+	void update();
+
+	void CreateTerrain(std::string filename);
+
+	std::string GetID()
+	{
+		return "CompVisTerrain";
+	}
+};
+
+
 #endif

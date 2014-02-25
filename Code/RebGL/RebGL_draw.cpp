@@ -47,6 +47,23 @@ void RebGL::Color(float r, float g, float b)
 	glColor3f(r, g, b);
 }
 
+
+void RebGL::Normal(RebVector RV)
+{
+	glNormal3f(RV.x, RV.y, RV.z);
+}
+
+void RebGL::MaterialSetup(RebMaterial rm)
+{
+	float amb[] = {rm.amb.fR, rm.amb.fG, rm.amb.fB, 1.0f};
+	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, amb);
+	float dif[] = {rm.dif.fR, rm.dif.fG, rm.dif.fB, 1.0f};
+	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, dif);
+	float spe[] = {rm.spe.fR, rm.spe.fG, rm.spe.fB, 1.0f};
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, spe);
+}
+
+
 void RebGL::Swap(void * window)
 {
 	iwm->SwapWindow(window);

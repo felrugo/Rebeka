@@ -14,24 +14,18 @@
 
 class RebGLSkinManager : public ISkinManager {
 	 protected:
-		 std::vector<RebTexture> vTextures;
-		 std::vector<RebMaterial> vMaterials;
-		 std::vector<RebSkin> vSkins;
-
-		 bool sforvecid(UINT id, UINT * fid = 0);
-		 bool textureisex(std::string filename);
-		 bool matidex(UINT * matid);
-		 bool skiidex(UINT * skiid);
 
    public:
 	   RebGLSkinManager();
       ~RebGLSkinManager(void);
 
 	  bool AddTexture(std::string filename, UINT * textid);
-	  bool AddMaterial(RebColor *ambient, RebColor *diffuse, RebColor *specular, RebColor *emissive, float * power, UINT * matid);
-	  bool CreateSkin(UINT * matid, UINT * texid[8], UINT * skiid, bool alpha);
 
-     
+	  void* LoadTexture(std::string filename);
+
+	  unsigned int GetHigh(void * data);
+
+	  RebColor GetPixelColor(void * data, unsigned int x, unsigned int y);
 
 };
 

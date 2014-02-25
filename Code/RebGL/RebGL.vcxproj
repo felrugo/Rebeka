@@ -186,6 +186,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="RebGL.h" />
+    <ClInclude Include="RebGL_LightSystem.h" />
     <ClInclude Include="RebGL_skinmanager.h" />
     <ClInclude Include="RebGL_VCM.h" />
     <ClInclude Include="RebGL_SS.h" />
@@ -193,6 +194,7 @@
   <ItemGroup>
     <ClCompile Include="RebGL_draw.cpp" />
     <ClCompile Include="RebGL_init.cpp" />
+    <ClCompile Include="RebGL_LightSystem.cpp" />
     <ClCompile Include="RebGL_skinmanager.cpp" />
     <ClCompile Include="RebGL_VCM.cpp" />
     <ClCompile Include="RebGL_SS.cpp" />

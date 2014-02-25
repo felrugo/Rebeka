@@ -38,12 +38,12 @@ void CompVisViewport::update()
 {
 	if((CompVisViewport*)*IRD->GetViewportID() == this)
 	{
-		RebMatrix mt, mr;
+		RebMatrix mt, mrx;
 		mt.Identity();
-		mr.Identity();
-		mr.RotyByDeg(-GetOwner()->GetOri().x, -GetOwner()->GetOri().y, -GetOwner()->GetOri().z);
+		mrx.Identity();
 		mt.Translate(-GetOwner()->GetPos().x, -GetOwner()->GetPos().y, -GetOwner()->GetPos().z);
-		IRD->SetViewportMat(mt * mr);
+		mrx.RotaWorld(-GetOwner()->GetOri().x, -GetOwner()->GetOri().y, -GetOwner()->GetOri().z);
+		IRD->SetViewportMat(mt * mrx);
 	}
 
 }

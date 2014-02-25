@@ -15,21 +15,6 @@ void ReleaseGameDLL(IGameDLL **IGDLL)
 
 void RebGame::Init()
 {
-	
-	rend.CreateDevice();
-
-	ras.CreateAudioDevice();
-
-	ras.GetAudioDevice()->Init();
-
-	ras.GetAudioDevice()->GetMusicPlayer()->Init();
-
-	ras.GetAudioDevice()->GetMusicPlayer()->SetSource("test.ogg");
-
-	ras.GetAudioDevice()->GetMusicPlayer()->Play();
-	rfs = new RebFileSystem;
-	rfs->GetAllFiles("..\\..");
-	rfs->Categorize();
 	winsys.CreateManager();
 	winm = winsys.GetManager();
 	winm->InitManager();
@@ -37,15 +22,45 @@ void RebGame::Init()
 	winm->EnableRender("hello world");
 	window = winm->GetWindow("hello world");
 
+	rend.CreateDevice();
 	rend.GetDevice()->Init(winm, 800, 600);
 	rd = rend.GetDevice();
 
-		mGDC = new RebGDC;
+	ras.CreateAudioDevice();
+	ras.GetAudioDevice()->Init();
+	ras.GetAudioDevice()->GetMusicPlayer()->Init();
+	ras.GetAudioDevice()->GetMusicPlayer()->SetSource("test.ogg");
+	ras.GetAudioDevice()->GetMusicPlayer()->Play();
+
+
+	//test
+
+	RebVector look(0, 0, -1);
+	RebVector up(0, 1, 0);
+	RebMatrix rm;
+	rm.Identity();
+	rm.RotyByDeg(90, -90, 0);
+	look = look * rm;
+	up = up * rm;
+	rm.RotyByDeg(-30, 0, 0);
+	look = look * rm;
+	RebVector ori;
+	ori.x = acos(look.y) * 180/PI;
+	ori.y = asin(-look.x) * 180/PI;
+
+
+	rfs = new RebFileSystem;
+	rfs->GetAllFiles("..\\..");
+	rfs->Categorize();
+
+	mGDC = new RebGDC;
 	mGDC->rd = rd;
 	mGDC->window = window;
 	mGDC->winm = winm;
 	mGDC->meh = winsys.GetMEH();
 	mGDC->rfs = rfs;
+
+
 	res = new RebEntitySystem(mGDC);
 	std::vector<TComponent*> tcomps;
 	TComponent * viewcompt = new TCompVisViewport(rd);
@@ -58,47 +73,9 @@ void RebGame::Init()
 	ent->SetPos(RebVector(0.0f, 0.0f, 0.0f));
 	static_cast<CompVisViewport*>(ent->GetComponent("CompVisViewport"))->SetActiveViewport();
 
-	RebMatrix m1, m2, m3;
-
-	double err = cos(3.14159265 / 2);
-
-	RebTimer rt;
-
-	rt.Start();
-
-	float tim;
-
-	Sleep(2000000);
-
-	tim = rt.GetCurrent();
-
-	rt.Start();
-	tim = rt.GetCurrent();
-	m1.Identity();
-	m2.Identity();
-
-	m1.Rota(0.0f, PI/2, 0.0f);
-
-	m3 = m1 * m2;
-	
-	std::vector<RebVertexBuffer> buffs;
-	RebVertexBuffer rvbtri;
-	rvbtri.met = R_TRIANGLES;
-
-	rvbtri.mm = MM_MODELVIEW;
-
-	rvbtri.name = "triangle";
-	rvbtri.Renderable = true;
-	RebVector points(-1.0f, 0.0f, 0.0f);
-	rvbtri.vertices.push_back(points);
-	points.Set(1.0f, 0.0f, 0.0f);
-	rvbtri.vertices.push_back(points);
-	points.Set(0.0f, 1.0f, 0.0f);
-	rvbtri.vertices.push_back(points);
-	buffs.push_back(rvbtri);
-	rd->GetVertexCacheManager()->CreateCache("trianglech", buffs);
 
 
+	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox", rfs->Search("phybox.obj").rpath);
 
 	bool pressed = false;
 	winm->TrapMouse(true);
@@ -118,7 +95,6 @@ while(1)
 		{
 			break;
 		}
-		rd->Color(1.0f, 0.0f, 0.0f);
 		rd->GetVertexCacheManager()->Render();
 		rd->Swap(window);
    }

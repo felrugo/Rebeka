@@ -147,6 +147,7 @@ class __declspec(dllexport) RebMatrix {
       inline void SetTranslation(RebVector vc, bool EraseContent=false);
 	   inline RebVector GetTranslation(void);
 	   inline RebVector GetRotation(void);
+	   inline void RotaWorld(float x, float y, float z); 
 
       inline void Billboard(RebVector vcPos, RebVector vcDir,
                             RebVector vcWorldUp = RebVector(0,1,0));
