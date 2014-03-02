@@ -26,6 +26,7 @@ class RebFileSystem
 	std::vector<RebFile> Files;
 	std::vector<RebFile> Objects;
 	std::vector<RebFile> Entities;
+	std::vector<RebFile> Shaders;
 
 public:
 	RebFileSystem();

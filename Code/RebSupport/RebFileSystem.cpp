@@ -132,6 +132,8 @@ void RebFileSystem::Categorize()
 			Objects.push_back(Files[i]);
 		else if(Files[i].fname.find(".xml") != std::string::npos && Files[i].path.find("Entities") != std::string::npos)
 			Entities.push_back(Files[i]);
+		else if(Files[i].path.find("Shaders") != std::string::npos)
+			Shaders.push_back(Files[i]);
 	}
 }
 

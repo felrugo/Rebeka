@@ -18,17 +18,24 @@ return str;
 }
 
 
-void RebShaderSystem::CreateProgram(unsigned int * programid)
+void RebShaderSystem::CreateProgram(std::string name, unsigned int * programid)
 {
 GLenum my_program;
 my_program = glCreateProgramObjectARB();
-programs.push_back(my_program);
+RebShaderProgram rsp;
+rsp.pid = my_program;
+rsp.name = name;
+programs.push_back(rsp);
 *programid = my_program;
 }
 
 void RebShaderSystem::AddShader(std::string shaderfile, unsigned int programid, unsigned int * shaderid)
 {
 GLenum my_shader;
+
+if(GetShaderid(shaderfile) == 0)
+{
+
 if (shaderfile.find(".rvs", 0, 4) != std::string::npos)
 {
 my_shader = glCreateShaderObjectARB(GL_VERTEX_SHADER_ARB);
@@ -53,6 +60,12 @@ const char * g = asd.c_str();
 glShaderSourceARB(my_shader, 1, &g, NULL);
 
 glCompileShaderARB(my_shader);
+}
+
+else
+{
+	my_shader = GetShaderid(shaderfile);
+}
 
 glAttachObjectARB(programid, my_shader);
 
@@ -98,11 +111,47 @@ void RebShaderSystem::ActivateProgram(unsigned int sid)
 }
 
 
+unsigned int RebShaderSystem::GetProgramid(std::string name)
+{
+	for (unsigned int i = 0; i < programs.size(); i++)
+	{
+		if (programs[i].name == name)
+		{
+			return programs[i].pid;
+		}
+	}
+	return 0;
+}
+
+unsigned int RebShaderSystem::GetShaderid(std::string source)
+{
+	for (unsigned int i = 0; i < programs.size(); i++)
+	{
+		for (int i2 = 0; i2 < programs[i].shaders.size(); i2++)
+		{
+			if (programs[i].shaders[i2].source == source)
+			{
+				return programs[i].shaders[i2].sid;
+			}
+		}
+	}
+	return 0;
+}
+
+
+
+
 RebShaderSystem::~RebShaderSystem()
 {
-	for (int i = 0; i < programs.size(); i++)
+	glUseProgramObjectARB(0);
+	for (unsigned int i = 0; i < programs.size(); i++)
 	{
-		glDeleteObjectARB(programs[i]);
+		for(unsigned int i2 = 0; i < programs[i].shaders.size(); i2++)
+		{
+			glDeleteObjectARB(programs[i].shaders[i2].sid);
+		}
+		programs[i].shaders.clear();
+		glDeleteObjectARB(programs[i].pid);
 	}
 	programs.clear();
 }

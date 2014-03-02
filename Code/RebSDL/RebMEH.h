@@ -10,6 +10,8 @@ class RebMEH : public IMEH
 	std::vector<IKeyListener*> keylists;
 	std::vector<IMouseListener*> mouselists;
 
+	bool runing;
+
 public:
 	void CallKeyListeners(RebEvent keyevent);
 
@@ -19,7 +21,9 @@ public:
 
 	void TranslateEvent(RebEvent * Event);
 
-	void AddEvent(RebEvent * Event);
+	void AddEvent(RebEvent Event);
+
+	void ProcEvents();
 
 	void PollGameEvent(RebEvent * Event);
 

@@ -1,9 +1,17 @@
-﻿Build started 2014.02.23. 12:15:22.
+﻿Build started 2014.02.26. 18:09:12.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSupport\RebSupport.vcxproj" on node 2 (Build target(s)).
-     1>Lib:
+     1>ClCompile:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ID:\Users\felrugo\Documents\GitHub\Rebeka\Code\boost_1_55_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebFileSystem.cpp
+         RebFileSystem.cpp
+       Lib:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebSupport.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebFileSystem.obj
+         Debug\RebTimer.obj
+         Debug\tinyxml2.obj
          RebSupport.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSupport\..\Libs\x32\RebSupport.lib
+       BscMake:
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebSupport.bsc" /n Debug\RebFileSystem.sbr Debug\RebTimer.sbr Debug\tinyxml2.sbr
      1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSupport\RebSupport.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.22
+Time Elapsed 00:00:06.88

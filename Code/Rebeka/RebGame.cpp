@@ -47,7 +47,7 @@ void RebGame::Init()
 	RebVector ori;
 	ori.x = acos(look.y) * 180/PI;
 	ori.y = asin(-look.x) * 180/PI;
-
+	
 
 	rfs = new RebFileSystem;
 	rfs->GetAllFiles("..\\..");
@@ -59,6 +59,12 @@ void RebGame::Init()
 	mGDC->winm = winm;
 	mGDC->meh = winsys.GetMEH();
 	mGDC->rfs = rfs;
+
+	UINT shaderp, sh;
+
+	rd->GetShaderSystem()->CreateProgram("inversec", &shaderp);
+	rd->GetShaderSystem()->AddShader(rfs->Search("inversec.rfs", "Shaders").rpath, shaderp, &sh);
+	rd->GetShaderSystem()->ActivateProgram(sh);
 
 
 	res = new RebEntitySystem(mGDC);

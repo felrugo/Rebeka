@@ -11,7 +11,7 @@ public:
 
 	virtual void Release() = 0;
 
-	virtual void AddEvent(RebEvent * Event) = 0;
+	virtual void AddEvent(RebEvent Event) = 0;
 
 	virtual void TranslateEvent(RebEvent * Event) = 0;
 

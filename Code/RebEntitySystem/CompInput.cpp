@@ -13,6 +13,7 @@ CompInpBasicControl::CompInpBasicControl(IMEH * seh)
 	keypressedmap.insert(std::pair<int, bool>(REBK_a, false));
 	keypressedmap.insert(std::pair<int, bool>(REBK_s, false));
 	keypressedmap.insert(std::pair<int, bool>(REBK_d, false));
+	keypressedmap.insert(std::pair<int, bool>(REBK_ESCAPE, false));
 }
 
 CompInpBasicControl::~CompInpBasicControl()
@@ -66,6 +67,13 @@ void CompInpBasicControl::update()
 		RebVector v(0.001f, 0.0f, 0.0f);
 		v = v * moovmat;
 		GetOwner()->SetPos(GetOwner()->GetPos() + v);
+	}
+	if(keypressedmap[REBK_ESCAPE])
+	{
+		RebEvent re;
+		re.Type = WE_QUIT;
+		re.quit.Type = WE_QUIT;
+		eh->AddEvent(re);
 	}
 }
 

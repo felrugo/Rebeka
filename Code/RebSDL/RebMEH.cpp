@@ -11,9 +11,9 @@ void ReleaseMEH(IMEH ** meh)
 }
 
 
-void RebMEH::AddEvent(RebEvent * Event)
+void RebMEH::AddEvent(RebEvent Event)
 {
-	events.push_back(*Event);
+	events.push_back(Event);
 }
 
 void RebMEH::CallKeyListeners(RebEvent keyevent)
@@ -140,6 +140,16 @@ void RebMEH::TranslateEvent(RebEvent * Event)
 }
 
 
+void RebMEH::ProcEvents()
+{
+	while(runing)
+	{
+		RebEvent re;
+		TranslateEvent(&re);
+	}
+}
+
+
 void RebMEH::RegisterKeyEventListener(IKeyListener* ikl)
 {
 	keylists.push_back(ikl);
@@ -176,10 +186,13 @@ void RebMEH::UnRegisterMouseEventListener(IMouseListener* iml)
 
 void RebMEH::Init()
 {
+	runing = true;
 }
 
 void RebMEH::Release()
 {
+	if(runing)
+	runing = false;
 }
 
 RebMEH::~RebMEH()

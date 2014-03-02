@@ -31,11 +31,16 @@ class IShaderSystem
 {
 	public:
 
-		virtual void Init() = 0;
+	virtual void Init() = 0;
+
+
+	virtual unsigned int GetProgramid(std::string name) = 0;
+
+	virtual unsigned int GetShaderid(std::string source) = 0;
 
 	virtual void ActivateProgram(unsigned int programid) = 0;
 
-	virtual void CreateProgram(unsigned int * programid) = 0;
+	virtual void CreateProgram(std::string name,unsigned int * programid) = 0;
 
 	virtual void AddShader(std::string shaderfile, unsigned int programid, unsigned int * shaderid) = 0;
 
