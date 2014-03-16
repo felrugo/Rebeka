@@ -156,6 +156,8 @@ class __declspec(dllexport) RebMatrix {
 
       inline void TransposeOf(const RebMatrix &m);       // transpose m, save result in this
       inline void InverseOf(const RebMatrix &m);         // invert m, save result in this
+
+	  inline void glm(float * fa);
       
       RebMatrix operator * (const RebMatrix &m)const;    // matrix multiplication
       RebVector operator * (const RebVector &vc)const;   // matrix vector multiplication

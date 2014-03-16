@@ -45,13 +45,17 @@ glShadeModel( GL_SMOOTH );
     glLoadIdentity( );
  
 	GLfloat ratio;
+
  
     /* Protect against a divide by zero */
     if ( height == 0 ) {
         height = 1;
     }
  
-    ratio = ( GLfloat )width / ( GLfloat )height;
+	w = width;
+
+	h = height;
+	ratio = ( GLfloat )width / ( GLfloat )height;
     /* Set our perspective */
     gluPerspective( 45.0f, ratio, 0.1f, 100.0f );
  
@@ -71,10 +75,18 @@ glShadeModel( GL_SMOOTH );
 	VCMRunning = true;
 
 	ISS = new RebShaderSystem;
-	ISS->Init();
+	ISS->Init(this);
 
 	ILS = new RebGLLightSystem();
 	MatViewport.Identity();
+}
+
+
+
+void RebGL::GetViewportSize(unsigned int * sw, unsigned int * sh)
+{
+	*sw = w;
+	*sh = h;
 }
 
 

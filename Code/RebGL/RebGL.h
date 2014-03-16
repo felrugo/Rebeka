@@ -24,6 +24,8 @@ class RebGL : public IRenderDevice
 
 	bool VCMRunning;
 
+	int w, h;
+
 	ISkinManager * skinman;
 
 	IVertexCacheManager * VCM;
@@ -73,6 +75,8 @@ public:
 
 	void ** GetViewportID();
 
+	void GetViewportSize(unsigned int * w, unsigned int * h);
+
 	ISkinManager * GetSkinManager();
 
 	IVertexCacheManager * GetVertexCacheManager();
@@ -100,6 +104,8 @@ public:
 	void Scale(float x, float y, float z);
 
 	void TransformMatrix(RebMatrix trans);
+
+	void Render();
 
 	~RebGL();
 };

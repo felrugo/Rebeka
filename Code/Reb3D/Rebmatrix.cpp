@@ -319,6 +319,19 @@ __declspec(naked) void MatrixMult(float *src1, float *src2, float *dst) {
 /*----------------------------------------------------------------*/
 
 
+inline void RebMatrix::glm(float * fa)
+{
+	float ret[] = { _11, _12, _13, _14,
+      _21, _22, _23, _24,
+      _31, _32, _33, _34,
+      _41, _42, _43, _44};
+	for(int x = 0; x < 16; x++)
+	{
+		fa[x] = ret[x];
+	}
+}
+
+
 
 inline void RebMatrix::RotaWorld(float x, float y, float z)
 {

@@ -226,6 +226,9 @@ void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 
 	void RebVertexCacheManager::Render()
 	{
+		prd->Clear(1, 1);
+		prd->ResetMatrix();
+
 		unsigned int i2;
 		for (UINT i3 = 0; i3 < RVCs.size(); i3++)
 		{
@@ -289,6 +292,13 @@ void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 			delete RVCs[i];
 		}
 	RVCs.clear();
+	}
+
+
+
+	std::vector<RebVertexCache*> * RebVertexCacheManager::GetRVCs()
+	{
+		return &RVCs;
 	}
 
 	RebVertexCacheManager::~RebVertexCacheManager()

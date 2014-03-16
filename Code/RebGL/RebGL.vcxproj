@@ -198,6 +198,7 @@
     <ClCompile Include="RebGL_skinmanager.cpp" />
     <ClCompile Include="RebGL_VCM.cpp" />
     <ClCompile Include="RebGL_SS.cpp" />
+    <ClCompile Include="RSRExtended.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EXP.def" />

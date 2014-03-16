@@ -62,9 +62,11 @@ void RebGame::Init()
 
 	UINT shaderp, sh;
 
-	rd->GetShaderSystem()->CreateProgram("inversec", &shaderp);
-	rd->GetShaderSystem()->AddShader(rfs->Search("inversec.rfs", "Shaders").rpath, shaderp, &sh);
-	rd->GetShaderSystem()->ActivateProgram(sh);
+	rd->GetShaderSystem()->CreateProgram("Extended", &shaderp);
+	rd->GetShaderSystem()->AddShader(rfs->Search("defff.rfs", "Shaders").rpath, shaderp, &sh);
+	rd->GetShaderSystem()->AddShader(rfs->Search("deffv.rvs", "Shaders").rpath, shaderp, &sh);
+	rd->GetShaderSystem()->UseRenderModel("RSRExtended");
+
 
 
 	res = new RebEntitySystem(mGDC);
@@ -93,15 +95,13 @@ void RebGame::GameLoop()
 while(1)
 	{
 		RebEvent Event;
-		rd->Clear(1, 1);
-		rd->ResetMatrix();
 	winsys.GetMEH()->TranslateEvent(&Event);
 	res->Update();
 		if(Event.Type == WE_QUIT)
 		{
 			break;
 		}
-		rd->GetVertexCacheManager()->Render();
+		rd->Render();
 		rd->Swap(window);
    }
 }

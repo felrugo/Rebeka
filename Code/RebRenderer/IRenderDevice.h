@@ -26,13 +26,15 @@ public:
 };
 
 
+class IRenderDevice;
+
+class IRenderModel;
 
 class IShaderSystem
 {
 	public:
 
-	virtual void Init() = 0;
-
+		virtual void Init(IRenderDevice * sird) = 0;
 
 	virtual unsigned int GetProgramid(std::string name) = 0;
 
@@ -46,7 +48,13 @@ class IShaderSystem
 
 	virtual void DeleteShader(unsigned int shaderid) = 0;
 
+	virtual void Link(unsigned int handle) = 0;
+
 	virtual void DeleteProgram(unsigned int programid) = 0;
+
+	virtual void UseRenderModel(std::string name) = 0;
+
+	virtual IRenderModel * GetRenderModel() = 0;
 
 	virtual ~IShaderSystem() {};
 };
@@ -84,6 +92,8 @@ public:
 
 	virtual void Release() = 0;
 
+	virtual std::vector<RebVertexCache*> * GetRVCs() = 0;
+
 	virtual ~IVertexCacheManager() {}
 };
 
@@ -113,6 +123,8 @@ class IRenderDevice
 	virtual void SetViewportMat(RebMatrix svm) = 0;
 
 	virtual void ** GetViewportID() = 0;
+
+	virtual void GetViewportSize(unsigned int * w, unsigned int * h) = 0;
 
 	virtual void Vertex3(float x, float y, float z) = 0;
 
@@ -150,12 +162,19 @@ class IRenderDevice
 
 	virtual void Flush() = 0;
 
+	virtual void Render() = 0;
+
 	virtual ~IRenderDevice() {}
 };
 
 
 
-
+class IRenderModel
+{
+public:
+	virtual void Render() = 0;
+	virtual ~IRenderModel() {}
+};
 
  
 typedef class IRenderDevice *LPRebRENDERDEVICE; 

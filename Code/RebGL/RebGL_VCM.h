@@ -1,11 +1,14 @@
 #ifndef REBGL_VCM_H
 #define REBGL_VCM_H
 
+
+#include <gl\glew.h>
 #include "..\RebRenderer\IRenderDevice.h"
 #include "assimp\Importer.hpp"
 #include "assimp\cimport.h"
 #include "assimp\postprocess.h"
 #include "assimp\scene.h"
+
 
 class RebVertexCacheManager : public IVertexCacheManager
 {
@@ -14,6 +17,8 @@ class RebVertexCacheManager : public IVertexCacheManager
 	std::vector<RebVertexCache*> obs;
 
 	IRenderDevice * prd;
+
+	
 
 public:
 
@@ -30,6 +35,8 @@ public:
 	void CreateTerrain(std::string file, std::string cname, RebVertexCache * link = 0);
 
 	void CreateCacheFromFile(std::string cname, std::string filename);
+
+	std::vector<RebVertexCache*> * GetRVCs();
 
 	void Render();
 

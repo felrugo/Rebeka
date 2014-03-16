@@ -5,6 +5,7 @@
 
 #include "../RebRenderer/IRenderDevice.h"
 #include "..\RebRenderer\Reb.h"
+#include <GL\glew.h>
 #include <gl\GL.h>
 #include <vector>
 #include <string>

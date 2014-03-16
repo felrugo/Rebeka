@@ -1,16 +1,14 @@
-﻿Build started 2014.03.02. 13:40:48.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014.03.15. 16:34:01.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp CompPhysic.cpp CompVisual.cpp RebEntity.cpp RebEntitySystem.cpp
          CompInput.cpp
          Generating Code...
-         Compiling...
+         Skipping... (no relevant changes detected)
          RebEntitySystem.cpp
          RebEntity.cpp
          CompVisual.cpp
          CompPhysic.cpp
-     1>d:\users\felrugo\documents\github\rebeka\code\rebentitysystem\compphysic.cpp(23): warning C4018: '<' : signed/unsigned mismatch
-         Generating Code...
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"..\bullet-2.82-r2704\lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\CompInput.obj
          Debug\CompPhysic.obj
@@ -25,4 +23,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:18.36
+Time Elapsed 00:00:08.51

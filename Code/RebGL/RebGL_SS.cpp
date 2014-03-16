@@ -1,10 +1,12 @@
 #include "RebGL_SS.h"
 
 
-void RebShaderSystem::Init()
+void RebShaderSystem::Init(IRenderDevice * sird)
 {
 	glewInit();
 	programs.clear();
+	ird = sird;
+	irm = 0;
 }
 
 
@@ -25,6 +27,7 @@ my_program = glCreateProgramObjectARB();
 RebShaderProgram rsp;
 rsp.pid = my_program;
 rsp.name = name;
+rsp.linked = false;
 programs.push_back(rsp);
 *programid = my_program;
 }
@@ -70,7 +73,7 @@ else
 glAttachObjectARB(programid, my_shader);
 
 // Link The Program Object
-glLinkProgramARB(programid);
+
  
 // Use The Program Object Instead Of Fixed Function OpenGL
 
@@ -94,6 +97,19 @@ if(isCompiled == GL_FALSE)
 
 }
 
+
+void RebShaderSystem::Link(unsigned int handle)
+{
+	for (unsigned int i = 0; i < programs.size(); i++)
+	{
+		if (programs[i].pid == handle)
+		{
+			programs[i].linked = true;
+			glLinkProgramARB(handle);
+		}
+	}
+}
+
 void RebShaderSystem::DeleteShader(unsigned int shaderid)
 {
 	glDeleteObjectARB(shaderid);
@@ -107,7 +123,16 @@ void RebShaderSystem::DeleteProgram(unsigned int programid)
 
 void RebShaderSystem::ActivateProgram(unsigned int sid)
 {
-	glUseProgramObjectARB(sid);
+	for (unsigned int i = 0; i < programs.size(); i++)
+	{
+		if (programs[i].pid == sid)
+		{
+			if(!programs[i].linked)
+			glLinkProgramARB(sid);
+			glUseProgramObjectARB(sid);
+		}
+	}
+	
 }
 
 
@@ -154,4 +179,14 @@ RebShaderSystem::~RebShaderSystem()
 		glDeleteObjectARB(programs[i].pid);
 	}
 	programs.clear();
+	if(irm != 0)
+	delete irm;
+}
+
+void RebShaderSystem::UseRenderModel(std::string name)
+{
+	if(name == "RSRExtended")
+	{
+		irm = new RSRExtended(ird);
+	}
 }

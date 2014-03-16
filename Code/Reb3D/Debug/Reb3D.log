@@ -1,12 +1,23 @@
-﻿Build started 2014.02.22. 11:48:07.
+﻿Build started 2014.03.15. 16:33:36.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Reb3D\Reb3D.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Rebmatrix.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebGLTrans.cpp Rebaabb.cpp Rebcpu.cpp Rebmatrix.cpp Rebobb.cpp Rebplane.cpp Rebpolygon.cpp Rebquat.cpp Rebray.cpp Rebvector.cpp
          Rebmatrix.cpp
      1>d:\users\felrugo\documents\github\rebeka\code\reb3d\rebmatrix.cpp(90): warning C4244: 'argument' : conversion from 'const double' to 'float', possible loss of data
      1>d:\users\felrugo\documents\github\rebeka\code\reb3d\rebmatrix.cpp(118): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
      1>d:\users\felrugo\documents\github\rebeka\code\reb3d\rebmatrix.cpp(119): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
      1>d:\users\felrugo\documents\github\rebeka\code\reb3d\rebmatrix.cpp(120): warning C4244: '=' : conversion from 'const double' to 'float', possible loss of data
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         Rebvector.cpp
+         Rebray.cpp
+         Rebquat.cpp
+         Rebpolygon.cpp
+         Rebplane.cpp
+         Rebobb.cpp
+         Rebcpu.cpp
+         Rebaabb.cpp
+         RebGLTrans.cpp
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\Reb3D.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\Rebaabb.obj
          Debug\Rebcpu.obj
@@ -25,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.07
+Time Elapsed 00:00:03.28
