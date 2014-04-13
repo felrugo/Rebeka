@@ -193,7 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CompInput.cpp" />
+    <ClCompile Include="CompPhyMoovable.cpp" />
     <ClCompile Include="CompPhysic.cpp" />
+    <ClCompile Include="CompVisTerrain.cpp" />
     <ClCompile Include="CompVisual.cpp" />
     <ClCompile Include="RebEntity.cpp" />
     <ClCompile Include="RebEntitySystem.cpp" />

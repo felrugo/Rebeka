@@ -143,12 +143,5 @@ void RebGL::ResetMatrix()
 
 	void RebGL::Render()
 	{
-		if(GetShaderSystem()->GetRenderModel() != 0)
-		{
-			GetShaderSystem()->GetRenderModel()->Render();
-		}
-		else
-		{
-			GetVertexCacheManager()->Render();
-		}
+		IRM->Render();
 	}

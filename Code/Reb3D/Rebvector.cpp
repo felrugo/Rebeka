@@ -275,6 +275,20 @@ RebQuat RebVector::operator * (const RebQuat &q) const {
    }
 /*----------------------------------------------------------------*/
 
+
+
+float * RebVector::glv()
+{
+	ogl[0] = x;
+	ogl[1] = y;
+	ogl[2] = z;
+	ogl[3] = w;
+	return ogl;
+}
+
+
+
+
 /**
  * Multiply a vector and a matrix, use SSE if available.
  */

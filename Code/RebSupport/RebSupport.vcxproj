@@ -147,13 +147,16 @@
   <ItemGroup>
     <ClInclude Include="RebFileSystem.h" />
     <ClInclude Include="RebGDC.h" />
+    <ClInclude Include="RebParam.h" />
     <ClInclude Include="RebString.h" />
     <ClInclude Include="RebTimer.h" />
+    <ClInclude Include="RebVL.h" />
     <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RebFileSystem.cpp" />
     <ClCompile Include="RebTimer.cpp" />
+    <ClCompile Include="RebVL.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

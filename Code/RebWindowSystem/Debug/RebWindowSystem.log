@@ -1,7 +1,8 @@
-﻿Build started 2014.02.26. 18:52:13.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebWindowSystem\RebWindowSystem.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2014.04.13. 19:39:37.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebWindowSystem\RebWindowSystem.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebWindowSystem.cpp
+         Skipping... (no relevant changes detected)
          RebWindowSystem.cpp
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebWindowSystem.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebWindowSystem.obj
@@ -12,4 +13,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.54
+Time Elapsed 00:00:04.52

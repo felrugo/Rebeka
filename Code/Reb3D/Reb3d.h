@@ -82,6 +82,7 @@ class RebPolygon;
 class __declspec(dllexport) RebVector {
    public:
       float x, y, z, w;       // coordinateset
+	  float ogl[4];
 
       //---------------------------------------
 
@@ -98,7 +99,11 @@ class __declspec(dllexport) RebVector {
       inline void  RotateWith(const RebMatrix&);      // apply rotation part
       inline void  InvRotateWith(const RebMatrix&);   // apply inverse rotation
       inline void  Difference(const RebVector &v1,    // from v1 to v2
-                              const RebVector &v2);
+      const RebVector &v2);
+
+	  inline float * glv();
+
+
       void operator += (const RebVector &v);          // operator +=
       void operator -= (const RebVector &v);          // operator -=
       void operator *= (float f);                     // scale vector

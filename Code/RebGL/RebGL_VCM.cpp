@@ -11,31 +11,11 @@ void RebVertexCacheManager::CreateCache(std::string name, std::vector<RebVertexB
 
 
 
-void RebVertexCacheManager::CreateTerrain(std::string file, std::string cname, RebVertexCache * link)
-{
-
-}
-
-
-
-
 void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string filename)
 {
 	RebVertexCache * rvc = new RebVertexCache;
 	RebVertexBuffer rvb;
 	
-	//find in obs
-
-	for(unsigned int fi = 0; fi < obs.size(); fi++)
-	{
-		if(obs[fi]->filename == filename)
-		{
-			rvc = obs[fi];
-			rvc->name = cname;
-			RVCs.push_back(rvc);
-			return;
-		}
-	}
 
 	const aiScene* scene = aiImportFile (filename.c_str(), aiProcessPreset_TargetRealtime_Fast); // TRIANGLES!
   if (!scene) {
@@ -178,27 +158,27 @@ void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string f
   rvc->filename = filename;
   rvc->transf.Identity();
   rvc->skin = rs;
-  obs.push_back(new RebVertexCache(*rvc));
+  /*obs.push_back(new RebVertexCache(*rvc));*/
   RVCs.push_back(rvc);
     aiReleaseImport (scene);
 }
 
 void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 	{
+		if(rvc = 0)
+			return;
 		UINT CID;
 		for(CID = 0; CID < RVCs.size(); CID++)
 		{
 			if(RVCs[CID] == rvc)
 			{
-				break;
+				delete RVCs[CID];
+			RVCs[CID] = 0;
+			RVCs.erase(RVCs.begin() + CID);
 			}
 		}
-		if (CID < RVCs.size())
-		{
-		RVCs.erase(RVCs.begin() + CID);
-		delete RVCs[CID];
 		}
-	}
+	
 
 	RebVertexCache * RebVertexCacheManager::GetVertexCache(std::string cname)
 	{
@@ -224,58 +204,7 @@ void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 		return 0;
 	}
 
-	void RebVertexCacheManager::Render()
-	{
-		prd->Clear(1, 1);
-		prd->ResetMatrix();
-
-		unsigned int i2;
-		for (UINT i3 = 0; i3 < RVCs.size(); i3++)
-		{
-			RebSkin rs = RVCs[i3]->skin;
-		for (UINT i = 0; i < RVCs[i3]->RVBs.size(); i++)
-		{
-			if(RVCs[i3]->RVBs[i].Renderable)
-			{
-				RebMaterial rm = rs.materials[RVCs[i3]->RVBs[i].materialid];
-				prd->ChangeMatrixMode(MM_MODELVIEW);
-				prd->ResetMatrix();
-				
-				prd->TransformMatrix(RVCs[i3]->RVBs[i].trans * RVCs[i3]->transf * prd->GetViewportMat());
-
-				prd->MaterialSetup(rm);
-				i2 = 0;
-				while (i2 < RVCs[i3]->RVBs[i].vertices.size())
-				{
-					prd->BindTexture(rm.diftextures[0].id);
-					prd->StartDraw( RVCs[i3]->RVBs[i].met);
-					if(RVCs[i3]->RVBs[i].texturecoords.size() > i2)
-					prd->TextCoord2(RVCs[i3]->RVBs[i].texturecoords[i2].x, RVCs[i3]->RVBs[i].texturecoords[i2].y);
-					if(RVCs[i3]->RVBs[i].normals.size() > i2)
-					prd->Normal(RVCs[i3]->RVBs[i].normals[i2]);
-					if(RVCs[i3]->RVBs[i].vertices.size() > i2)
-					prd->Vertex3( RVCs[i3]->RVBs[i].vertices[i2]);
-					i2++;
-					if(RVCs[i3]->RVBs[i].texturecoords.size() > i2)
-					prd->TextCoord2(RVCs[i3]->RVBs[i].texturecoords[i2].x, RVCs[i3]->RVBs[i].texturecoords[i2].y);
-					if(RVCs[i3]->RVBs[i].normals.size() > i2)
-					prd->Normal(RVCs[i3]->RVBs[i].normals[i2]);
-					if(RVCs[i3]->RVBs[i].vertices.size() > i2)
-					prd->Vertex3( RVCs[i3]->RVBs[i].vertices[i2]);
-					i2++;
-					if(RVCs[i3]->RVBs[i].texturecoords.size() > i2)
-					prd->TextCoord2(RVCs[i3]->RVBs[i].texturecoords[i2].x, RVCs[i3]->RVBs[i].texturecoords[i2].y);
-					if(RVCs[i3]->RVBs[i].normals.size() > i2)
-					prd->Normal(RVCs[i3]->RVBs[i].normals[i2]);
-					if(RVCs[i3]->RVBs[i].vertices.size() > i2)
-					prd->Vertex3( RVCs[i3]->RVBs[i].vertices[i2]);
-				prd->EndDraw();
-				i2++;
-				}
-			}
-		}
-		}
-	}
+	
 
 	
 	RebVertexCacheManager::RebVertexCacheManager(IRenderDevice * srd)
@@ -289,7 +218,11 @@ void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 	{
 		for (unsigned int i = 0; i < RVCs.size(); i++)
 		{
+			if(RVCs[i] != 0)
+			{
 			delete RVCs[i];
+			RVCs[i] = 0;
+			}
 		}
 	RVCs.clear();
 	}
@@ -300,6 +233,9 @@ void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 	{
 		return &RVCs;
 	}
+
+
+	
 
 	RebVertexCacheManager::~RebVertexCacheManager()
 	{

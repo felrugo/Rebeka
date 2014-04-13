@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "Reb.h"
 #include "..\RebWindowSystem\IWindowManager.h"
+#include "..\RebSupport\RebGDC.h"
  
 // D E F I N E S /////////////////////////////////////////////////// 
  
@@ -30,11 +31,14 @@ class IRenderDevice;
 
 class IRenderModel;
 
+class IShaderHandler
+{
+public:
+};
+
 class IShaderSystem
 {
 	public:
-
-		virtual void Init(IRenderDevice * sird) = 0;
 
 	virtual unsigned int GetProgramid(std::string name) = 0;
 
@@ -52,13 +56,15 @@ class IShaderSystem
 
 	virtual void DeleteProgram(unsigned int programid) = 0;
 
-	virtual void UseRenderModel(std::string name) = 0;
-
-	virtual IRenderModel * GetRenderModel() = 0;
-
 	virtual ~IShaderSystem() {};
 };
 
+
+class IImageHandler
+{
+public:
+
+};
 
 class ISkinManager {
 public:
@@ -88,8 +94,6 @@ public:
 
 	virtual void CreateCacheFromFile(std::string cname, std::string filename) = 0;
 
-	virtual void Render() = 0;
-
 	virtual void Release() = 0;
 
 	virtual std::vector<RebVertexCache*> * GetRVCs() = 0;
@@ -97,12 +101,21 @@ public:
 	virtual ~IVertexCacheManager() {}
 };
 
+class IGameEnv
+{
+public:
+	virtual RebTerrain * CreateTerrain() = 0;
+	virtual std::vector<RebTerrain*> * GetTerrains() = 0;
+	virtual void DeleteTerrain(RebTerrain * del) = 0;
+};
 
 class IRenderDevice
 {	
 	public:
 
-		virtual void Init(IWindowManager * siwm, int width, int height) = 0;
+	virtual void Init(RebGDC * gd) = 0;
+
+	virtual void SetVP(int width, int height) = 0; 
 
 	virtual void Release() = 0;
 
@@ -117,6 +130,8 @@ class IRenderDevice
 	virtual IVertexCacheManager * GetVertexCacheManager()= 0;
 
 	virtual IShaderSystem * GetShaderSystem() = 0;
+
+	virtual IGameEnv * GetEnv() = 0;
 
 	virtual RebMatrix GetViewportMat() = 0;
 

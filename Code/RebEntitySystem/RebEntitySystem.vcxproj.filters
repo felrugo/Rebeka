@@ -65,5 +65,11 @@
     <ClCompile Include="CompInput.cpp">
       <Filter>Components\Input</Filter>
     </ClCompile>
+    <ClCompile Include="CompPhyMoovable.cpp">
+      <Filter>Components\Physic</Filter>
+    </ClCompile>
+    <ClCompile Include="CompVisTerrain.cpp">
+      <Filter>Components\Visual</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

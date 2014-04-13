@@ -72,6 +72,7 @@ std::string ret;
 
    if (nomedia != INVALID_HANDLE_VALUE)
    {
+	   FindClose(nomedia);
 	   return;
    }
 
@@ -100,6 +101,9 @@ std::string ret;
    //Close the handle after use or memory/resource leak
    FindClose(handle);
     }
+
+
+
 
 #elif __linux__
 #endif

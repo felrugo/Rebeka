@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "..\Reb3D\Reb3d.h"
+#include "..\RebSupport\RebVL.h"
 
 
 enum Methold {R_TRIANGLES, R_QUADS};
@@ -67,7 +68,15 @@ struct RebLight
 	RebColor color;
 };
 
-
+struct RebTerrain
+{
+	std::vector<RebVector> Hps;
+	unsigned int stepx;
+	unsigned int stepy;
+	unsigned int textureid;
+	unsigned int stepsize;
+	RebMatrix trans;
+};
 
 struct RebVertexBuffer
 {
@@ -163,6 +172,9 @@ struct RebVertexCache
 	}
 
 };
+
+
+
 
 
 #endif

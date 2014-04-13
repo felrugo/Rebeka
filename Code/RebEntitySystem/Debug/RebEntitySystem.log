@@ -1,26 +1,32 @@
-﻿Build started 2014.03.15. 16:34:01.
+﻿Build started 2014.04.13. 19:40:27.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp CompPhysic.cpp CompVisual.cpp RebEntity.cpp RebEntitySystem.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp CompPhyMoovable.cpp CompPhysic.cpp CompVisTerrain.cpp CompVisual.cpp RebEntity.cpp RebEntitySystem.cpp
          CompInput.cpp
          Generating Code...
-         Skipping... (no relevant changes detected)
+         Compiling...
          RebEntitySystem.cpp
          RebEntity.cpp
          CompVisual.cpp
+         CompVisTerrain.cpp
          CompPhysic.cpp
+         CompPhyMoovable.cpp
+         Generating Code...
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"..\bullet-2.82-r2704\lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\CompInput.obj
+         Debug\CompPhyMoovable.obj
          Debug\CompPhysic.obj
+         Debug\CompVisTerrain.obj
          Debug\CompVisual.obj
          Debug\RebEntity.obj
          Debug\RebEntitySystem.obj
      1>BulletCollision_vs2010_debug.lib(btBroadphaseProxy.obj) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+     1>CompPhyMoovable.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
          RebEntitySystem.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\..\Libs\x32\RebEntitySystem.lib
        BscMake:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebEntitySystem.bsc" /n Debug\CompInput.sbr Debug\CompPhysic.sbr Debug\CompVisual.sbr Debug\RebEntity.sbr Debug\RebEntitySystem.sbr
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebEntitySystem.bsc" /n Debug\CompInput.sbr Debug\CompPhyMoovable.sbr Debug\CompPhysic.sbr Debug\CompVisTerrain.sbr Debug\CompVisual.sbr Debug\RebEntity.sbr Debug\RebEntitySystem.sbr
      1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:08.51
+Time Elapsed 00:00:24.35

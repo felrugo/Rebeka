@@ -1,13 +1,15 @@
 #include "RebGL_SS.h"
 
 
-void RebShaderSystem::Init(IRenderDevice * sird)
+RebShaderSystem::RebShaderSystem(IRenderDevice * sird)
 {
-	glewInit();
+		glewInit();
 	programs.clear();
 	ird = sird;
 	irm = 0;
 }
+
+
 
 
 std::string RebShaderSystem::GetShaderData(std::string file)
@@ -152,7 +154,7 @@ unsigned int RebShaderSystem::GetShaderid(std::string source)
 {
 	for (unsigned int i = 0; i < programs.size(); i++)
 	{
-		for (int i2 = 0; i2 < programs[i].shaders.size(); i2++)
+		for (unsigned int i2 = 0; i2 < programs[i].shaders.size(); i2++)
 		{
 			if (programs[i].shaders[i2].source == source)
 			{
@@ -181,12 +183,4 @@ RebShaderSystem::~RebShaderSystem()
 	programs.clear();
 	if(irm != 0)
 	delete irm;
-}
-
-void RebShaderSystem::UseRenderModel(std::string name)
-{
-	if(name == "RSRExtended")
-	{
-		irm = new RSRExtended(ird);
-	}
 }

@@ -10,4 +10,5 @@ int WINAPI WinMain( HINSTANCE hInstance,HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	rgdl.GetGDLL()->GameLoop();
 	rgdl.GetGDLL()->Release();
 	rgdl.ReleaseGameDLL();
+	return 0;
 }

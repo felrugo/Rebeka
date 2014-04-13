@@ -50,6 +50,8 @@ TComponent * TemplateManager::BuiltinComps(std::string cn, RebGDC * GameData)
 	TComponent * ret = 0;
 	if(cn == "CompVisModel")
 		ret = new TCompVisModel(GameData->rd);
+	if(cn == "CompVisTerrain")
+		ret = new TCompVisTerrain(GameData->rd);
 		return ret;
 }
 
@@ -71,9 +73,18 @@ TemplateManager::TemplateManager(RebEntitySystem * sres)
 	temps.clear();
 	CTFF.clear();
 	CTFF.push_back(BuiltinComps);
+	LoadDef();
 	LoadEntTemps();
 }
 
+
+
+void TemplateManager::LoadDef()
+{
+	TEntity * ter = new TEntity("Terrain");
+	ter->AddTemplate(TCFactory("CompVisTerrain"));
+	temps.push_back(ter);
+}
 
 void TemplateManager::LoadEntTemps()
 {

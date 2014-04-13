@@ -6,6 +6,7 @@
 #include "CompPhysic.h"
 #include "CompInput.h"
 #include "..\RebSupport\RebGDC.h"
+#include "..\RebSupport\RebFileSystem.h"
 #include "..\RebSupport\tinyxml2.h"
 #include <map>
 
@@ -21,6 +22,8 @@ public:
 	TemplateManager(RebEntitySystem * sres);
 
 	void LoadEntTemps();
+
+	void LoadDef();
 
 	static TComponent * BuiltinComps(std::string cn, RebGDC * GameData);
 

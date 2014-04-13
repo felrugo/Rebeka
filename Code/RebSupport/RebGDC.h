@@ -1,11 +1,11 @@
 #ifndef REBGDC_H
 #define REBGDC_H
 
-#include "../RebRenderer/IRenderer.h"
-#include "..\RebWindowSystem\RebWindowSystem.h"
-#include "..\RebAudio\RebAudioSystem.h"
-#include "..\RebEntitySystem\RebEntitySystem.h"
-#include "..\RebSupport\RebFileSystem.h"
+class IWindowManager;
+class IRenderDevice;
+class RebFileSystem;
+class IMEH;
+
 
 class RebGDC
 {
@@ -14,6 +14,7 @@ public:
 	IRenderDevice * rd;
 	IMEH * meh;
 	void * window;
+	bool * grp;
 	RebFileSystem * rfs;
 	RebGDC()
 	{
@@ -22,6 +23,7 @@ public:
 		meh = 0;
 		window = 0;
 		rfs = 0;
+		grp = 0;
 	}
 };
 

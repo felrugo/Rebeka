@@ -2,6 +2,7 @@
 #define REBSHADERSYSTEM_H
 
 #include "..\RebRenderer\IRenderDevice.h"
+#include "..\RebSupport\RebFileSystem.h"
 #include <fstream>
 #include <streambuf>
 #include "GL\glew.h"
@@ -22,6 +23,25 @@ struct RebShaderProgram
 	
 };
 
+class RebGLShader
+{
+	unsigned int phandle;
+	std::vector<unsigned int> shands;
+	IRenderDevice * IRD;
+public:
+	RebGLShader(IRenderDevice * sird);
+
+	void AddShaderFile(RebFile file);
+
+
+	~RebGLShader();
+};
+
+
+struct LMStruct
+{
+	GLuint D, A, S;
+};
 
 class RSRExtended : public IRenderModel
 {
@@ -30,13 +50,15 @@ std::vector<RebVertexCache*> * RVCs;
 	GLuint programHandle;
 	GLuint texloc;
 	GLuint texCloc;
-
-	GLuint viewmatloc;
+	LMStruct Light, Material;
+	GLuint lp;
+	GLuint shine;
 
 	GLuint positionBufferHandle;
 GLuint colorBufferHandle;
 public:
 	RSRExtended(IRenderDevice * sird);
+	void TerrainRender();
 	void Render();
 	~RSRExtended();
 };
@@ -51,7 +73,7 @@ class RebShaderSystem : public IShaderSystem
 	IRenderDevice * ird;
 
 public:
-	void Init(IRenderDevice * sird);
+	RebShaderSystem(IRenderDevice * sird);
 
 	unsigned int GetProgramid(std::string name);
 
@@ -70,10 +92,6 @@ public:
 	void DeleteShader(unsigned int shaderid);
 
 	void DeleteProgram(unsigned int programid);
-
-	void UseRenderModel(std::string name);
-
-	IRenderModel * GetRenderModel() {return irm;}
 
 	~RebShaderSystem();
 };

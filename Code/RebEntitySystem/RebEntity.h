@@ -8,78 +8,19 @@
 #include "..\RebSupport\RebString.h"
 #include "..\RebRenderer\IRenderDevice.h"
 #include "..\RebWindowSystem\IMEH.h"
+#include "..\RebSupport\RebParam.h"
 
 
 class Entity;
 
 class TemplateManager;
 
-class Param
-{
-public:
-	void* Data;
-	std::string Type;
-
-	Param()
-	{
-		Data = 0;
-		Type = typeid(Data).name();
-	}
-
-	void DeleteData()
-	{
-		if(Data != 0)
-		{
-			delete Data;
-			Data = 0;
-		}
-	}
-	template <class T>
-	 T operator = (T equ)
-	 {
-		 DeleteData();
-		 Data = new T;
-		 *(T*)Data = equ;
-		 Type = typeid(T).name();
-		 return equ;
-	 }
-
-	 template <class T>
-	 operator T ()
-	 {
-		 T ret;
-		 ret = *(T*)Data;
-		 return ret;
-	 }
-
-
-	 template <class T>
-	 bool operator == (T equ)
-	 {
-		 if(typeid(T).name() == Type)
-		 {
-			 if(*(T*)Data == equ)
-			 {
-				 return true;
-			 }
-			 return false;
-		 }
-		 return false;
-	 }
-
-	~Param()
-	{
-		DeleteData();
-	}
-};
-
-
 class Component
 {
 protected:
 	Entity * parent;
 
-	std::map<std::string, Param> Params;
+	std::map<std::string, RebParam> Params;
 public:
 	virtual std::string GetType() = 0;
 
@@ -92,9 +33,12 @@ public:
 
 	virtual void update() {}
 
-	void AddParams(std::map<std::string, Param> spars)
+	void AddParams(std::map<std::string, RebParam> spars)
 	{
-		Params = spars;
+
+		for(std::map<std::string, RebParam>::iterator it = spars.begin(); it != spars.end(); it++) {
+			Params[it->first] = it->second;
+		}
 	}
 
 	template <class T>
@@ -103,9 +47,9 @@ public:
 		Params[paramname] = paramvalue;
 	}
 
-	Param GetParam(std::string paramname)
+	RebParam GetParam(std::string paramname)
 	{
-		for(std::map<std::string, Param>::iterator it = Params.begin(); it != Params.end(); it++) {
+		for(std::map<std::string, RebParam>::iterator it = Params.begin(); it != Params.end(); it++) {
 			if(it->first == paramname)
 			{
 				return Params[paramname];
@@ -130,7 +74,7 @@ class TComponent
 {
 public:
 
-	std::map<std::string, Param> TParams;
+	std::map<std::string, RebParam> TParams;
 
 	TComponent() {};
 	virtual ~TComponent() {};

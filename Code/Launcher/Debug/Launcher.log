@@ -1,5 +1,5 @@
-﻿Build started 2014.02.03. 19:09:21.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2014.03.22. 13:46:19.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
@@ -13,4 +13,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.37
+Time Elapsed 00:00:04.47

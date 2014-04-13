@@ -12,62 +12,54 @@ void ReleaseGameDLL(IGameDLL **IGDLL)
 	delete *IGDLL;
 }
 
+int dost()
+{
+	int a = 5;
+	return a;
+}
 
 void RebGame::Init()
 {
-	winsys.CreateManager();
-	winm = winsys.GetManager();
-	winm->InitManager();
-	winm->CreateWin("hello world", 800, 600, 100, 100);
-	winm->EnableRender("hello world");
-	window = winm->GetWindow("hello world");
 
-	rend.CreateDevice();
-	rend.GetDevice()->Init(winm, 800, 600);
-	rd = rend.GetDevice();
-
-	ras.CreateAudioDevice();
-	ras.GetAudioDevice()->Init();
-	ras.GetAudioDevice()->GetMusicPlayer()->Init();
-	ras.GetAudioDevice()->GetMusicPlayer()->SetSource("test.ogg");
-	ras.GetAudioDevice()->GetMusicPlayer()->Play();
-
-
-	//test
-
-	RebVector look(0, 0, -1);
-	RebVector up(0, 1, 0);
-	RebMatrix rm;
-	rm.Identity();
-	rm.RotyByDeg(90, -90, 0);
-	look = look * rm;
-	up = up * rm;
-	rm.RotyByDeg(-30, 0, 0);
-	look = look * rm;
-	RebVector ori;
-	ori.x = acos(look.y) * 180/PI;
-	ori.y = asin(-look.x) * 180/PI;
+	mGDC = new RebGDC;
+	
 	
 
 	rfs = new RebFileSystem;
 	rfs->GetAllFiles("..\\..");
 	rfs->Categorize();
 
-	mGDC = new RebGDC;
-	mGDC->rd = rd;
+	mGDC->rfs = rfs;
+	mGDC->grp = &gr;
+
+
+	winsys.CreateManager();
+	winm = winsys.GetManager();
+	winm->InitManager();
+	winm->CreateWin("Launcher", 1280, 720, 100, 100);
+	winm->EnableRender("Launcher");
+	window = winm->GetWindow("Launcher");
+
 	mGDC->window = window;
 	mGDC->winm = winm;
 	mGDC->meh = winsys.GetMEH();
-	mGDC->rfs = rfs;
-
-	UINT shaderp, sh;
-
-	rd->GetShaderSystem()->CreateProgram("Extended", &shaderp);
-	rd->GetShaderSystem()->AddShader(rfs->Search("defff.rfs", "Shaders").rpath, shaderp, &sh);
-	rd->GetShaderSystem()->AddShader(rfs->Search("deffv.rvs", "Shaders").rpath, shaderp, &sh);
-	rd->GetShaderSystem()->UseRenderModel("RSRExtended");
 
 
+	rend.CreateDevice();
+	rend.GetDevice()->Init(mGDC);
+	rd = rend.GetDevice();
+	rd->SetVP(1280, 720);
+
+	ras.CreateAudioDevice();
+	ras.GetAudioDevice()->Init();
+	ras.GetAudioDevice()->GetMusicPlayer()->Init();
+	ras.GetAudioDevice()->GetMusicPlayer()->SetSource("test.ogg");
+	ras.GetAudioDevice()->GetMusicPlayer()->Play();
+	
+
+	
+
+	RebTimer rtimer;
 
 	res = new RebEntitySystem(mGDC);
 	std::vector<TComponent*> tcomps;
@@ -77,30 +69,33 @@ void RebGame::Init()
 	tcomps.push_back(inpconp);
 	res->GetTemplateManager()->CreateEntTemp("tviewport", tcomps);
 	Entity * ent = res->GetTemplateManager()->CreateEntByTemp("testviwe", "tviewport");
-
+	res->GetTemplateManager()->CreateEntByTemp("Ter1", "Terrain");
 	ent->SetPos(RebVector(0.0f, 0.0f, 0.0f));
 	static_cast<CompVisViewport*>(ent->GetComponent("CompVisViewport"))->SetActiveViewport();
 
 
 
-	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox", rfs->Search("phybox.obj").rpath);
+	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox1", rfs->Search("phybox.obj").rpath);
+	
+
 
 	bool pressed = false;
 	winm->TrapMouse(true);
-	
+
+	gr = true;
 }
 
 void RebGame::GameLoop()
 {
-while(1)
+while(gr)
 	{
 		RebEvent Event;
-	winsys.GetMEH()->TranslateEvent(&Event);
-	res->Update();
+		winsys.GetMEH()->TranslateEvent(&Event);
 		if(Event.Type == WE_QUIT)
 		{
-			break;
+			gr = false;
 		}
+		res->Update();
 		rd->Render();
 		rd->Swap(window);
    }
@@ -113,8 +108,8 @@ void RebGame::Release()
 	res->Release();
 	ras.GetAudioDevice()->GetMusicPlayer()->Stop();
 	rend.GetDevice()->Release();
-	winm->DisableRender("hello world");
-	winm->DestroyWindow("hello world");
+	winm->DisableRender("Launcher");
+	winm->DestroyWindow("Launcher");
 	winm->ReleaseManager();
 	winsys.DeleteManager();
 	rend.ReleaseDevice();

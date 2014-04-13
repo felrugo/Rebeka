@@ -10,7 +10,9 @@
 #include "RebGL_VCM.h"
 #include "RebGL_SS.h"
 #include "RebGL_LightSystem.h"
-#include <thread>
+#include "RebEnv.h"
+#include "..\RebSupport\RebGDC.h"
+
 
 
 
@@ -26,15 +28,23 @@ class RebGL : public IRenderDevice
 
 	int w, h;
 
+	
+
 	ISkinManager * skinman;
 
 	IVertexCacheManager * VCM;
 
 	IShaderSystem * ISS;
 
+	RebFileSystem * rfs;
+
+	IRenderModel * IRM;
+
 	ILightSystem * ILS;
 
 	IWindowManager * iwm;
+
+	IGameEnv * GE;
 
 	RebMatrix MatViewport;
 
@@ -45,7 +55,9 @@ public:
 
 	void * tm();
 	
-	void Init(IWindowManager * siwm, int width, int height);
+	void Init(RebGDC * gd);
+
+	void SetVP(int width, int height); 
 
 	void Release();
 
@@ -82,6 +94,8 @@ public:
 	IVertexCacheManager * GetVertexCacheManager();
 
 	IShaderSystem * GetShaderSystem();
+
+	IGameEnv * GetEnv();
 
 	void Swap(void * window);
 

@@ -13,7 +13,32 @@ public:
 	}
 };
 
+class CompPhyMoovable : public CompPhysic
+{
+	btDynamicsWorld * DW;
+public:
+	CompPhyMoovable(btDynamicsWorld * SDW);
 
+	void LoadPhysic();
+
+	void SetRVC(RebVertexCache * set);
+
+	std::string GetID()
+	{
+		return "CompPhyMoovable";
+	}
+
+	void update();
+
+	void Moov();
+
+};
+
+
+class TCompPhyMoovable : public TComponent
+{
+
+};
 
 
 

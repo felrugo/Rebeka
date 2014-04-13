@@ -105,12 +105,17 @@ public:
 class CompVisTerrain : public CompVisual
 {
 	std::string curloaded;
+
+	RebTerrain * ter;
+
 public:
 	CompVisTerrain(IRenderDevice * sird);
 
+	~CompVisTerrain();
+
 	void update();
 
-	void CreateTerrain(std::string filename);
+	void CreateTerrain();
 
 	std::string GetID()
 	{
@@ -118,5 +123,31 @@ public:
 	}
 };
 
+class TCompVisTerrain : public TComponent
+{
+	IRenderDevice * IRD;
+public:
+	TCompVisTerrain(IRenderDevice * sird)
+	{
+		IRD = sird;
+	}
+
+	std::string GetID()
+	{
+	return "TCompVisTerrain";
+	}
+
+	std::string GetType()
+	{
+	return "CompVisual";
+	}
+
+	Component * MakeComponent()
+	{
+		CompVisTerrain * cvt = new CompVisTerrain(IRD);
+		cvt->AddParams(TParams);
+		return cvt;
+	}
+};
 
 #endif

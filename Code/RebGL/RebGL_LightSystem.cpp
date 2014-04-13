@@ -3,9 +3,7 @@
 RebGLLightSystem::RebGLLightSystem()
 {
 	lights.clear();
-	glEnable(GL_LIGHTING);
-	float ambientLight[] = {1.0f, 1.0f, 1.0f, 1.0f};
-	glLightModelfv(GL_LIGHT_MODEL_AMBIENT,ambientLight);
+	
 }
 
 

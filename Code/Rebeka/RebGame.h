@@ -12,6 +12,7 @@
 #include "..\RebSupport\RebFileSystem.h"
 #include "..\RebSupport\RebTimer.h"
 #include "..\RebSupport\RebString.h"
+#include "..\RebSupport\RebVL.h"
 
 class RebGame : public IGameDLL
 {
@@ -24,9 +25,12 @@ public:
 	RebEntitySystem * res;
 	RebFileSystem * rfs;
 	void * window;
+	bool gr;
 	
 
 RebGDC * mGDC;
+
+
 void Init();
 
 void GameLoop();

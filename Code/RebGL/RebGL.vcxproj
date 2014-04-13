@@ -108,7 +108,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;RebSupport.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>EXP.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>..\Assimp\lib\x86;..\glew-1.10.0\lib\Release\Win32;..\FreeImage\Dist;..\SDL2-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -131,7 +131,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\Debug;..\Assimp\lib\x86;D:\Program Files\Assimp\lib\x86;..\SDL2-2.0.0\lib\x86;..\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;RebSupport.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>EXP.def</ModuleDefinitionFile>
     </Link>
     <Bscmake>
@@ -157,7 +157,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>EXP.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>..\Assimp\lib\x86;..\glew-1.10.0\lib\Release\Win32;..\FreeImage\Dist;..\SDL2-2.0.0\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glu32.lib;OpenGL32.lib;FreeImage.lib;RebSupport.lib;glew32.lib;assimp.lib;Reb3D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -185,6 +185,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="RebEnv.h" />
     <ClInclude Include="RebGL.h" />
     <ClInclude Include="RebGL_LightSystem.h" />
     <ClInclude Include="RebGL_skinmanager.h" />
@@ -192,6 +193,7 @@
     <ClInclude Include="RebGL_SS.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="RebEnv.cpp" />
     <ClCompile Include="RebGL_draw.cpp" />
     <ClCompile Include="RebGL_init.cpp" />
     <ClCompile Include="RebGL_LightSystem.cpp" />

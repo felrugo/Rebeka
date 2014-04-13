@@ -20,7 +20,7 @@ void CompPhyModel::LoadPhysic()
 			return;
 		}
 	}
-	for (int i = 0; i < RVC->RVBs.size(); i++)
+	for (unsigned int i = 0; i < RVC->RVBs.size(); i++)
 	{
 	
 			

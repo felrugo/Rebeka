@@ -6,12 +6,29 @@ RSRExtended::RSRExtended(IRenderDevice * sird)
 {
 	ird = sird;
 	RVCs = ird->GetVertexCacheManager()->GetRVCs();
+	RebFileSystem rfs;
+	rfs.GetAllFiles("..\\..");
 
-	programHandle = ird->GetShaderSystem()->GetProgramid("Extended");
+	ird->GetShaderSystem()->CreateProgram("Extended", &programHandle);
+	ird->GetShaderSystem()->AddShader(rfs.Search("defff.rfs", "").rpath, programHandle, 0);
+	ird->GetShaderSystem()->AddShader(rfs.Search("deffv.rvs", "").rpath, programHandle, 0);
+
 
 ird->GetShaderSystem()->Link(programHandle);
 
 texCloc = glGetAttribLocationARB(programHandle, "texCoord");
+
+lp = glGetUniformLocationARB(programHandle, "Light.Position");
+
+Light.A = glGetUniformLocationARB(programHandle, "Light.La");
+Light.D = glGetUniformLocationARB(programHandle, "Light.Ld");
+Light.S = glGetUniformLocationARB(programHandle, "Light.Ls");
+
+Material.A = glGetUniformLocationARB(programHandle, "Material.Ka");
+Material.D = glGetUniformLocationARB(programHandle, "Material.Kd");
+Material.S = glGetUniformLocationARB(programHandle, "Material.Ks");
+
+shine = glGetUniformLocationARB(programHandle, "Material.Shininess");
 
 texloc = glGetUniformLocationARB(programHandle, "Tex1");
 
@@ -24,10 +41,45 @@ ird->GetShaderSystem()->ActivateProgram(programHandle);
 
 
 
+void RSRExtended::TerrainRender()
+{
+	glUseProgramObjectARB(0);
+	std::vector<RebTerrain*> * ters = ird->GetEnv()->GetTerrains();
+	for(unsigned int i = 0; i < ters->size(); i++)
+	{
+		ird->TransformMatrix(ters->at(i)->trans * ird->GetViewportMat());
+
+		glBegin(GL_TRIANGLE_STRIP);
+		for(unsigned int i2 = 0; i2 < ters->at(i)->Hps.size(); i2++)
+		{
+			glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+			ird->Vertex3(ters->at(i)->Hps[i2]);
+		}
+		glEnd();
+	}
+
+}
+
+
 	void RSRExtended::Render()
 	{
+		
 			ird->Clear(1, 1);
 		ird->ResetMatrix();
+
+		TerrainRender();
+		ird->ResetMatrix();
+
+		ird->GetShaderSystem()->ActivateProgram(programHandle);
+
+		glUniform3f(Light.A, 1.0, 1.0, 1.0);
+		glUniform3f(Light.D, 1.0, 1.0, 1.0);
+		glUniform3f(Light.S, 1.0, 1.0, 1.0);
+
+
+		glUniform1f(shine, 1.0);
+
+		glUniform3f(lp, 0.0, 0.0, 0.0);
 
 		unsigned int i2;
 		for (UINT i3 = 0; i3 < RVCs->size(); i3++)
@@ -42,36 +94,31 @@ ird->GetShaderSystem()->ActivateProgram(programHandle);
 				ird->ResetMatrix();
 				
 				ird->TransformMatrix(RVCs->at(i3)->RVBs[i].trans * RVCs->at(i3)->transf * ird->GetViewportMat());
+				
 
-				ird->MaterialSetup(rm);
+				glUniform3f(Material.A, rm.amb.fR, rm.amb.fG, rm.amb.fB);
+				glUniform3f(Material.D, rm.dif.fR, rm.dif.fG, rm.dif.fB);
+				glUniform3f(Material.S, rm.spe.fR, rm.spe.fG, rm.spe.fB);
+
+
 				i2 = 0;
 				while (i2 < RVCs->at(i3)->RVBs[i].vertices.size())
 				{
 					glActiveTexture(GL_TEXTURE0);
+					if(rm.diftextures.size() > 0)
 					ird->BindTexture(rm.diftextures[0].id);
 					ird->StartDraw( RVCs->at(i3)->RVBs[i].met);
-					if(RVCs->at(i3)->RVBs[i].texturecoords.size() > i2)
-					ird->TextCoord2(RVCs->at(i3)->RVBs[i].texturecoords[i2].x, RVCs->at(i3)->RVBs[i].texturecoords[i2].y);
-					if(RVCs->at(i3)->RVBs[i].normals.size() > i2)
-					ird->Normal(RVCs->at(i3)->RVBs[i].normals[i2]);
-					if(RVCs->at(i3)->RVBs[i].vertices.size() > i2)
-					ird->Vertex3( RVCs->at(i3)->RVBs[i].vertices[i2]);
-					i2++;
-					if(RVCs->at(i3)->RVBs[i].texturecoords.size() > i2)
-					ird->TextCoord2(RVCs->at(i3)->RVBs[i].texturecoords[i2].x, RVCs->at(i3)->RVBs[i].texturecoords[i2].y);
-					if(RVCs->at(i3)->RVBs[i].normals.size() > i2)
-					ird->Normal(RVCs->at(i3)->RVBs[i].normals[i2]);
-					if(RVCs->at(i3)->RVBs[i].vertices.size() > i2)
-					ird->Vertex3( RVCs->at(i3)->RVBs[i].vertices[i2]);
-					i2++;
-					if(RVCs->at(i3)->RVBs[i].texturecoords.size() > i2)
-					ird->TextCoord2(RVCs->at(i3)->RVBs[i].texturecoords[i2].x, RVCs->at(i3)->RVBs[i].texturecoords[i2].y);
-					if(RVCs->at(i3)->RVBs[i].normals.size() > i2)
-					ird->Normal(RVCs->at(i3)->RVBs[i].normals[i2]);
-					if(RVCs->at(i3)->RVBs[i].vertices.size() > i2)
-					ird->Vertex3( RVCs->at(i3)->RVBs[i].vertices[i2]);
+					for (short t = 0; t < 3; t++)
+					{
+					if(RVCs->at(i3)->RVBs[i].texturecoords.size() > i2+t)
+					glTexCoord3fv(RVCs->at(i3)->RVBs[i].texturecoords[i2+t].glv());
+					if(RVCs->at(i3)->RVBs[i].normals.size() > i2+t)
+					glNormal3fv(RVCs->at(i3)->RVBs[i].normals[i2+t].glv());
+					if(RVCs->at(i3)->RVBs[i].vertices.size() > i2+t)
+					glVertex3fv(RVCs->at(i3)->RVBs[i].vertices[i2+t].glv());
+					}
 				ird->EndDraw();
-				i2++;
+				i2 += 3;
 				}
 			}
 		}

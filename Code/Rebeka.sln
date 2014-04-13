@@ -95,6 +95,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IGameDLL", "IGameDLL\IGameD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor", "Editor\Editor.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebGameLogic", "RebGameLogic\RebGameLogic.vcxproj", "{66C6207C-D957-4521-BA82-B329D4D955F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebUI", "RebUI\RebUI.vcxproj", "{BB00CFC6-382A-482F-97EC-A13D7C289076}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -205,6 +209,18 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
+		{66C6207C-D957-4521-BA82-B329D4D955F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{66C6207C-D957-4521-BA82-B329D4D955F1}.Debug|Win32.Build.0 = Debug|Win32
+		{66C6207C-D957-4521-BA82-B329D4D955F1}.Debug|x64.ActiveCfg = Debug|Win32
+		{66C6207C-D957-4521-BA82-B329D4D955F1}.Release|Win32.ActiveCfg = Release|Win32
+		{66C6207C-D957-4521-BA82-B329D4D955F1}.Release|Win32.Build.0 = Release|Win32
+		{66C6207C-D957-4521-BA82-B329D4D955F1}.Release|x64.ActiveCfg = Release|Win32
+		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Debug|Win32.Build.0 = Debug|Win32
+		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Debug|x64.ActiveCfg = Debug|Win32
+		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Release|Win32.ActiveCfg = Release|Win32
+		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Release|Win32.Build.0 = Release|Win32
+		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
