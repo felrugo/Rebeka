@@ -191,6 +191,7 @@
     <ClInclude Include="RebGL_skinmanager.h" />
     <ClInclude Include="RebGL_VCM.h" />
     <ClInclude Include="RebGL_SS.h" />
+    <ClInclude Include="RMDeferred.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RebEnv.cpp" />
@@ -200,6 +201,7 @@
     <ClCompile Include="RebGL_skinmanager.cpp" />
     <ClCompile Include="RebGL_VCM.cpp" />
     <ClCompile Include="RebGL_SS.cpp" />
+    <ClCompile Include="RMDeferred.cpp" />
     <ClCompile Include="RSRExtended.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -9,12 +9,10 @@ RSRExtended::RSRExtended(IRenderDevice * sird)
 	RebFileSystem rfs;
 	rfs.GetAllFiles("..\\..");
 
-	ird->GetShaderSystem()->CreateProgram("Extended", &programHandle);
-	ird->GetShaderSystem()->AddShader(rfs.Search("defff.rfs", "").rpath, programHandle, 0);
-	ird->GetShaderSystem()->AddShader(rfs.Search("deffv.rvs", "").rpath, programHandle, 0);
-
-
-ird->GetShaderSystem()->Link(programHandle);
+	extended.AddShaderFile(rfs.Search("defff.rfs", ""));
+	extended.AddShaderFile(rfs.Search("deffv.rvs", ""));
+	extended.Link();
+	programHandle = extended.GetHandle();
 
 texCloc = glGetAttribLocationARB(programHandle, "texCoord");
 
@@ -34,7 +32,7 @@ texloc = glGetUniformLocationARB(programHandle, "Tex1");
 
 glUniform1i(texloc, 0);
 
-ird->GetShaderSystem()->ActivateProgram(programHandle);
+extended.Use();
 
 
 }
@@ -70,7 +68,7 @@ void RSRExtended::TerrainRender()
 		TerrainRender();
 		ird->ResetMatrix();
 
-		ird->GetShaderSystem()->ActivateProgram(programHandle);
+		extended.Use();
 
 		glUniform3f(Light.A, 1.0, 1.0, 1.0);
 		glUniform3f(Light.D, 1.0, 1.0, 1.0);

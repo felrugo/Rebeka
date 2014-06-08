@@ -1,0 +1,22 @@
+// lighting
+
+uniform sampler2D colorMap;
+uniform sampler2D positionMap;
+uniform sampler2D normalMap;
+uniform sampler2D texcoordMap;
+uniform vec2 screenSize;
+uniform vec3 pointLightPostion;
+uniform vec3 pointLightColor;
+
+void main( void )
+{
+    float Distance = distance(texture2D(positionMap, gl_FragCoord.xy / screenSize).xyz, pointLightPostion);
+    vec3 Normal = normalize(texture2D(normalMap, gl_FragCoord.xy / screenSize).xyz);
+    vec3 LightDirection = normalize(texture2D(positionMap, gl_FragCoord.xy / screenSize).xyz - pointLightPostion);
+    vec4 Color = vec4(pointLightColor,1) * 0.8 * dot(Normal, -LightDirection);
+    float Attenuation =  0.0 +
+                         0.008 * Distance +
+                         0.002 * Distance * Distance;
+
+    gl_FragColor = Color / Attenuation;
+}

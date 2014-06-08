@@ -10,6 +10,18 @@
 #include "assimp\scene.h"
 
 
+
+class RebAssimpMH : public IModelHandler
+{
+RebVertexCache RVC;
+IRenderDevice * prd;
+public:
+RebAssimpMH(IRenderDevice * srd);
+bool LoadModel(std::string file);
+RebVertexCache GetRVC();
+};
+
+
 class RebVertexCacheManager : public IVertexCacheManager
 {
 	std::vector<RebVertexCache*> RVCs;

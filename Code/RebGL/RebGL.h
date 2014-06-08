@@ -11,6 +11,7 @@
 #include "RebGL_SS.h"
 #include "RebGL_LightSystem.h"
 #include "RebEnv.h"
+#include "RMDeferred.h"
 #include "..\RebSupport\RebGDC.h"
 
 
@@ -33,8 +34,6 @@ class RebGL : public IRenderDevice
 	ISkinManager * skinman;
 
 	IVertexCacheManager * VCM;
-
-	IShaderSystem * ISS;
 
 	RebFileSystem * rfs;
 
@@ -92,8 +91,6 @@ public:
 	ISkinManager * GetSkinManager();
 
 	IVertexCacheManager * GetVertexCacheManager();
-
-	IShaderSystem * GetShaderSystem();
 
 	IGameEnv * GetEnv();
 

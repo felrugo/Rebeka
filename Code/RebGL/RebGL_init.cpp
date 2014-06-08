@@ -24,7 +24,7 @@ void * RebGL::tm()
 
 void RebGL::Init(RebGDC * gd)
 {
-
+gd->rd = this;
 	iwm = gd->winm;
 
 	skinman = new RebGLSkinManager;
@@ -33,18 +33,15 @@ void RebGL::Init(RebGDC * gd)
 	VCM = new RebVertexCacheManager(this);
 	VCMRunning = true;
 
-	ISS = new RebShaderSystem(this);
-	
+	/*ISS = new RebShaderSystem(this);*/
+	glewInit();
 
 	ILS = new RebGLLightSystem();
-
-	IRM = new RSRExtended(this);
 
 	GE = new RebEnv;
 	MatViewport.Identity();
 
-
-	gd->rd = this;
+	IRM = new RMDeferred(gd);
 }
 
 void RebGL::SetVP(int width, int height)
@@ -88,6 +85,8 @@ void RebGL::SetVP(int width, int height)
  
     /* Reset The View */
     glLoadIdentity( );
+
+
 }
 
 void RebGL::GetViewportSize(unsigned int * sw, unsigned int * sh)
@@ -111,7 +110,7 @@ void RebGL::Release()
 	if(VCMRunning)
 	{
 	delete VCM;
-	
+	delete IRM;
 	VCMRunning = false;
 	}
 }
@@ -137,7 +136,6 @@ void RebGL::Clear(bool color, bool depth)
 RebGL::~RebGL()
 {
 	Release();
-	delete ISS;
 }
 
 
@@ -166,10 +164,6 @@ void ** RebGL::GetViewportID()
 	return &ViewportID;
 }
 
-IShaderSystem * RebGL::GetShaderSystem()
-{
-	return ISS;
-}
 
 IGameEnv * RebGL::GetEnv()
 {

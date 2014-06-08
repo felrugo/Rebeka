@@ -1,0 +1,13 @@
+// transform
+
+varying vec3 normal;
+varying vec4 position;
+uniform mat4 worldMatrix;
+
+void main( void )
+{
+    gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+    position = worldMatrix * gl_Vertex;
+	normal = gl_Normal;
+    gl_TexCoord[0]=gl_MultiTexCoord0;
+}

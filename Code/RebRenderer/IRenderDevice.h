@@ -36,34 +36,41 @@ class IShaderHandler
 public:
 };
 
-class IShaderSystem
-{
-	public:
-
-	virtual unsigned int GetProgramid(std::string name) = 0;
-
-	virtual unsigned int GetShaderid(std::string source) = 0;
-
-	virtual void ActivateProgram(unsigned int programid) = 0;
-
-	virtual void CreateProgram(std::string name,unsigned int * programid) = 0;
-
-	virtual void AddShader(std::string shaderfile, unsigned int programid, unsigned int * shaderid) = 0;
-
-	virtual void DeleteShader(unsigned int shaderid) = 0;
-
-	virtual void Link(unsigned int handle) = 0;
-
-	virtual void DeleteProgram(unsigned int programid) = 0;
-
-	virtual ~IShaderSystem() {};
-};
+//class IShaderSystem
+//{
+//	public:
+//
+//	virtual unsigned int GetProgramid(std::string name) = 0;
+//
+//	virtual unsigned int GetShaderid(std::string source) = 0;
+//
+//	virtual void ActivateProgram(unsigned int programid) = 0;
+//
+//	virtual void CreateProgram(std::string name,unsigned int * programid) = 0;
+//
+//	virtual void AddShader(std::string shaderfile, unsigned int programid, unsigned int * shaderid) = 0;
+//
+//	virtual void DeleteShader(unsigned int shaderid) = 0;
+//
+//	virtual void Link(unsigned int handle) = 0;
+//
+//	virtual void DeleteProgram(unsigned int programid) = 0;
+//
+//	virtual ~IShaderSystem() {};
+//};
 
 
 class IImageHandler
 {
 public:
 
+};
+
+class IModelHandler
+{
+public:
+virtual bool LoadModel(std::string file) = 0;
+virtual RebVertexCache GetRVC() = 0;
 };
 
 class ISkinManager {
@@ -128,8 +135,6 @@ class IRenderDevice
 	virtual ISkinManager * GetSkinManager() = 0;
 
 	virtual IVertexCacheManager * GetVertexCacheManager()= 0;
-
-	virtual IShaderSystem * GetShaderSystem() = 0;
 
 	virtual IGameEnv * GetEnv() = 0;
 

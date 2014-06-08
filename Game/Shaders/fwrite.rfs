@@ -1,0 +1,18 @@
+#version 400
+
+in vec3 position;
+in vec3 normal;
+
+uniform sampler2D difftext;
+
+layout(location = 0) out vec3 color0;
+layout(location = 1) out vec3 color1;
+layout(location = 2) out vec3 color2;
+
+void main()
+{
+color0 = texture2D(difftext, gl_TexCoord[0].st).xyz;
+color1 = position;
+color2 = normal;
+}
+
