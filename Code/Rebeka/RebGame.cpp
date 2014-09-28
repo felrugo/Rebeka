@@ -76,9 +76,13 @@ void RebGame::Init()
 
 
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox1", rfs->Search("phybox.obj").rpath);
-	
-
-
+	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox2", rfs->Search("phybox.obj").rpath);
+	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox3", rfs->Search("phybox.obj").rpath);
+	//
+	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->transf.Scale(0.01f, 0.01f, 0.01f);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->transf.Translate(0, 1, 0);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->transf.Scale(0.05f, 0.05f, 0.05f);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->transf.Translate(0, 1, 4);
 	bool pressed = false;
 	winm->TrapMouse(true);
 

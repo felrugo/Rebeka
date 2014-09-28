@@ -1,10 +1,13 @@
-#version 420 core
+#version 440 core
 
 uniform sampler2D color;
 uniform sampler2D pos;
 uniform sampler2D norm;
+uniform sampler2DShadow shadowmap;
 uniform uint num_lights;
-uniform mat4 moovmat;
+uniform uint ntriangles;
+uniform mat4 sm;
+uniform mat4 cm;
 
 uniform vec3 mmv;
 
@@ -16,12 +19,31 @@ vec3 position;
 vec3 color;
 };
 
+
+struct Triangle
+{
+vec3 A, B, C;
+mat4 trans;
+};
+
+struct Ray
+{
+vec3 point;
+vec3 dest;
+};
+
 uniform LightPoint light[100];
+
+mat4 bias = mat4(
+0.5, 0.0, 0.0, 0.0,
+0.0, 0.5, 0.0, 0.0,
+0.0, 0.0, 0.5, 0.0,
+0.5, 0.5, 0.5, 1.0
+);
 
 uniform vec3 diffuse_albedo = vec3(0.5, 0.2, 0.7);
 uniform vec3 specular_albedo = vec3(0.7);
 uniform float specular_power = 128.0;
-
 
 
 void main()
@@ -32,20 +54,33 @@ vec4 n = texture2D(norm, gl_FragCoord.xy / screenSize);
 vec4 col;
 col = texture2D(color, gl_FragCoord.xy / screenSize);
 
+vec4 shadowcoord = bias * cm * sm * wpos;
+vec3 cp = vec3(0,20,0);
+
+
+
+vec3 ed = wpos.xyz - mmv;
+vec3 cd = wpos.xyz - cp;
 vec3 L = wpos.xyz - light[0].position;
 float dist = length(L);
 L = normalize(L);
 vec3 N = normalize(n.xyz);
 vec3 R = reflect(-L, N);
-float NdotR = max(0.0, dot(N, R));
-float NdotL = max(0.0, dot(N, L));
-float attenuation = 50.0 / (pow(dist, 2.0) + 1.0);
+float NdotR = abs(dot(normalize(ed), R));
+float NdotL =abs(dot(N, L));
+float attenuation = 500.0 / (pow(dist, 2.0) + 1.0);
+vec3 ambient_color = vec3(0.1, 0.1, 0.1);
 vec3 diffuse_color = light[0].color * col.rgb *
 NdotL * attenuation;
 vec3 specular_color = light[0].color *
 pow(NdotR, specular_power)
 * attenuation;
 
-ocolor = vec4(diffuse_color + specular_color, 1.0);
-}
 
+
+float shadow = textureProj(shadowmap, shadowcoord);
+
+
+ocolor = vec4(ambient_color + (diffuse_color + specular_color) * shadow,1);
+
+}

@@ -206,6 +206,11 @@ void RebGLShaderProgram::AddShaderFile(RebFile shad)
 			delete fs;
 		fs = sh;
 		break;
+	case RebGLShader::RS_GEOMETRY:
+		if(gs != 0)
+			delete gs;
+		gs = sh;
+		break;
 	default:
 		break;
 	}
@@ -289,6 +294,11 @@ else if (file.fname.find(".rfs", 0, 4) != std::string::npos)
 {
 pshader = glCreateShaderObjectARB(GL_FRAGMENT_SHADER_ARB);
 ty = RS_FRAGMENT;
+}
+	else if (file.fname.find(".rgs", 0, 4) != std::string::npos)
+{
+	pshader = glCreateShaderObjectARB(GL_GEOMETRY_SHADER_ARB);
+ty = RS_GEOMETRY;
 }
 else
 {

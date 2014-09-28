@@ -2,14 +2,24 @@
 
 out vec3 position;
 out vec3 normal;
-
 uniform mat4 mmat;
+uniform mat4 viewmat;
+
+
+
+mat4 bias = mat4(
+0.5, 0.0, 0.0, 0.0,
+0.0, 0.5, 0.0, 0.0,
+0.0, 0.0, 0.5, 0.0,
+0.5, 0.5, 0.5, 1.0
+);
 
 void main()
 {
-position = (gl_Vertex * mmat).xyz;
-normal = gl_Normal;
+vec4 p2 = gl_Vertex * mmat;
+position = p2.xyz;
+normal = gl_Normal * mat3(mmat);
 gl_TexCoord[0] = gl_MultiTexCoord0;
-gl_Position = gl_ModelViewProjectionMatrix * mmat * gl_Vertex;
+gl_Position = gl_ProjectionMatrix * viewmat * mmat * gl_Vertex;
 }
 

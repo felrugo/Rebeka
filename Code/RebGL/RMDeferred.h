@@ -3,6 +3,7 @@
 
 #include "RebGL_SS.h"
 #include <assert.h>
+#include <memory>
 
 class GBuffer
 {
@@ -176,6 +177,20 @@ private:
 };
 
 
+class ShadowMap
+{
+	GLuint sfbo, st, post, srbo;
+	unsigned int w, h;
+	RebMatrix cube[6];
+public:
+	ShadowMap(GLuint sw, GLuint sh);
+	void SetCUBE(GLuint handle);
+	void Write();
+	void Read();
+	~ShadowMap();
+};
+
+
 class RTT
 {
 	GLuint fbo;
@@ -195,22 +210,34 @@ class RMDeferred : public IRenderModel
 {
 	IRenderDevice * ird;
 	RebFileSystem * rfs;
-
+	ShadowMap * sm;
+	float * tris;
 	std::vector<RebVertexCache*> * RVCs;
-
+	/*RayTraceBuffer rtb;*/
 	unsigned int width;
 unsigned int height;
 
 RTT tt;
 RebGLShaderProgram geoProgram ;
 RebGLShaderProgram lightProgram;
+RebGLShaderProgram shadowProgram;
 GLuint mainObjectID;
 GLuint lightVolumeID;
 
+unsigned long int nof, last, not;
+
+GLuint ssbo[2];
+float mo;
+
+unsigned long int gettriang();
+
 public:
 	RMDeferred(RebGDC * data);
+	~RMDeferred();
 	void PassGeom();
+	void ShadowPass();
 	void Shade();
+	unsigned long int getFloats();
 	void copy();
 void Render();
 };

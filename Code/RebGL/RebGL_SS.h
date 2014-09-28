@@ -14,7 +14,7 @@ class RebGLShaderProgram;
 class RebGLShader
 {
 	friend class RebGLShaderProgram;
-	enum ShaderType {RS_VERTEX, RS_FRAGMENT};
+	enum ShaderType {RS_VERTEX, RS_FRAGMENT, RS_GEOMETRY};
 	unsigned int pshader;
 	ShaderType ty;
 	bool * compiled;
@@ -38,6 +38,7 @@ class RebGLShaderProgram
 	bool linked;
 	RebGLShader * vs;
 	RebGLShader * fs;
+	RebGLShader * gs;
 	std::string GetShaderData(std::string file);
 public:
 	RebGLShaderProgram();

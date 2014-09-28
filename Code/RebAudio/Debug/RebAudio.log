@@ -1,7 +1,8 @@
-﻿Build started 2014.02.03. 19:08:30.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\RebAudio.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2014.09.27. 14:48:48.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\RebAudio.vcxproj" on node 4 (Build target(s)).
      1>ClCompile:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebAudioSystem.cpp
+         Skipping... (no relevant changes detected)
          RebAudioSystem.cpp
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebAudio.lib" /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebAudioSystem.obj
@@ -12,4 +13,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.63
+Time Elapsed 00:00:03.55

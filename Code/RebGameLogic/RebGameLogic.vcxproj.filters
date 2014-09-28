@@ -17,4 +17,12 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RebFlowGraphSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>

@@ -1,8 +1,9 @@
-﻿Build started 2014.05.11. 14:35:13.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSDL\RebSDL.vcxproj" on node 3 (Build target(s)).
+﻿Build started 2014.09.27. 14:48:56.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSDL\RebSDL.vcxproj" on node 4 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp
+         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp RebSDL.cpp
          Skipping... (no relevant changes detected)
+         RebSDL.cpp
          RebMEH.cpp
        Link:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebSDL.dll" /INCREMENTAL /NOLOGO /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXPO.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebSDL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebSDL.lib" /MACHINE:X86 /DLL Debug\RebMEH.obj
@@ -14,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.85
+Time Elapsed 00:00:02.07

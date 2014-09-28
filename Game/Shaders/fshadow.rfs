@@ -1,0 +1,10 @@
+#version 400
+
+in vec3 wpos;
+uniform vec3 ep;
+layout(location = 0) out vec4 fragmentdepth;
+ 
+void main(){
+    // Not really needed, OpenGL does it anyway
+    fragmentdepth = vec4(vec3(length(wpos - ep)),1);
+}

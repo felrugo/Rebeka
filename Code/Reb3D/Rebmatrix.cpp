@@ -91,6 +91,30 @@ inline void RebMatrix::RotyByDeg(float x, float y, float z)
 }
 
 
+
+inline void RebMatrix::Ortho(float l, float r, float t, float b, float n, float f)
+{
+    _11 = 2 / (r - l);
+    _12 = 0;
+    _13 = 0;
+    _14 = 0;
+ 
+   _21 = 0;
+   _22 = 2 / (t - b);
+    _23 = 0;
+    _24 = 0;
+ 
+    _31 = 0;
+    _32 = 0;
+    _33 = -1 / (f - n);
+    _33 = 0;
+ 
+    _41 = -(r + l) / (r - l);
+    _42 = -(t + b) / (t - b);
+    _43 = -n / (f - n);
+    _44 = 1;
+}
+
 inline void RebMatrix::Rota(float x, float y, float z)
    { Rota(RebVector(x, y, z)); }
 
@@ -140,6 +164,39 @@ inline RebVector RebMatrix::GetTranslation(void)
 inline RebVector RebMatrix::GetRotation(void)
 {
 	return ori;
+}
+
+inline void RebMatrix::Scale(float x, float y, float z)
+{
+	_11 = _11 * x;
+	_22 = _22 * y;
+	_33 = _33 * z;
+}
+
+
+inline void RebMatrix::Frustum(float left, float right, float bottom, float top, float zNear, float zFar)
+{
+	 float zDelta = (zFar-zNear);
+        float dir = (right-left);
+        float height = (top-bottom);
+        float zNear2 = 2*zNear;
+
+       _11=2.0f*zNear/dir;
+       _12=0.0f;
+	   _13=(right+left)/dir;
+       _14=0.0f;
+	   _21=0.0f;
+        _22=zNear2/height;
+		_23=(top+bottom)/height;
+       _24=0.0f;
+        _31=0.0f;
+        _32=0.0f;
+		_33=-(zFar+zNear)/zDelta;
+		_34=-zNear2*zFar/zDelta;
+		_41=0.0f;
+		_42=0.0f;
+		_43=-1.0f;
+		_44=0.0f;
 }
 
 

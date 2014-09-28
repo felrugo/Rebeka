@@ -154,6 +154,8 @@ class __declspec(dllexport) RebMatrix {
 	   inline RebVector GetRotation(void);
 	   inline void RotaWorld(float x, float y, float z); 
 
+	   inline void Scale(float x, float y, float z);
+
       inline void Billboard(RebVector vcPos, RebVector vcDir,
                             RebVector vcWorldUp = RebVector(0,1,0));
       inline void LookAt(RebVector vcPos, RebVector vcLookAt, 
@@ -161,9 +163,11 @@ class __declspec(dllexport) RebMatrix {
 
       inline void TransposeOf(const RebMatrix &m);       // transpose m, save result in this
       inline void InverseOf(const RebMatrix &m);         // invert m, save result in this
-
+	  inline void Frustum(float left, float right, float bottom, float top, float zNear, float zFar);
 	  inline void glm(float * fa);
       
+	  inline void Ortho(float l, float r, float t, float b, float n, float f);
+
       RebMatrix operator * (const RebMatrix &m)const;    // matrix multiplication
       RebVector operator * (const RebVector &vc)const;   // matrix vector multiplication
    }; // class
