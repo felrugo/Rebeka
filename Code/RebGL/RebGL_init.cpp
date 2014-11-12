@@ -78,7 +78,7 @@ void RebGL::SetVP(int width, int height)
 	h = height;
 	ratio = ( GLfloat )width / ( GLfloat )height;
     /* Set our perspective */
-    gluPerspective( 45.0f, ratio, 0.1f, 100.0f );
+    gluPerspective( 45.0f, ratio, 0.1f, 1000.0f );
  
     /* Make sure we're chaning the model view and not the projection */
     glMatrixMode( GL_MODELVIEW );

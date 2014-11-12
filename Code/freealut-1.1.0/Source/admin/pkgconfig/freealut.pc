@@ -1,0 +1,11 @@
+prefix=/SDK/Local
+exec_prefix=${prefix}
+libdir=/SDK/Local/newlib/lib
+includedir=/SDK/Local/common/include
+
+Name: freealut
+Description: freealut is a free implementation of the OpenAL utility toolkit.
+Requires: openal
+Version: 1.1.0
+Libs: -L${libdir} -lalut
+Cflags: -I${includedir}

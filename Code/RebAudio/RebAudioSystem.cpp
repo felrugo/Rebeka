@@ -3,7 +3,7 @@
 
 RebAudioSystem::RebAudioSystem()
 {
-	mDLL = LoadLibrary("RebSFML.dll");
+	mDLL = LoadLibrary("RebAL.dll");
 	runing = false;
 }
 

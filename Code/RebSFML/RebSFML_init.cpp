@@ -14,7 +14,7 @@ void ReleaseAudioDevice(IAudioDevice **NAD)
 void RebSFML::Init()
 {
 	mp = new RebMusicPlayer;
-	ss = new RebSoundSystem;
+	/*ss = new RebSoundSystem;*/
 	mprun = true;
 	ssrun = true;
 }

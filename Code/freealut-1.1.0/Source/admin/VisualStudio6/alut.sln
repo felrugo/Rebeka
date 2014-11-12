@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "alut", "alut\alut.dsp", "{6EE1A1FA-507B-405F-89B2-FF4A8C4CE7D9}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "hello_world", "hello_world\hello_world.dsp", "{A518E854-2335-4333-B012-36E52B7E4B49}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6EE1A1FA-507B-405F-89B2-FF4A8C4CE7D9} = {6EE1A1FA-507B-405F-89B2-FF4A8C4CE7D9}
+	EndProjectSection
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "playfile", "playfile\playfile.dsp", "{FA335E0C-C3A4-41A9-A71E-B8CEB5702D40}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6EE1A1FA-507B-405F-89B2-FF4A8C4CE7D9} = {6EE1A1FA-507B-405F-89B2-FF4A8C4CE7D9}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

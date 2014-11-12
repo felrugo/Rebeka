@@ -12,11 +12,7 @@ void ReleaseGameDLL(IGameDLL **IGDLL)
 	delete *IGDLL;
 }
 
-int dost()
-{
-	int a = 5;
-	return a;
-}
+
 
 void RebGame::Init()
 {
@@ -51,11 +47,13 @@ void RebGame::Init()
 	rd->SetVP(1280, 720);
 
 	ras.CreateAudioDevice();
-	ras.GetAudioDevice()->Init();
+	/*ras.GetAudioDevice()->Init();
 	ras.GetAudioDevice()->GetMusicPlayer()->Init();
-	ras.GetAudioDevice()->GetMusicPlayer()->SetSource("test.ogg");
-	ras.GetAudioDevice()->GetMusicPlayer()->Play();
+	ras.GetAudioDevice()->GetMusicPlayer()->SetSource(rfs->Search("daft.mp3", "Music").rpath);
+	ras.GetAudioDevice()->GetMusicPlayer()->Play();*/
 	
+	ras.GetAudioDevice()->Init();
+	ras.GetAudioDevice()->GetSoundSystem()->Test();
 
 	
 
@@ -100,6 +98,7 @@ while(gr)
 			gr = false;
 		}
 		res->Update();
+		/*ras.GetAudioDevice()->Update();*/
 		rd->Render();
 		rd->Swap(window);
    }
@@ -110,7 +109,7 @@ void RebGame::Release()
 	winm->TrapMouse(false);
 	delete mGDC;
 	res->Release();
-	ras.GetAudioDevice()->GetMusicPlayer()->Stop();
+	/*ras.GetAudioDevice()->GetMusicPlayer()->Stop();*/
 	rend.GetDevice()->Release();
 	winm->DisableRender("Launcher");
 	winm->DestroyWindow("Launcher");

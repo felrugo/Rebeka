@@ -50,6 +50,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reb3D", "Reb3D\Reb3D.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebAudio", "RebAudio\RebAudio.vcxproj", "{9166A557-7C7D-4A3B-A73B-F5D73AB5682B}"
 	ProjectSection(ProjectDependencies) = postProject
+		{7385459F-AD43-4FFC-86B1-473AD8215878} = {7385459F-AD43-4FFC-86B1-473AD8215878}
 		{844D19AA-97F4-44DE-896E-51906259BAE7} = {844D19AA-97F4-44DE-896E-51906259BAE7}
 	EndProjectSection
 EndProject
@@ -98,6 +99,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebGameLogic", "RebGameLogic\RebGameLogic.vcxproj", "{66C6207C-D957-4521-BA82-B329D4D955F1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebUI", "RebUI\RebUI.vcxproj", "{BB00CFC6-382A-482F-97EC-A13D7C289076}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebAL", "RebAL\RebAL.vcxproj", "{7385459F-AD43-4FFC-86B1-473AD8215878}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -221,6 +224,12 @@ Global
 		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Release|Win32.ActiveCfg = Release|Win32
 		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Release|Win32.Build.0 = Release|Win32
 		{BB00CFC6-382A-482F-97EC-A13D7C289076}.Release|x64.ActiveCfg = Release|Win32
+		{7385459F-AD43-4FFC-86B1-473AD8215878}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7385459F-AD43-4FFC-86B1-473AD8215878}.Debug|Win32.Build.0 = Debug|Win32
+		{7385459F-AD43-4FFC-86B1-473AD8215878}.Debug|x64.ActiveCfg = Debug|Win32
+		{7385459F-AD43-4FFC-86B1-473AD8215878}.Release|Win32.ActiveCfg = Release|Win32
+		{7385459F-AD43-4FFC-86B1-473AD8215878}.Release|Win32.Build.0 = Release|Win32
+		{7385459F-AD43-4FFC-86B1-473AD8215878}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

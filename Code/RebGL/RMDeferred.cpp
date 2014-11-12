@@ -90,8 +90,8 @@ glDeleteFramebuffersEXT(1, &fbo);
 
 ShadowMap::ShadowMap(GLuint sw, GLuint sh)
 {
-	w = 2048;
-	h = 2048;
+	w = 4096;
+	h = 4096;
 
 	for(int i = 0; i < 6; i++)
 	{
@@ -115,11 +115,12 @@ ShadowMap::ShadowMap(GLuint sw, GLuint sh)
 
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
+glTexParameteri(GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE, GL_INTENSITY);
 
 GLint internal_format = GL_DEPTH_COMPONENT24; 
 GLenum data_type = GL_UNSIGNED_INT;
@@ -141,7 +142,7 @@ GLenum format = GL_DEPTH_COMPONENT;
 glTexImage2D(GL_TEXTURE_2D, 
 0, 
 internal_format, 
-2048, 2048, 0, 
+w, h, 0, 
 format, 
 data_type, 
 NULL); //content need not be specified
@@ -161,7 +162,7 @@ void ShadowMap::Write()
 {
 	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, sfbo);
 	glDrawBuffer(GL_NONE);
-	glViewport(0,0,2048, 2048);
+	glViewport(0,0,w, h);
 }
 
 void ShadowMap::Read()
@@ -323,15 +324,17 @@ void ShadowMap::SetCUBE(GLuint handle)
 		sm->Write();
 		shadowProgram.Use();
 		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_BACK);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 
 
-		glUniform3f(glGetUniformLocation(shadowProgram.GetHandle(), "ep"), 0,10,0);
+		glUniform3f(glGetUniformLocation(shadowProgram.GetHandle(), "ep"), 0,20,0);
 		
 	RebMatrix shadowmat, sha, res, bias;
 	shadowmat.Identity();
-	shadowmat.Translate(0,-10,0);
+	shadowmat.Translate(0,-20,0);
 
 
 		bias.Identity();
@@ -384,6 +387,7 @@ void ShadowMap::SetCUBE(GLuint handle)
 			}
 		}
 		}
+		glDisable(GL_CULL_FACE);
 		glDisable(GL_DEPTH_TEST);
 	}
 
@@ -402,7 +406,7 @@ void ShadowMap::SetCUBE(GLuint handle)
 
 		RebMatrix shadowmat, sha, res, bias;
 	shadowmat.Identity();
-	shadowmat.Translate(0,-10,0);
+	shadowmat.Translate(0,-20,0);
 
 	sha.Identity();
 	sha.RotyByDeg(90,0,0);

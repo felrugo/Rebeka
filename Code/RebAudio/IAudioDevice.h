@@ -10,9 +10,7 @@ class SoundSource
 {
 };
 
-class SoundListener
-{
-};
+
 
 class MusicPlayer
 {
@@ -41,6 +39,9 @@ public:
 
 class SoundSystem
 {
+public:
+	virtual void Test() = 0;
+	virtual void Update() {}
 };
 
 
@@ -48,6 +49,10 @@ class IAudioDevice
 {
 public:
 	virtual void Init() = 0;
+
+	virtual void Update()
+	{
+	}
 
 	virtual void Release() = 0;
 

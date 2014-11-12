@@ -1,8 +1,7 @@
-﻿Build started 2014.09.27. 14:48:56.
+﻿Build started 2014.10.25. 10:32:32.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebRenderer\RebRenderer.vcxproj" on node 3 (Build target(s)).
      1>ClCompile:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebRenderer.cpp
-         Skipping... (no relevant changes detected)
          RebRenderer.cpp
        Lib:
          D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebRenderer.lib" Reb3D.lib /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebRenderer.obj
@@ -13,4 +12,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.94
+Time Elapsed 00:00:06.15

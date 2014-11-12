@@ -3,7 +3,7 @@
 uniform sampler2D color;
 uniform sampler2D pos;
 uniform sampler2D norm;
-uniform sampler2DShadow shadowmap;
+uniform sampler2D shadowmap;
 uniform uint num_lights;
 uniform uint ntriangles;
 uniform mat4 sm;
@@ -76,9 +76,11 @@ vec3 specular_color = light[0].color *
 pow(NdotR, specular_power)
 * attenuation;
 
-
-
-float shadow = textureProj(shadowmap, shadowcoord);
+float shadow = 1.0;
+vec2 shadc = vec2(shadowcoord.x / shadowcoord.w, shadowcoord.y / shadowcoord.w);
+if(shadowcoord.w > 0.0)
+if(texture(shadowmap, shadc).r < shadowcoord.z / shadowcoord.w)
+shadow = 0.2;
 
 
 ocolor = vec4(ambient_color + (diffuse_color + specular_color) * shadow,1);

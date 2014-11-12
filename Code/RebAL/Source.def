@@ -1,0 +1,4 @@
+LIBRARY "RebAL.dll"
+EXPORTS
+CreateAudioDevice
+ReleaseAudioDevice

@@ -38,19 +38,19 @@ public:
 };
 
 
-class RebSoundListener : public SoundListener
-{
-	sf::Listener listener;
-
-public:
-
-	
-	
-	void SetPos(RebVector pos);
-
-	void SetOrientation(RebVector ori);
-
-};
+//class RebSoundListener : public SoundListener
+//{
+//	sf::Listener listener;
+//
+//public:
+//
+//	
+//	
+//	void SetPos(RebVector pos);
+//
+//	void SetOrientation(RebVector ori);
+//
+//};
 
 class RebSoundSource : public SoundSource
 {
@@ -79,8 +79,6 @@ public:
 
 class RebSoundSystem : public SoundSystem
 {
-
-
 
 public:
 	void Init();
