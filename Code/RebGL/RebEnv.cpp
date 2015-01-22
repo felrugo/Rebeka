@@ -13,6 +13,14 @@ RebTerrain * RebEnv::CreateTerrain()
 }
 
 
+RebTerrain * RebEnv::CreateTerrain(std::string hmf)
+{
+	RebTerrain * ret = new RebTerrain();
+
+	Terrains.push_back(ret);
+	return ret;
+}
+
 std::vector<RebTerrain*> * RebEnv::GetTerrains()
 {
 	return &Terrains;

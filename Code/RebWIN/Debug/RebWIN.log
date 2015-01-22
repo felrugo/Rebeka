@@ -1,0 +1,20 @@
+﻿Build started 2014.12.13. 12:13:05.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebWIN\RebWIN.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBWIN_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RebWM.cpp
+         RebWM.cpp
+     1>d:\users\felrugo\documents\github\rebeka\code\rebwin\rebwm.cpp(5): error C2259: 'RebWM' : cannot instantiate abstract class
+                 due to following members:
+                 'void IWindowManager::InitManager(void)' : is abstract
+                 d:\users\felrugo\documents\github\rebeka\code\rebwindowsystem\iwindowmanager.h(9) : see declaration of 'IWindowManager::InitManager'
+                 'void IWindowManager::ReleaseManager(void)' : is abstract
+                 d:\users\felrugo\documents\github\rebeka\code\rebwindowsystem\iwindowmanager.h(11) : see declaration of 'IWindowManager::ReleaseManager'
+     1>d:\users\felrugo\documents\github\rebeka\code\rebwin\rebwm.cpp(31): error C2572: 'RebWM::CreateWin' : redefinition of default parameter : parameter 5
+                 d:\users\felrugo\documents\github\rebeka\code\rebwin\rebwm.h(37) : see declaration of 'RebWM::CreateWin'
+     1>d:\users\felrugo\documents\github\rebeka\code\rebwin\rebwm.cpp(31): error C2572: 'RebWM::CreateWin' : redefinition of default parameter : parameter 4
+                 d:\users\felrugo\documents\github\rebeka\code\rebwin\rebwm.h(37) : see declaration of 'RebWM::CreateWin'
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebWIN\RebWIN.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.90

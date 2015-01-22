@@ -118,9 +118,9 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
-glTexParameteri(GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE, GL_INTENSITY);
+//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_R_TO_TEXTURE);
+//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
+//glTexParameteri(GL_TEXTURE_2D, GL_DEPTH_TEXTURE_MODE, GL_INTENSITY);
 
 GLint internal_format = GL_DEPTH_COMPONENT24; 
 GLenum data_type = GL_UNSIGNED_INT;
@@ -148,6 +148,7 @@ data_type,
 NULL); //content need not be specified
    glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT,
 st, 0);
+   
 
 	// Check if all worked fine and unbind the FBO
 	GLenum status = glCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);
@@ -328,7 +329,18 @@ void ShadowMap::SetCUBE(GLuint handle)
 		glCullFace(GL_BACK);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
+		//test
 
+		RebMatrix rot, sca;
+		rot.Identity();
+		rot.RotyByDeg(0, 90, 0);
+
+		sca.Identity();
+		sca.Translate(0, 0, -1);
+
+		RebVector rv(0, 0, 0);
+
+		//end of test
 
 		glUniform3f(glGetUniformLocation(shadowProgram.GetHandle(), "ep"), 0,20,0);
 		

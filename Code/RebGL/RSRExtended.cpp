@@ -51,7 +51,7 @@ void RSRExtended::TerrainRender()
 		for(unsigned int i2 = 0; i2 < ters->at(i)->Hps.size(); i2++)
 		{
 			glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-			ird->Vertex3(ters->at(i)->Hps[i2]);
+			//ird->Vertex3(ters->at(i)->Hps[i2]);
 		}
 		glEnd();
 	}

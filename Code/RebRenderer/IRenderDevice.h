@@ -63,6 +63,12 @@ public:
 class IImageHandler
 {
 public:
+	virtual void LoadFile(std::string file) = 0;
+	virtual unsigned int GetWidth() = 0;
+	virtual unsigned int GetHight() = 0;
+	virtual RebVector GetPixelColor(unsigned int x, unsigned int y) = 0;
+	virtual void LoadIntoRenderer() = 0;
+
 
 };
 

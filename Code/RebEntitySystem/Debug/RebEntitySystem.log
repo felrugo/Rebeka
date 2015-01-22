@@ -1,17 +1,10 @@
-﻿Build started 2014.11.12. 10:55:05.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 5 (Build target(s)).
+﻿Build started 2015.01.17. 12:06:48.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /I"D:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp CompPhyMoovable.cpp CompPhysic.cpp CompVisTerrain.cpp CompVisual.cpp RebEntity.cpp RebEntitySystem.cpp
-         RebEntitySystem.cpp
-         RebEntity.cpp
-         CompVisual.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /I"D:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt CompVisTerrain.cpp
          CompVisTerrain.cpp
-         CompPhysic.cpp
-         CompPhyMoovable.cpp
-         CompInput.cpp
-         Generating Code...
        Lib:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"..\bullet-2.82-r2704\lib" /LIBPATH:..\Libs\x32\ /LIBPATH:"D:\Program Files (x86)\Visual Leak Detector\lib\Win32" /NOLOGO Debug\CompInput.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"..\bullet-2.82-r2704\lib" /LIBPATH:..\Libs\x32\ /LIBPATH:"D:\Program Files (x86)\Visual Leak Detector\lib\Win32" /NOLOGO Debug\CompInput.obj
          Debug\CompPhyMoovable.obj
          Debug\CompPhysic.obj
          Debug\CompVisTerrain.obj
@@ -22,9 +15,9 @@
      1>CompPhyMoovable.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
          RebEntitySystem.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\..\Libs\x32\RebEntitySystem.lib
        BscMake:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebEntitySystem.bsc" /n Debug\CompInput.sbr Debug\CompPhyMoovable.sbr Debug\CompPhysic.sbr Debug\CompVisTerrain.sbr Debug\CompVisual.sbr Debug\RebEntity.sbr Debug\RebEntitySystem.sbr
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebEntitySystem.bsc" /n Debug\CompInput.sbr Debug\CompPhyMoovable.sbr Debug\CompPhysic.sbr Debug\CompVisTerrain.sbr Debug\CompVisual.sbr Debug\RebEntity.sbr Debug\RebEntitySystem.sbr
      1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:22.31
+Time Elapsed 00:00:07.94

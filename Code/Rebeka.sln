@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rebeka", "Rebeka\Rebeka.vcxproj", "{8B721FB1-0BA6-405A-8FAF-C46CA3FE2E50}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9CE59B1B-5005-4902-9A78-299384DEE446} = {9CE59B1B-5005-4902-9A78-299384DEE446}
@@ -94,13 +96,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebSupport", "RebSupport\Re
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IGameDLL", "IGameDLL\IGameDLL.vcxproj", "{EE351769-29A3-4A94-B1C3-657F8D547DFD}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor", "Editor\Editor.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebGameLogic", "RebGameLogic\RebGameLogic.vcxproj", "{66C6207C-D957-4521-BA82-B329D4D955F1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebUI", "RebUI\RebUI.vcxproj", "{BB00CFC6-382A-482F-97EC-A13D7C289076}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RebAL", "RebAL\RebAL.vcxproj", "{7385459F-AD43-4FFC-86B1-473AD8215878}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor", "Editor\Editor.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -204,14 +206,6 @@ Global
 		{EE351769-29A3-4A94-B1C3-657F8D547DFD}.Release|Win32.ActiveCfg = Release|Win32
 		{EE351769-29A3-4A94-B1C3-657F8D547DFD}.Release|Win32.Build.0 = Release|Win32
 		{EE351769-29A3-4A94-B1C3-657F8D547DFD}.Release|x64.ActiveCfg = Release|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.Build.0 = Debug|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.ActiveCfg = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.Build.0 = Debug|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.ActiveCfg = Release|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
-		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
 		{66C6207C-D957-4521-BA82-B329D4D955F1}.Debug|Win32.ActiveCfg = Debug|Win32
 		{66C6207C-D957-4521-BA82-B329D4D955F1}.Debug|Win32.Build.0 = Debug|Win32
 		{66C6207C-D957-4521-BA82-B329D4D955F1}.Debug|x64.ActiveCfg = Debug|Win32
@@ -230,8 +224,19 @@ Global
 		{7385459F-AD43-4FFC-86B1-473AD8215878}.Release|Win32.ActiveCfg = Release|Win32
 		{7385459F-AD43-4FFC-86B1-473AD8215878}.Release|Win32.Build.0 = Release|Win32
 		{7385459F-AD43-4FFC-86B1-473AD8215878}.Release|x64.ActiveCfg = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.Build.0 = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.ActiveCfg = Debug|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.Build.0 = Debug|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.ActiveCfg = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = msvc2013_64
 	EndGlobalSection
 EndGlobal

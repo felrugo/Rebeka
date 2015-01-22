@@ -24,12 +24,12 @@
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{a9920e33-c539-45ad-a26d-59f88d95cfa7}</UniqueIdentifier>
+      <UniqueIdentifier>{c8b2c521-d79b-46a7-b952-f8b1a078d086}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{9e0b194e-4062-49d2-b545-ceb266ea6e4b}</UniqueIdentifier>
+      <UniqueIdentifier>{f6c1553c-8eb4-4231-b108-870d2116969b}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
@@ -50,6 +50,9 @@
     <ClCompile Include="GeneratedFiles\qrc_editor.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="RebECode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="editor.h">
@@ -65,6 +68,9 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_editor.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RebECode.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

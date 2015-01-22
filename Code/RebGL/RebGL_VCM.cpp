@@ -17,7 +17,7 @@ void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string f
 	RebVertexBuffer rvb;
 	
 
-	const aiScene* scene = aiImportFile (filename.c_str(), aiProcessPreset_TargetRealtime_Fast); // TRIANGLES!
+	const aiScene* scene = aiImportFile(filename.c_str(), aiProcessPreset_TargetRealtime_Fast); // TRIANGLES!
   if (!scene) {
 	  delete rvc;
     return;

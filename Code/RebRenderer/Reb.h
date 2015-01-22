@@ -70,7 +70,7 @@ struct RebLight
 
 struct RebTerrain
 {
-	std::vector<RebVector> Hps;
+	std::vector<float> Hps;
 	unsigned int stepx;
 	unsigned int stepy;
 	unsigned int textureid;

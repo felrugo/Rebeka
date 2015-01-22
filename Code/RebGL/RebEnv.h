@@ -1,7 +1,7 @@
 #ifndef REBENV
 #define REBENV
 
-#include "..\RebRenderer\IRenderDevice.h"
+#include "RebGL.h"
 
 
 
@@ -11,6 +11,7 @@ class RebEnv : public IGameEnv
 public:
 	RebEnv();
 	RebTerrain * CreateTerrain();
+	RebTerrain * CreateTerrain(std::string hmf);
 	std::vector<RebTerrain*> * GetTerrains();
 	void DeleteTerrain(RebTerrain * del);
 };

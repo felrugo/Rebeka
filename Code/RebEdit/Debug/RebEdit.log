@@ -1,0 +1,14 @@
+﻿Build started 2014.12.17. 14:48:42.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEdit\RebEdit.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Debug\\RebEdit.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_opengl\lib /LIBPATH:"D:\Program Files (x86)\Visual Leak Detector\lib\Win32" qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Debug\RebEdit.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Debug\RebEdit.lib" /MACHINE:X86 /SAFESEH Debug\main.obj
+         Debug\rebedit.obj
+     1>rebedit.obj : error LNK2001: unresolved external symbol "public: virtual struct QMetaObject const * __thiscall RebEdit::metaObject(void)const " (?metaObject@RebEdit@@UBEPBUQMetaObject@@XZ)
+     1>rebedit.obj : error LNK2001: unresolved external symbol "public: virtual void * __thiscall RebEdit::qt_metacast(char const *)" (?qt_metacast@RebEdit@@UAEPAXPBD@Z)
+     1>rebedit.obj : error LNK2001: unresolved external symbol "public: virtual int __thiscall RebEdit::qt_metacall(enum QMetaObject::Call,int,void * *)" (?qt_metacall@RebEdit@@UAEHW4Call@QMetaObject@@HPAPAX@Z)
+     1>D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Debug\\RebEdit.exe : fatal error LNK1120: 3 unresolved externals
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEdit\RebEdit.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.27
