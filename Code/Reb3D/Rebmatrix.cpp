@@ -199,7 +199,19 @@ inline void RebMatrix::Frustum(float left, float right, float bottom, float top,
 		_44=0.0f;
 }
 
-
+inline void RebMatrix::Perspective(float fov, float aspect, float near, float far)
+{
+	float D2R = PI / 180.0;
+	float yScale = 1.0 / tan(D2R * fov / 2);
+	float xScale = yScale / aspect;
+	float nearmfar = near - far;
+	
+	_11 = xScale;
+	_22 = yScale;
+	_33 = (far + near) / nearmfar;
+	_34 = -1;
+	_43 = 2 * far*near / nearmfar;
+}
 
 // Build rotation matrix around arbitrary axis
 inline void RebMatrix::RotaArbi(const RebVector &_vcAxis, float a) {

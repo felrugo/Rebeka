@@ -1,16 +1,26 @@
 #version 440
+
+
 layout(triangles) in;
+
+
 //3 vertices per tri, output 6 tris (1 for each cm-face)
+
+
 layout(triangle_strip, max_vertices=18) out;
+
 // contains P*V[i], transforms from WS to cubemap-face i
-uniform mat4 cm_mat[6];		
+uniform mat4 cm_mat[6];
+uniform mat4 cm;	
+
+
 out vec4 WS_pos_from_GS;
 void main(void) {
  //iterate over the 6 cubemap faces
  for(gl_Layer=0; gl_Layer<6; ++gl_Layer) {
  for(int tri_vert=0; tri_vert<3; ++tri_vert) {
 WS_pos_from_GS = gl_in[tri_vert].gl_Position;
-gl_Position = cm_mat[gl_Layer] * WS_pos_from_GS;
+gl_Position = cm * cm_mat[gl_Layer] * WS_pos_from_GS;
 EmitVertex();
  }
  EndPrimitive();

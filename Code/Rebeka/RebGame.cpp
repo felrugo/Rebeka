@@ -40,6 +40,7 @@ void RebGame::Init()
 	mGDC->winm = winm;
 	mGDC->meh = winsys.GetMEH();
 
+	mGDC->meh->Init(mGDC);
 
 	rend.CreateDevice();
 	rend.GetDevice()->Init(mGDC);
@@ -53,7 +54,7 @@ void RebGame::Init()
 	ras.GetAudioDevice()->GetMusicPlayer()->Play();*/
 	
 	ras.GetAudioDevice()->Init();
-	ras.GetAudioDevice()->GetSoundSystem()->Test();
+	//ras.GetAudioDevice()->GetSoundSystem()->Test();
 
 	
 
@@ -72,31 +73,33 @@ void RebGame::Init()
 	static_cast<CompVisViewport*>(ent->GetComponent("CompVisViewport"))->SetActiveViewport();
 
 
+	rd->GetEnv()->CreateTerrain(rfs->Search("Heightmap5.png", "Textures").rpath);
+
 
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox1", rfs->Search("phybox.obj").rpath);
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox2", rfs->Search("phybox.obj").rpath);
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox3", rfs->Search("phybox.obj").rpath);
+	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox4", rfs->Search("phybox.obj").rpath);
 	//
 	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->transf.Scale(0.01f, 0.01f, 0.01f);
 	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->transf.Translate(0, 1, 0);
 	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->transf.Scale(0.05f, 0.05f, 0.05f);
 	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->transf.Translate(0, 1, 4);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox4")->transf.Scale(0.01f, 0.01f, 0.01f);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox4")->transf.Translate(2, 24, 0);
 	bool pressed = false;
 	winm->TrapMouse(true);
 
-	gr = true;
+	mGDC->grp = new bool(true);
 }
 
 void RebGame::GameLoop()
 {
-while(gr)
+while(*mGDC->grp)
 	{
 		RebEvent Event;
 		winsys.GetMEH()->TranslateEvent(&Event);
-		if(Event.Type == WE_QUIT)
-		{
-			gr = false;
-		}
+		
 		res->Update();
 		/*ras.GetAudioDevice()->Update();*/
 		rd->Render();
@@ -107,7 +110,6 @@ while(gr)
 void RebGame::Release()
 {
 	winm->TrapMouse(false);
-	delete mGDC;
 	res->Release();
 	/*ras.GetAudioDevice()->GetMusicPlayer()->Stop();*/
 	rend.GetDevice()->Release();
@@ -119,4 +121,5 @@ void RebGame::Release()
 	delete res;
 	delete rfs;
 	ras.ReleaseAudioDevice();
+	delete mGDC;
 }

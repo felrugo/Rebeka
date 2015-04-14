@@ -53,6 +53,15 @@
     <ClCompile Include="RebECode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="REOGLW.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_REOGLW.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_REOGLW.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="editor.h">
@@ -63,6 +72,9 @@
     </CustomBuild>
     <CustomBuild Include="editor.qrc">
       <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="REOGLW.h">
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

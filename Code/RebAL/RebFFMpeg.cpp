@@ -153,17 +153,11 @@ void RebDecoder::Load_Wave_File(char *fname, unsigned int buff)
 
 void RebDecoder::decode(unsigned int buff, ALuint frequency, ALenum format)
 {
-	// libav
-    //buff size is 2048
-
 
 
     AVFrame* decodedFrame;
 	decodedFrame=av_frame_alloc();
     int len;
-
-	/*while(1)
-	{*/
 
 
 decerr:
@@ -207,18 +201,7 @@ decerr:
         int64_t dts = decodedFrame->pkt_dts;
 
 
-               // OpenAL consumes buffers in the background
-               // we first need to initialize the OpenAL buffers then
-               // start continous playback.
-
-			   /*if(buffsize + data_size > 2048)
-			   {
-				   buffdataplus = malloc(buffsize + data_size);
-				   buffdataplus = 
-			   }
-
-			   buffdata = decodedFrame->data[0];
-			   buffsize += data_size;*/
+               
 			  
 			   
 		alBufferData(buff, AL_FORMAT_STEREO16, destBuffer[0], bufferSize, decodedFrame->sample_rate);

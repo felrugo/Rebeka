@@ -6,6 +6,7 @@
 Renderer::Renderer()
 {
 	runing = false;
+	rd = 0;
 }
 
 void Renderer::CreateDevice()

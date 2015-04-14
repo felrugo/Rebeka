@@ -16,10 +16,10 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QOpenGLWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "REOGLW.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,8 +27,8 @@ class Ui_EditorClass
 {
 public:
     QWidget *centralWidget;
-    QOpenGLWidget *openGLWidget;
     QPushButton *pushButton;
+    REOGLW *MainPerspective;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
 
@@ -36,15 +36,16 @@ public:
     {
         if (EditorClass->objectName().isEmpty())
             EditorClass->setObjectName(QStringLiteral("EditorClass"));
+        EditorClass->setWindowModality(Qt::ApplicationModal);
         EditorClass->resize(1113, 644);
         centralWidget = new QWidget(EditorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        openGLWidget = new QOpenGLWidget(centralWidget);
-        openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
-        openGLWidget->setGeometry(QRect(0, 0, 1021, 601));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(1030, 20, 75, 23));
+        MainPerspective = new REOGLW(centralWidget);
+        MainPerspective->setObjectName(QStringLiteral("MainPerspective"));
+        MainPerspective->setGeometry(QRect(0, 0, 1021, 571));
         EditorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(EditorClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));

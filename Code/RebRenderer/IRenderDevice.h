@@ -65,7 +65,7 @@ class IImageHandler
 public:
 	virtual void LoadFile(std::string file) = 0;
 	virtual unsigned int GetWidth() = 0;
-	virtual unsigned int GetHight() = 0;
+	virtual unsigned int GetHeight() = 0;
 	virtual RebVector GetPixelColor(unsigned int x, unsigned int y) = 0;
 	virtual void LoadIntoRenderer() = 0;
 
@@ -118,6 +118,7 @@ class IGameEnv
 {
 public:
 	virtual RebTerrain * CreateTerrain() = 0;
+	virtual RebTerrain * CreateTerrain(std::string frp) = 0;
 	virtual std::vector<RebTerrain*> * GetTerrains() = 0;
 	virtual void DeleteTerrain(RebTerrain * del) = 0;
 };
@@ -143,6 +144,8 @@ class IRenderDevice
 	virtual IVertexCacheManager * GetVertexCacheManager()= 0;
 
 	virtual IGameEnv * GetEnv() = 0;
+
+	virtual ILightSystem * GetLightSystem() = 0;
 
 	virtual RebMatrix GetViewportMat() = 0;
 

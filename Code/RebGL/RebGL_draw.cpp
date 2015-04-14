@@ -55,11 +55,11 @@ void RebGL::Normal(RebVector RV)
 
 void RebGL::MaterialSetup(RebMaterial rm)
 {
-	float amb[] = {rm.amb.fR, rm.amb.fG, rm.amb.fB, 1.0f};
+	float amb[] = {rm.amb.x, rm.amb.y, rm.amb.z, 1.0f};
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, amb);
-	float dif[] = {rm.dif.fR, rm.dif.fG, rm.dif.fB, 1.0f};
+	float dif[] = {rm.dif.x, rm.dif.y, rm.dif.z, 1.0f};
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, dif);
-	float spe[] = {rm.spe.fR, rm.spe.fG, rm.spe.fB, 1.0f};
+	float spe[] = {rm.spe.x, rm.spe.y, rm.spe.z, 1.0f};
 	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, spe);
 }
 

@@ -83,27 +83,27 @@ void RebVertexCacheManager::CreateCacheFromFile(std::string cname, std::string f
 		  rm.name = path.data;
 		
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_AMBIENT, col)){
-		  rm.amb.fR = col.r;
-		rm.amb.fG = col.g;
-		rm.amb.fB = col.b;
+		  rm.amb.x = col.r;
+		rm.amb.y = col.g;
+		rm.amb.z = col.b;
 	  }
 
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_DIFFUSE, col)){
-		  rm.dif.fR = col.r;
-		rm.dif.fG = col.g;
-		rm.dif.fB = col.b;
+		  rm.dif.x = col.r;
+		rm.dif.y = col.g;
+		rm.dif.z = col.b;
 	  }
 
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_EMISSIVE, col)){
-		  rm.emi.fR = col.r;
-		rm.emi.fG = col.g;
-		rm.emi.fB = col.b;
+		  rm.emi.x = col.r;
+		rm.emi.y = col.g;
+		rm.emi.z = col.b;
 	  }
 
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_SPECULAR, col)){
-		  rm.spe.fR = col.r;
-		rm.spe.fG = col.g;
-		rm.spe.fB = col.b;
+		  rm.spe.x = col.r;
+		rm.spe.y = col.g;
+		rm.spe.z = col.b;
 	  }
 
 
@@ -315,27 +315,27 @@ void RebVertexCacheManager::DeleteCache(RebVertexCache * rvc)
 		  rm.name = path.data;
 		
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_AMBIENT, col)){
-		  rm.amb.fR = col.r;
-		rm.amb.fG = col.g;
-		rm.amb.fB = col.b;
+		  rm.amb.x = col.r;
+		rm.amb.y = col.g;
+		rm.amb.z = col.b;
 	  }
 
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_DIFFUSE, col)){
-		  rm.dif.fR = col.r;
-		rm.dif.fG = col.g;
-		rm.dif.fB = col.b;
+		  rm.dif.x = col.r;
+		rm.dif.y = col.g;
+		rm.dif.z = col.b;
 	  }
 
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_EMISSIVE, col)){
-		  rm.emi.fR = col.r;
-		rm.emi.fG = col.g;
-		rm.emi.fB = col.b;
+		  rm.emi.x = col.r;
+		rm.emi.y = col.g;
+		rm.emi.z = col.b;
 	  }
 
 	  if(AI_SUCCESS == scene->mMaterials[mati]->Get(AI_MATKEY_COLOR_SPECULAR, col)){
-		  rm.spe.fR = col.r;
-		rm.spe.fG = col.g;
-		rm.spe.fB = col.b;
+		  rm.spe.x = col.r;
+		rm.spe.y = col.g;
+		rm.spe.z = col.b;
 	  }
 
 

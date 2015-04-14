@@ -1,4 +1,4 @@
-﻿Build started 2014.12.13. 12:13:15.
+﻿Build started 2015.03.29. 15:21:34.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebWindowSystem\RebWindowSystem.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebWindowSystem.cpp
@@ -12,4 +12,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.97
+Time Elapsed 00:00:05.05

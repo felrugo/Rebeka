@@ -192,6 +192,7 @@
     <ClInclude Include="RebGL_VCM.h" />
     <ClInclude Include="RebGL_SS.h" />
     <ClInclude Include="RebIH.h" />
+    <ClInclude Include="RebRenderTechnic.h" />
     <ClInclude Include="RMDeferred.h" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,7 @@
     <ClCompile Include="RebGL_VCM.cpp" />
     <ClCompile Include="RebGL_SS.cpp" />
     <ClCompile Include="RebIH.cpp" />
+    <ClCompile Include="RebRenderTechnic.cpp" />
     <ClCompile Include="RMDeferred.cpp" />
     <ClCompile Include="RSRExtended.cpp" />
   </ItemGroup>

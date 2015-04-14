@@ -354,8 +354,8 @@ unsigned int RebGLShader::GetHandle()
 	return pshader;
 }
 
-	void RebGLShader::Compile()
-	{
+void RebGLShader::Compile()
+{
 		glCompileShaderARB(pshader);
 		GLint isCompiled = 0;
 glGetShaderiv(pshader, GL_COMPILE_STATUS, &isCompiled);
@@ -370,7 +370,7 @@ if(isCompiled == GL_FALSE)
 	*error = true;	
 }
 *compiled = true;
-	}
+}
 
 
 	RebGLShader::~RebGLShader()

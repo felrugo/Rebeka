@@ -7,18 +7,13 @@ uniform mat4 viewmat;
 
 
 
-mat4 bias = mat4(
-0.5, 0.0, 0.0, 0.0,
-0.0, 0.5, 0.0, 0.0,
-0.0, 0.0, 0.5, 0.0,
-0.5, 0.5, 0.5, 1.0
-);
+
 
 void main()
 {
-vec4 p2 = gl_Vertex * mmat;
+vec4 p2 = mmat * gl_Vertex;
 position = p2.xyz;
-normal = gl_Normal * mat3(mmat);
+normal = mat3(mmat) * gl_Normal;
 gl_TexCoord[0] = gl_MultiTexCoord0;
 gl_Position = gl_ProjectionMatrix * viewmat * mmat * gl_Vertex;
 }

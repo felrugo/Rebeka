@@ -10,3 +10,23 @@ void RebIH::LoadFile(std::string file)
 	FreeImage_Unload(temp);
 
 }
+
+
+unsigned int RebIH::GetWidth()
+{
+	return FreeImage_GetWidth(imagen);
+}
+
+
+unsigned int RebIH::GetHeight()
+{
+	return FreeImage_GetHeight(imagen);
+}
+
+RebVector RebIH::GetPixelColor(unsigned int x, unsigned int y)
+{
+	RGBQUAD val;
+	FreeImage_GetPixelColor(imagen, x, y, &val);
+	RebVector ret(val.rgbRed, val.rgbGreen, val.rgbBlue);
+	return ret;
+}

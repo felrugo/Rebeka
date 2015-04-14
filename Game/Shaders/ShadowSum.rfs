@@ -1,0 +1,42 @@
+#version 400
+
+uniform sampler2D postex; 
+uniform sampler2D shad2d;
+uniform samplerCube shadcube;
+uniform sampler2D prev;
+
+uniform vec3 lightpos;
+uniform int first;
+uniform int sop;
+
+
+out vec3 shadsum;
+ 
+ float GetShadowPCF(vec3 ltwp)
+{
+float sum = 0;
+for(float xm = -0.1; xm <= 0.1; xm += 0.025)
+{
+for(float zm = -0.1; zm <= 0.1; zm += 0.025)
+{
+if(texture(shadcube, ltwp + vec3(xm, 0, zm)).r * 1000 > length(ltwp) - 0.5)
+sum += 1;
+}
+}
+sum /=64;
+return sum;
+}
+ 
+ 
+void main(){
+vec2 screenSize = vec2(1280,720);
+vec3 pos = texture2D(postex, gl_FragCoord.xy / screenSize).rgb;
+
+vec3 ltop = pos - lightpos;
+
+
+if(first)
+shadsum = vec3(GetShadowPCF(ltop), 0,0);
+else
+shadsum = vec3(min(1,(GetShadowPCF(ltop) + texture2D(prev, gl_FragCoord.xy / screenSize).r)), 0,0);
+}

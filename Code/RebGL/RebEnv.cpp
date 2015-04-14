@@ -17,6 +17,25 @@ RebTerrain * RebEnv::CreateTerrain(std::string hmf)
 {
 	RebTerrain * ret = new RebTerrain();
 
+	RebIH ih;
+	ih.LoadFile(hmf);
+	unsigned int w, h;
+	w = ih.GetWidth();
+	h = ih.GetHeight();
+
+	ret->stepx = w;
+	ret->stepy = h;
+
+	for (unsigned int i = 0; i < h; i++)
+	{
+		for (unsigned int i2 = 0; i2 < w; i2++)
+		{
+			float push = ih.GetPixelColor(w, h).x;
+			ret->Hps.push_back(push);
+		}
+	}
+
+
 	Terrains.push_back(ret);
 	return ret;
 }

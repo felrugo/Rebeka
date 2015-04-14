@@ -3,7 +3,7 @@
 uniform sampler2D color;
 uniform sampler2D pos;
 uniform sampler2D norm;
-uniform sampler2D shadowmap;
+uniform sampler2D shadowsum;
 uniform uint num_lights;
 uniform uint ntriangles;
 uniform mat4 sm;
@@ -20,17 +20,7 @@ vec3 color;
 };
 
 
-struct Triangle
-{
-vec3 A, B, C;
-mat4 trans;
-};
 
-struct Ray
-{
-vec3 point;
-vec3 dest;
-};
 
 uniform LightPoint light[100];
 
@@ -44,6 +34,9 @@ mat4 bias = mat4(
 uniform vec3 diffuse_albedo = vec3(0.5, 0.2, 0.7);
 uniform vec3 specular_albedo = vec3(0.7);
 uniform float specular_power = 128.0;
+
+
+
 
 
 void main()
@@ -76,11 +69,15 @@ vec3 specular_color = light[0].color *
 pow(NdotR, specular_power)
 * attenuation;
 
-float shadow = 1.0;
-vec2 shadc = vec2(shadowcoord.x / shadowcoord.w, shadowcoord.y / shadowcoord.w);
-if(shadowcoord.w > 0.0)
-if(texture(shadowmap, shadc).r < shadowcoord.z / shadowcoord.w)
-shadow = 0.2;
+
+float bia = 0.005*tan(acos(NdotL)); // cosTheta is dot( n,l ), clamped between 0 and 1
+bia = clamp(bia, 0,0.01);
+
+float shadow = texture2D(shadowsum, gl_FragCoord.xy / screenSize).r;
+//vec2 shadc = vec2(shadowcoord.x / shadowcoord.w, shadowcoord.y / shadowcoord.w);
+//if(shadowcoord.w > 0.0)
+//if((texture(shadowmap, wpos.xyz - light[0].position).r * 1000) < length(wpos.xyz - light[0].position))
+//shadow = 0.2;
 
 
 ocolor = vec4(ambient_color + (diffuse_color + specular_color) * shadow,1);

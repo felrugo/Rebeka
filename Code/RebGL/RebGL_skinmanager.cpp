@@ -72,10 +72,7 @@ RebColor RebGLSkinManager::GetPixelColor(void * data, unsigned int x, unsigned i
 	RGBQUAD col;
 	FreeImage_GetPixelColor(img, x, y, &col);
 	RebColor ret;
-	ret.fA = col.rgbReserved / 256;
-	ret.fB = col.rgbBlue / 256;
-	ret.fG = col.rgbGreen / 256;
-	ret.fR = col.rgbRed / 256;
+	ret.Set(col.rgbRed / 256, col.rgbGreen / 256, col.rgbBlue / 256, col.rgbReserved / 256);
 	return ret;
 }
 

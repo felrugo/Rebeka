@@ -42,100 +42,110 @@ void RebMEH::CallMouseListener(RebEvent mouseevent)
 	}
 }
 
-void RebMEH::PollGameEvent(RebEvent * Event)
+bool RebMEH::PollGameEvent(RebEvent * Event)
 {
 	if (events.size() > 0)
 	{
 	*Event = events[0];
 	events.erase(events.begin());
+	return true;
 	}
+	return false;
 }
 
 void RebMEH::TranslateEvent(RebEvent * Event)
 {
 	SDL_Event ev;
-	SDL_PollEvent(&ev);
-	switch (ev.type)
+	while (SDL_PollEvent(&ev))
 	{
-	case SDL_QUIT:
-		Event->Type = WE_QUIT;
-		Event->quit.Type = Event->Type;
-		Event->quit.data = &ev.quit.timestamp;
-		break;
-	case SDL_KEYDOWN:
-		Event->Type = WE_KEYDOWNEVENT;
-		Event->key.keysym.sym = ev.key.keysym.sym;
-		Event->key.Type = Event->Type;
-		Event->key.keysym.mod = ev.key.keysym.mod;
-		Event->key.keysym.scancode = ev.key.keysym.scancode;
-		Event->key.state = ev.key.state;
-		CallKeyListeners(*Event);
-		break;
-	case SDL_KEYUP:
-		Event->Type = WE_KEYUPEVENT;
-		Event->key.keysym.sym = ev.key.keysym.sym;
-		Event->key.Type = Event->Type;
-		Event->key.keysym.mod = ev.key.keysym.mod;
-		Event->key.keysym.scancode = ev.key.keysym.scancode;
-		Event->key.state = ev.key.state;
-		CallKeyListeners(*Event);
-		break;
-	case SDL_MOUSEBUTTONDOWN:
-		Event->Type = WE_MOUSEKEYDOWNEVENT;
-		Event->mousekey.Type = Event->Type;
-		Event->mousekey.button = ev.button.button;
-		Event->mousekey.padding1 = ev.button.padding1;
-		Event->mousekey.padding2 = ev.button.padding2;
-		Event->mousekey.state = ev.button.state;
-		Event->mousekey.which = ev.button.which;
-		Event->mousekey.windowID = ev.button.windowID;
-		Event->mousekey.x = ev.button.x;
-		Event->mousekey.y = ev.button.y;
-		CallMouseListener(*Event);
-		break;
 
-	case SDL_MOUSEBUTTONUP:
-		Event->Type = WE_MOUSEKEYUPEVENT;
-		Event->mousekey.Type = Event->Type;
-		Event->mousekey.button = ev.button.button;
-		Event->mousekey.padding1 = ev.button.padding1;
-		Event->mousekey.padding2 = ev.button.padding2;
-		Event->mousekey.state = ev.button.state;
-		Event->mousekey.which = ev.button.which;
-		Event->mousekey.windowID = ev.button.windowID;
-		Event->mousekey.x = ev.button.x;
-		Event->mousekey.y = ev.button.y;
-		CallMouseListener(*Event);
-		break;
-	case SDL_MOUSEWHEEL:
-		Event->Type = WE_MOUSEWHEELEVENT;
-		Event->mousekey.Type = Event->Type;
-		Event->mousekey.button = ev.button.button;
-		Event->mousekey.padding1 = ev.button.padding1;
-		Event->mousekey.padding2 = ev.button.padding2;
-		Event->mousekey.state = ev.button.state;
-		Event->mousekey.which = ev.button.which;
-		Event->mousekey.windowID = ev.button.windowID;
-		Event->mousekey.x = ev.button.x;
-		Event->mousekey.y = ev.button.y;
-		CallMouseListener(*Event);
-		break;
-	case SDL_MOUSEMOTION:
-		Event->Type = WE_MOUSEMOTIONEVENT;
-		Event->mousekey.Type = Event->Type;
-		Event->mousemot.state = ev.motion.state;
-		Event->mousemot.which = ev.motion.which;
-		Event->mousemot.windowID = ev.motion.windowID;
-		Event->mousemot.x = ev.motion.x;
-		Event->mousemot.xrel = ev.motion.xrel;
-		Event->mousemot.y = ev.motion.y;
-		Event->mousemot.yrel = ev.motion.yrel;
-		CallMouseListener(*Event);
-		break;
-	default:
-		Event->Type = WE_GAMEEVENT;
-		PollGameEvent(Event);
-		break;
+		switch (ev.type)
+		{
+		case SDL_QUIT:
+			Event->Type = WE_QUIT;
+			Event->quit.Type = Event->Type;
+			Event->quit.data = &ev.quit.timestamp;
+			*gdc->grp = false;
+			break;
+		case SDL_KEYDOWN:
+			Event->Type = WE_KEYDOWNEVENT;
+			Event->key.keysym.sym = ev.key.keysym.sym;
+			Event->key.Type = Event->Type;
+			Event->key.keysym.mod = ev.key.keysym.mod;
+			Event->key.keysym.scancode = ev.key.keysym.scancode;
+			Event->key.state = ev.key.state;
+			CallKeyListeners(*Event);
+			break;
+		case SDL_KEYUP:
+			Event->Type = WE_KEYUPEVENT;
+			Event->key.keysym.sym = ev.key.keysym.sym;
+			Event->key.Type = Event->Type;
+			Event->key.keysym.mod = ev.key.keysym.mod;
+			Event->key.keysym.scancode = ev.key.keysym.scancode;
+			Event->key.state = ev.key.state;
+			CallKeyListeners(*Event);
+			break;
+		case SDL_MOUSEBUTTONDOWN:
+			Event->Type = WE_MOUSEKEYDOWNEVENT;
+			Event->mousekey.Type = Event->Type;
+			Event->mousekey.button = ev.button.button;
+			Event->mousekey.padding1 = ev.button.padding1;
+			Event->mousekey.padding2 = ev.button.padding2;
+			Event->mousekey.state = ev.button.state;
+			Event->mousekey.which = ev.button.which;
+			Event->mousekey.windowID = ev.button.windowID;
+			Event->mousekey.x = ev.button.x;
+			Event->mousekey.y = ev.button.y;
+			CallMouseListener(*Event);
+			break;
+
+		case SDL_MOUSEBUTTONUP:
+			Event->Type = WE_MOUSEKEYUPEVENT;
+			Event->mousekey.Type = Event->Type;
+			Event->mousekey.button = ev.button.button;
+			Event->mousekey.padding1 = ev.button.padding1;
+			Event->mousekey.padding2 = ev.button.padding2;
+			Event->mousekey.state = ev.button.state;
+			Event->mousekey.which = ev.button.which;
+			Event->mousekey.windowID = ev.button.windowID;
+			Event->mousekey.x = ev.button.x;
+			Event->mousekey.y = ev.button.y;
+			CallMouseListener(*Event);
+			break;
+		case SDL_MOUSEWHEEL:
+			Event->Type = WE_MOUSEWHEELEVENT;
+			Event->mousekey.Type = Event->Type;
+			Event->mousekey.button = ev.button.button;
+			Event->mousekey.padding1 = ev.button.padding1;
+			Event->mousekey.padding2 = ev.button.padding2;
+			Event->mousekey.state = ev.button.state;
+			Event->mousekey.which = ev.button.which;
+			Event->mousekey.windowID = ev.button.windowID;
+			Event->mousekey.x = ev.button.x;
+			Event->mousekey.y = ev.button.y;
+			CallMouseListener(*Event);
+			break;
+		case SDL_MOUSEMOTION:
+			Event->Type = WE_MOUSEMOTIONEVENT;
+			Event->mousekey.Type = Event->Type;
+			Event->mousemot.state = ev.motion.state;
+			Event->mousemot.which = ev.motion.which;
+			Event->mousemot.windowID = ev.motion.windowID;
+			Event->mousemot.x = ev.motion.x;
+			Event->mousemot.xrel = ev.motion.xrel;
+			Event->mousemot.y = ev.motion.y;
+			Event->mousemot.yrel = ev.motion.yrel;
+			CallMouseListener(*Event);
+			break;
+		default:
+			
+			break;
+		}
+	}
+	while (PollGameEvent(Event))
+	{
+		if (Event->Type == WE_QUIT)
+			*gdc->grp = false;
 	}
 }
 
@@ -184,9 +194,10 @@ void RebMEH::UnRegisterMouseEventListener(IMouseListener* iml)
 }
 
 
-void RebMEH::Init()
+void RebMEH::Init(RebGDC * data)
 {
 	runing = true;
+	gdc = data;
 }
 
 void RebMEH::Release()

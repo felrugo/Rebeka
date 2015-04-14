@@ -1,4 +1,4 @@
-﻿Build started 2015.01.17. 12:06:56.
+﻿Build started 2015.04.14. 14:30:17.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" on node 2 (Build target(s)).
      1>Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\Rebeka.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\Libs\x32 /LIBPATH:"D:\Program Files (x86)\Visual Leak Detector\lib\Win32" RebRenderer.lib RebAudio.lib RebWindowSystem.lib RebEntitySystem.lib RebSupport.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Rebeka.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Rebeka.lib" /MACHINE:X86 /DLL Debug\RebGame.obj
@@ -8,4 +8,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.57
+Time Elapsed 00:00:00.92

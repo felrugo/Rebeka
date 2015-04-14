@@ -7,6 +7,8 @@ class RebGameLogic
 	RebGDC * mGDC;
 public:
 	RebGameLogic(RebGDC * gdc);
+	void Update();
+
 };
 
 

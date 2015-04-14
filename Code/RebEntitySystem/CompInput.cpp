@@ -34,10 +34,17 @@ void CompInpBasicControl::onKeyEvent(RebEvent keyevent)
 	}
 }
 
+
+float clamp(float what, float with)
+{
+	return std::fmin(std::fmax(what, -with), with);
+}
+
 void CompInpBasicControl::onMMotionEvent(RebEvent me)
 {
  RebVector mv(-(me.mousemot.yrel) / 50.0f, -(me.mousemot.xrel) / 50.0f, 0.0f);
-	GetOwner()->SetOri(GetOwner()->GetOri() + mv);
+ RebVector newori(clamp((GetOwner()->GetOri() + mv).x, 90), (GetOwner()->GetOri() + mv).y, (GetOwner()->GetOri() + mv).z);
+	GetOwner()->SetOri(newori);
 }
 
 void CompInpBasicControl::update()
@@ -45,30 +52,33 @@ void CompInpBasicControl::update()
 	RebMatrix moovmat;
 	moovmat.Identity();
 	moovmat.RotyByDeg(GetOwner()->GetOri().x, GetOwner()->GetOri().y, GetOwner()->GetOri().z);
+
+	float mult = 1;
+	if (keypressedmap[REBK_LSHIFT])
+		mult = 10;
+
 	if(keypressedmap[REBK_w])
 	{
 		RebVector v(0.0f, 0.0f,	-0.001f);
-		if(keypressedmap[REBK_LSHIFT])
-		v = v * 10;
-		v = v * moovmat;
+		v = v * moovmat * mult;
 		GetOwner()->SetPos(GetOwner()->GetPos() + v);
 	}
 	if(keypressedmap[REBK_a])
 	{
 		RebVector v(-0.001f, 0.0f,	0.0f);
-		v = v * moovmat;
+		v = v * moovmat * mult;
 		GetOwner()->SetPos(GetOwner()->GetPos() + v);
 	}
 	if(keypressedmap[REBK_s])
 	{
 		RebVector v(0.0f, 0.0f,	0.001f);
-		v = v * moovmat;
+		v = v * moovmat * mult;
 		GetOwner()->SetPos(GetOwner()->GetPos() + v);
 	}
 	if(keypressedmap[REBK_d])
 	{
 		RebVector v(0.001f, 0.0f, 0.0f);
-		v = v * moovmat;
+		v = v * moovmat * mult;
 		GetOwner()->SetPos(GetOwner()->GetPos() + v);
 	}
 	if(keypressedmap[REBK_ESCAPE])

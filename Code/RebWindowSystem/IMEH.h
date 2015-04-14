@@ -1,13 +1,13 @@
 #ifndef IMEH_H
 #define IMEH_H
 
-
+#include "..\RebSupport\RebGDC.h"
 #include "EventListeners.h"
 
 class IMEH
 {
 public:
-	virtual void Init() = 0;
+	virtual void Init(RebGDC * data) = 0;
 
 	virtual void Release() = 0;
 

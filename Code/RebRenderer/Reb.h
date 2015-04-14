@@ -18,21 +18,10 @@ enum MatrixMode
 
 enum PhysicState { PS_NOPS, PS_STATIC, PS_MOOVABLE, PS_SOFTBODY};
 
+enum LightType {LT_SPOT, LT_POINT};
 
-typedef struct RebColor
-{
-	union 
-	{
-		struct
-		{
-	float fR;
-	float fG;
-	float fB;
-	float fA;
-		};
-		float c[4];
-	};
-} REBCOLOR;
+
+typedef RebVector RebColor;
 
 struct RebTexture;
 
@@ -62,20 +51,36 @@ struct RebSkin
 };
 
 
-struct RebLight
+class RebLight
 {
+protected:
 	RebVector pos;
 	RebColor color;
+	LightType lt;
+	RebMatrix view;
+public:
+
 };
 
-struct RebTerrain
+class RebTerrain
 {
+public:
+
 	std::vector<float> Hps;
 	unsigned int stepx;
 	unsigned int stepy;
 	unsigned int textureid;
 	unsigned int stepsize;
 	RebMatrix trans;
+
+	RebTerrain()
+	{
+		Hps.clear();
+		stepx = stepy = textureid = 0;
+		stepsize = 1;
+		trans.Identity();
+	}
+
 };
 
 struct RebVertexBuffer

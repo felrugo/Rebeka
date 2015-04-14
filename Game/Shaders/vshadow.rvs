@@ -1,14 +1,21 @@
 #version 400
 
 uniform mat4 sm;
-uniform mat4 cm;
+//uniform mat4 cm;
 uniform mat4 mmat;
 
 out vec3 wpos;
 
+mat4 bias = mat4(
+1.1, 0.0, 0.0, 0.0,
+0.0, 1.1, 0.0, 0.0,
+0.0, 0.0, 1.1, 0.0,
+0.0, 0.0, 0.0, 1.0
+);
+
 void main(void)
 {
 wpos = (mmat * gl_Vertex).xyz;
-gl_Position = cm * sm * mmat * gl_Vertex;
+gl_Position = mmat * gl_Vertex;
 }
 

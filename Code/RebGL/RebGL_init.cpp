@@ -36,7 +36,7 @@ gd->rd = this;
 	/*ISS = new RebShaderSystem(this);*/
 	glewInit();
 
-	ILS = new RebGLLightSystem();
+	ILS = new RebGLLightSystem(gd);
 
 	GE = new RebEnv;
 	MatViewport.Identity();
@@ -147,6 +147,11 @@ ISkinManager * RebGL::GetSkinManager()
 IVertexCacheManager * RebGL::GetVertexCacheManager()
 {
 	return VCM;
+}
+
+ILightSystem * RebGL::GetLightSystem()
+{
+	return ILS;
 }
 
 RebMatrix RebGL::GetViewportMat()

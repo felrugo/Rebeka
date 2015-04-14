@@ -131,7 +131,9 @@ TEntity::TEntity(std::string sname)
 
 	void Entity::SetOri(RebVector sori)
 	{
-		ori = sori;
+		ori.x = std::fmod(sori.x, 360);
+		ori.y = std::fmod(sori.y, 360);
+		ori.z = std::fmod(sori.z, 360);
 	}
 
 	Entity::~Entity()

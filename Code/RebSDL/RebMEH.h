@@ -3,13 +3,15 @@
 #include "..\RebWindowSystem\IMEH.h"
 #include "SDL.h"
 #include <vector>
+#include <thread>
 
 class RebMEH : public IMEH
 {
 	std::vector<RebEvent> events;
 	std::vector<IKeyListener*> keylists;
 	std::vector<IMouseListener*> mouselists;
-
+	RebGDC * gdc;
+	std::thread updater;
 	bool runing;
 
 public:
@@ -17,7 +19,7 @@ public:
 
 	void CallMouseListener(RebEvent mouseevent);
 
-	void Init();
+	void Init(RebGDC * data);
 
 	void TranslateEvent(RebEvent * Event);
 
@@ -25,7 +27,7 @@ public:
 
 	void ProcEvents();
 
-	void PollGameEvent(RebEvent * Event);
+	bool PollGameEvent(RebEvent * Event);
 
 	void RegisterKeyEventListener(IKeyListener* ikl);
 

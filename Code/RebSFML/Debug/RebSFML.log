@@ -1,16 +1,16 @@
-﻿Build started 2014.12.13. 12:13:23.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSFML\RebSFML.vcxproj" on node 5 (Build target(s)).
+﻿Build started 2015.03.07. 13:58:10.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSFML\RebSFML.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\SFML-2.1\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBSFML_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebSFML_init.cpp RebSFML_MusicPlayer.cpp RebSFML_SoundSource.cpp
-         RebSFML_SoundSource.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\SFML-2.1\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBSFML_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebSFML_MusicPlayer.cpp RebSFML_SoundSource.cpp RebSFML_init.cpp
          RebSFML_MusicPlayer.cpp
-         RebSFML_init.cpp
          Generating Code...
+         Skipping... (no relevant changes detected)
+         RebSFML_init.cpp
+         RebSFML_SoundSource.cpp
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebSFML.dll" /INCREMENTAL /NOLOGO /LIBPATH:"..\SFML-2.1\lib" /LIBPATH:..\Libs\x32 "sfml-audio-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"Exports.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebSFML.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebSFML.lib" /MACHINE:X86 /DLL Debug\RebSFML_init.obj
          Debug\RebSFML_MusicPlayer.obj
          Debug\RebSFML_SoundSource.obj
-            Creating library ..\..\Bin32\RebSFML.lib and object ..\..\Bin32\RebSFML.exp
          RebSFML.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSFML\..\..\Bin32\RebSFML.dll
        BscMake:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\RebSFML.bsc" /n Debug\RebSFML_init.sbr Debug\RebSFML_MusicPlayer.sbr Debug\RebSFML_SoundSource.sbr
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:09.20
+Time Elapsed 00:00:06.28

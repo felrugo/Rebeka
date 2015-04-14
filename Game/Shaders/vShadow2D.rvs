@@ -1,0 +1,14 @@
+#version 400
+
+uniform mat4 sm;
+uniform mat4 cm;
+uniform mat4 mmat;
+
+out vec3 wpos;
+
+void main(void)
+{
+wpos = (mmat * gl_Vertex).xyz;
+gl_Position = cm * sm * mmat * gl_Vertex;
+}
+

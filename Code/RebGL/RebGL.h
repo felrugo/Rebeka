@@ -94,6 +94,8 @@ public:
 
 	IGameEnv * GetEnv();
 
+	ILightSystem * GetLightSystem();
+
 	void Swap(void * window);
 
 	void Flush();

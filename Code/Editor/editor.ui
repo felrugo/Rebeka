@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>EditorClass</class>
  <widget class="QMainWindow" name="EditorClass">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,16 +17,6 @@
    <string>Editor</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QOpenGLWidget" name="openGLWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1021</width>
-      <height>601</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
@@ -35,6 +28,16 @@
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="REOGLW" name="MainPerspective">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1021</width>
+      <height>571</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -51,6 +54,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>REOGLW</class>
+   <extends>QOpenGLWidget</extends>
+   <header>REOGLW.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="editor.qrc"/>
  </resources>

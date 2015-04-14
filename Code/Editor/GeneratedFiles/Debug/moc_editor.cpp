@@ -76,6 +76,8 @@ void *Editor::qt_metacast(const char *_clname)
     if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_Editor.stringdata))
         return static_cast<void*>(const_cast< Editor*>(this));
+    if (!strcmp(_clname, "IWindowManager"))
+        return static_cast< IWindowManager*>(const_cast< Editor*>(this));
     return QMainWindow::qt_metacast(_clname);
 }
 

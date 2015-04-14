@@ -10,6 +10,7 @@
 #include <vector>
 #include <string>
 #include "FreeImage.h"
+#include "RebIH.h"
 
 #define MAX_ID 65535
 

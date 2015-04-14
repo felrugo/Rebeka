@@ -94,9 +94,9 @@ void RSRExtended::TerrainRender()
 				ird->TransformMatrix(RVCs->at(i3)->RVBs[i].trans * RVCs->at(i3)->transf * ird->GetViewportMat());
 				
 
-				glUniform3f(Material.A, rm.amb.fR, rm.amb.fG, rm.amb.fB);
-				glUniform3f(Material.D, rm.dif.fR, rm.dif.fG, rm.dif.fB);
-				glUniform3f(Material.S, rm.spe.fR, rm.spe.fG, rm.spe.fB);
+				//glUniform3f(Material.A, rm.amb.fR, rm.amb.fG, rm.amb.fB);
+				//glUniform3f(Material.D, rm.dif.fR, rm.dif.fG, rm.dif.fB);
+				//glUniform3f(Material.S, rm.spe.fR, rm.spe.fG, rm.spe.fB);
 
 
 				i2 = 0;

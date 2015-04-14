@@ -164,6 +164,7 @@ class __declspec(dllexport) RebMatrix {
       inline void TransposeOf(const RebMatrix &m);       // transpose m, save result in this
       inline void InverseOf(const RebMatrix &m);         // invert m, save result in this
 	  inline void Frustum(float left, float right, float bottom, float top, float zNear, float zFar);
+	  inline void Perspective(float fov, float aspect, float near, float far);
 	  inline void glm(float * fa);
       
 	  inline void Ortho(float l, float r, float t, float b, float n, float f);

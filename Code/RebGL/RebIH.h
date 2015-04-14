@@ -10,10 +10,10 @@ class RebIH : public IImageHandler
 	FIBITMAP* imagen;
 public:
 	void LoadFile(std::string file);
-	virtual unsigned int GetWidth() = 0;
-	virtual unsigned int GetHight() = 0;
-	virtual RebVector GetPixelColor(unsigned int x, unsigned int y) = 0;
-	virtual void LoadIntoRenderer() = 0;
+	unsigned int GetWidth();
+	unsigned int GetHeight();
+	RebVector GetPixelColor(unsigned int x, unsigned int y);
+	void LoadIntoRenderer() {};
 };
 
 

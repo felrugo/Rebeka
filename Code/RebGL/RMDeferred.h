@@ -1,7 +1,8 @@
 #ifndef RMDEFERRED
 #define RMDEFERRED
 
-#include "RebGL_SS.h"
+#include "RebRenderTechnic.h"
+#include "RebGL_LightSystem.h"
 #include <assert.h>
 #include <memory>
 
@@ -177,18 +178,7 @@ private:
 };
 
 
-class ShadowMap
-{
-	GLuint sfbo, st, post, srbo;
-	unsigned int w, h;
-	RebMatrix cube[6];
-public:
-	ShadowMap(GLuint sw, GLuint sh);
-	void SetCUBE(GLuint handle);
-	void Write();
-	void Read();
-	~ShadowMap();
-};
+
 
 
 class RTT
@@ -200,9 +190,24 @@ public:
 	~RTT();
 	void Write();
 	void bind(GLuint handle);
+	int GetPostex();
 	void Read();
 };
 
+class ShadowSum
+{
+	GLuint fbo, shadsum[2];
+	GLuint depthrenderbuffer;
+	RebGLShaderProgram ssum;
+	RebGLLightSystem * ls;
+public:
+	ShadowSum(RebGDC * rgdc);
+	void Write(char to);
+	void SumShadows(int postexid);
+	void Read();
+	~ShadowSum();
+
+};
 
 
 
@@ -210,7 +215,7 @@ class RMDeferred : public IRenderModel
 {
 	IRenderDevice * ird;
 	RebFileSystem * rfs;
-	ShadowMap * sm;
+	
 	float * tris;
 	std::vector<RebVertexCache*> * RVCs;
 	/*RayTraceBuffer rtb;*/
@@ -218,6 +223,7 @@ class RMDeferred : public IRenderModel
 unsigned int height;
 
 RTT tt;
+ShadowSum ss;
 RebGLShaderProgram geoProgram ;
 RebGLShaderProgram lightProgram;
 RebGLShaderProgram shadowProgram;
@@ -235,7 +241,7 @@ public:
 	RMDeferred(RebGDC * data);
 	~RMDeferred();
 	void PassGeom();
-	void ShadowPass();
+	
 	void Shade();
 	unsigned long int getFloats();
 	void copy();

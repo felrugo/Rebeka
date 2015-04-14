@@ -12,7 +12,7 @@
 #include "..\RebSupport\RebString.h"
 #include "..\RebSupport\RebVL.h"
 
-class Editor : public QMainWindow
+class Editor : public QMainWindow, public IWindowManager
 {
 	Q_OBJECT
 
@@ -21,6 +21,28 @@ public:
 	void Init();
 	void EditorLoop();
 	void Release();
+
+
+	void InitManager() {}
+
+	void ReleaseManager() {}
+
+	void CreateWin(std::string name, int w, int h, int posx = 0, int posy = 0) {}
+
+	void DestroyWindow(std::string name) {}
+
+	void* GetWindow(std::string name) { return 0; }
+
+	void EnableRender(std::string name) {}
+
+	void SwapWindow(void * window) {}
+
+	void DisableRender(std::string name) {}
+
+	void TrapMouse(bool trap) {}
+
+
+
 	~Editor();
 
 private:
