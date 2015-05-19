@@ -1,16 +1,13 @@
-﻿Build started 2014.02.02. 18:02:49.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" on node 4 (Rebuild target(s)).
-     1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBEKA_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebGame.cpp
-         RebGame.cpp
-       Link:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\Rebeka.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\Libs\x32 RebRenderer.lib RebAudio.lib RebWindowSystem.lib RebEntitySystem.lib RebSupport.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Rebeka.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Rebeka.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebGame.obj
+﻿Build started 2015.04.23. 19:24:47.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" on node 3 (Build target(s)).
+     1>Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\Rebeka.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\Libs\x32 /LIBPATH:"D:\Program Files (x86)\Visual Leak Detector\lib\Win32" RebRenderer.lib RebAudio.lib RebWindowSystem.lib RebEntitySystem.lib RebSupport.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Rebeka.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Rebeka.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebGame.obj
             Creating library ..\..\Bin32\Rebeka.lib and object ..\..\Bin32\Rebeka.exp
          Generating code
          Finished generating code
          Rebeka.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\..\..\Bin32\Rebeka.dll
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Rebeka\Rebeka.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.28
+Time Elapsed 00:00:03.90

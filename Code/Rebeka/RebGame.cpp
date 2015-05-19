@@ -80,13 +80,16 @@ void RebGame::Init()
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox2", rfs->Search("phybox.obj").rpath);
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox3", rfs->Search("phybox.obj").rpath);
 	rd->GetVertexCacheManager()->CreateCacheFromFile("testbox4", rfs->Search("phybox.obj").rpath);
+	rd->GetVertexCacheManager()->CreateCacheFromFile("kepkeret", rfs->Search("kepkeret.obj").rpath);
 	//
-	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->transf.Scale(0.01f, 0.01f, 0.01f);
-	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->transf.Translate(0, 1, 0);
-	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->transf.Scale(0.05f, 0.05f, 0.05f);
-	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->transf.Translate(0, 1, 4);
-	rd->GetVertexCacheManager()->GetVertexCache("testbox4")->transf.Scale(0.01f, 0.01f, 0.01f);
-	rd->GetVertexCacheManager()->GetVertexCache("testbox4")->transf.Translate(2, 24, 0);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->GetTrans()->Scale(0.01f, 0.01f, 0.01f);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox2")->GetTrans()->Translate(0, 1, 0);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->GetTrans()->Scale(0.05f, 0.05f, 0.05f);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox3")->GetTrans()->Translate(0, 1, 4);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox4")->GetTrans()->Scale(0.01f, 0.01f, 0.01f);
+	rd->GetVertexCacheManager()->GetVertexCache("testbox4")->GetTrans()->Translate(2, 24, 0);
+	rd->GetVertexCacheManager()->GetVertexCache("kepkeret")->GetTrans()->Scale(0.1f, 0.1f, 0.1f);
+	rd->GetVertexCacheManager()->GetVertexCache("kepkeret")->GetTrans()->Translate(3, 0, -6);
 	bool pressed = false;
 	winm->TrapMouse(true);
 

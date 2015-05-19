@@ -50,11 +50,14 @@ col = texture2D(color, gl_FragCoord.xy / screenSize);
 vec4 shadowcoord = bias * cm * sm * wpos;
 vec3 cp = vec3(0,20,0);
 
-
-
+vec3 difsum = vec3(0,0,0);
+vec3 spesum = difsum;
+vec3 ambient_color = vec3(0.1, 0.1, 0.1);
+for(uint i = 0; i < num_lights; i++)
+{
 vec3 ed = wpos.xyz - mmv;
 vec3 cd = wpos.xyz - cp;
-vec3 L = wpos.xyz - light[0].position;
+vec3 L = wpos.xyz - light[i].position;
 float dist = length(L);
 L = normalize(L);
 vec3 N = normalize(n.xyz);
@@ -62,16 +65,19 @@ vec3 R = reflect(-L, N);
 float NdotR = abs(dot(normalize(ed), R));
 float NdotL =abs(dot(N, L));
 float attenuation = 500.0 / (pow(dist, 2.0) + 1.0);
-vec3 ambient_color = vec3(0.1, 0.1, 0.1);
-vec3 diffuse_color = light[0].color * col.rgb *
+
+vec3 diffuse_color = light[i].color * col.rgb *
 NdotL * attenuation;
-vec3 specular_color = light[0].color *
+vec3 specular_color = light[i].color *
 pow(NdotR, specular_power)
 * attenuation;
 
+difsum += diffuse_color;
+spesum += specular_color;
+}
 
-float bia = 0.005*tan(acos(NdotL)); // cosTheta is dot( n,l ), clamped between 0 and 1
-bia = clamp(bia, 0,0.01);
+//float bia = 0.005*tan(acos(NdotL)); // cosTheta is dot( n,l ), clamped between 0 and 1
+//bia = clamp(bia, 0,0.01);
 
 float shadow = texture2D(shadowsum, gl_FragCoord.xy / screenSize).r;
 //vec2 shadc = vec2(shadowcoord.x / shadowcoord.w, shadowcoord.y / shadowcoord.w);
@@ -80,6 +86,6 @@ float shadow = texture2D(shadowsum, gl_FragCoord.xy / screenSize).r;
 //shadow = 0.2;
 
 
-ocolor = vec4(ambient_color + (diffuse_color + specular_color) * shadow,1);
+ocolor = vec4(ambient_color + (difsum + spesum) * shadow,1);
 
 }

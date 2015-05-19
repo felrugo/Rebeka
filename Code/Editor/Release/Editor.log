@@ -1,0 +1,22 @@
+﻿Build started 2015.04.23. 19:27:07.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_editor.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_editor.cpp, GeneratedFiles\Release\moc_editor.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_REOGLW.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_REOGLW.cpp, GeneratedFiles\Release\moc_REOGLW.cpp.
+     1>Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\\Editor.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_opengl\lib /LIBPATH:..\Libs\x32 qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5OpenGL.lib opengl32.lib glu32.lib Qt5Widgets.lib Reb3D.lib RebAudio.lib RebEntitySystem.lib RebSupport.lib RebUI.lib RebRenderer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\Editor.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\Editor.lib" /MACHINE:X86 /SAFESEH Release\editor.obj
+         Release\qrc_editor.obj
+         Release\moc_editor.obj
+         Release\moc_REOGLW.obj
+         Release\main.obj
+         Release\RebECode.obj
+         Release\REOGLW.obj
+         Reb3D.lib(Rebmatrix.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+            Creating library D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\Editor.lib and object D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\Editor.exp
+         Generating code
+         Finished generating code
+         Editor.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Win32\Release\Editor.exe
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.35

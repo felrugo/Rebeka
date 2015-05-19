@@ -19,7 +19,7 @@ for(float xm = -0.1; xm <= 0.1; xm += 0.025)
 {
 for(float zm = -0.1; zm <= 0.1; zm += 0.025)
 {
-if(texture(shadcube, ltwp + vec3(xm, 0, zm)).r * 1000 > length(ltwp) - 0.5)
+if(texture(shadcube, ltwp + vec3(xm, 0, zm)).r * 1000 > length(ltwp) - 0.2)
 sum += 1;
 }
 }
