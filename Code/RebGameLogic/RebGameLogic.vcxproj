@@ -78,6 +78,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="RebFlowGraph.h" />
     <ClInclude Include="RebFlowGraphSystem.h" />
     <ClInclude Include="RGL.h" />
   </ItemGroup>

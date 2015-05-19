@@ -1,22 +1,28 @@
-﻿Build started 2014.02.02. 18:02:41.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 3 (Rebuild target(s)).
+﻿Build started 2015.04.23. 19:00:44.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp CompPhysic.cpp CompVisual.cpp RebEntity.cpp RebEntitySystem.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\bullet-2.82-r2704\src" /I"D:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CompInput.cpp CompPhyMoovable.cpp CompPhysic.cpp CompVisTerrain.cpp CompVisual.cpp RebEntity.cpp RebEntitySystem.cpp
          CompInput.cpp
+         CompPhyMoovable.cpp
          CompPhysic.cpp
-     1>CompPhysic.cpp(23): warning C4018: '<' : signed/unsigned mismatch
+         CompVisTerrain.cpp
          CompVisual.cpp
          RebEntity.cpp
+     1>RebEntity.cpp(134): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>RebEntity.cpp(135): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>RebEntity.cpp(136): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
          RebEntitySystem.cpp
        Lib:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"..\bullet-2.82-r2704\lib" /LIBPATH:..\Libs\x32\ /NOLOGO /LTCG Release\CompInput.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebEntitySystem.lib" BulletCollision_vs2010_debug.lib BulletDynamics_vs2010_debug.lib LinearMath_vs2010_debug.lib /LIBPATH:"..\bullet-2.82-r2704\lib" /LIBPATH:..\Libs\x32\ /LIBPATH:"D:\Program Files (x86)\Visual Leak Detector\lib\Win32" /NOLOGO /LTCG Release\CompInput.obj
+         Release\CompPhyMoovable.obj
          Release\CompPhysic.obj
+         Release\CompVisTerrain.obj
          Release\CompVisual.obj
          Release\RebEntity.obj
          Release\RebEntitySystem.obj
          RebEntitySystem.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\..\Libs\x32\RebEntitySystem.lib
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebEntitySystem\RebEntitySystem.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.99
+Time Elapsed 00:00:22.04

@@ -76,7 +76,7 @@ class IModelHandler
 {
 public:
 virtual bool LoadModel(std::string file) = 0;
-virtual RebVertexCache GetRVC() = 0;
+virtual RebVertexCache * GetRVC() = 0;
 };
 
 class ISkinManager {

@@ -10,7 +10,7 @@ CompPhyModel::CompPhyModel(btDynamicsWorld * SDW, IRenderDevice * SIRD, std::str
 
 void CompPhyModel::LoadPhysic()
 {
-	RebVertexCache * RVC = IRD->GetVertexCacheManager()->GetVCByFile(mf);
+	/*RebVertexCache * RVC = IRD->GetVertexCacheManager()->GetVCByFile(mf);
 	if(RVC == 0)
 	{
 		IRD->GetVertexCacheManager()->CreateCacheFromFile(mf, mf);
@@ -45,6 +45,6 @@ void CompPhyModel::LoadPhysic()
 
 		DW->addRigidBody(StaticRigidBody);
 	
-		}
+		}*/
 	}
 	

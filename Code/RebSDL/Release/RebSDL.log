@@ -1,12 +1,12 @@
-﻿Build started 2014.02.02. 18:02:31.
+﻿Build started 2015.04.23. 19:22:55.
      1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebSDL\RebSDL.vcxproj" on node 3 (Rebuild target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"..\SDL2-2.0.0\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp RebSDL.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\SDL2-2.0.0\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBSDL_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RebMEH.cpp RebSDL.cpp
          RebMEH.cpp
          RebSDL.cpp
      1>RebSDL.cpp(61): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebSDL.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXPO.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebSDL.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebSDL.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebMEH.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebSDL.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXPO.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebSDL.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebSDL.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebMEH.obj
          Release\RebSDL.obj
             Creating library ..\..\Bin32\RebSDL.lib and object ..\..\Bin32\RebSDL.exp
          Generating code
@@ -16,4 +16,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.25
+Time Elapsed 00:00:04.04

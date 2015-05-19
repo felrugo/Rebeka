@@ -13,6 +13,8 @@ public:
 	RebGLLight(RebColor col, RebVector spos, LightType slt, RebVector spotlookat, RebGDC * gdc);
 	void SetPos(RebVector spos);
 	RebVector GetPos();
+	RebVector GetColor();
+	RebMatrix * GetViewm();
 	ShadowMap * GetShadowMap();
 	bool GetSop();
 

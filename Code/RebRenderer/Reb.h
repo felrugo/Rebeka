@@ -59,7 +59,11 @@ protected:
 	LightType lt;
 	RebMatrix view;
 public:
+	virtual RebVector GetPos() = 0;
 
+	virtual RebVector GetColor() = 0;
+
+	virtual RebMatrix * GetViewm() = 0;
 };
 
 class RebTerrain
@@ -83,98 +87,72 @@ public:
 
 };
 
-struct RebVertexBuffer
+class RebVertexBuffer
 {
-
-	std::vector<RebVector> vertices;
-	std::vector<RebVector> normals;
-	std::vector<RebVector> texturecoords;
-	MatrixMode mm;
-	bool Renderable;
-	PhysicState ps;
-	RebMatrix trans;
-	std::string name;
-	Methold met;
-	UINT ID;
-	UINT materialid;
+public:
 	
-	UINT readpoint;
+	virtual std::vector<RebVector> * GetVertices() = 0;
 
-	RebVertexBuffer()
-	{
-		vertices.clear();
-		normals.clear();
-		texturecoords.clear();
-		mm = MM_MODELVIEW;
-		met = R_TRIANGLES;
-		ps = PS_NOPS;
-		readpoint = 0;
-		trans.Identity();
-		Renderable = true;
-	}
+	virtual std::vector<RebVector> * GetNormals() = 0;
 
-	void Reset()
-	{
-		vertices.clear();
-		normals.clear();
-		texturecoords.clear();
-		mm = MM_MODELVIEW;
-		met = R_TRIANGLES;
-		readpoint = 0;
-		Renderable = true;
-	}
+	virtual std::vector<RebVector> * GetTextureCoords() = 0;
 
-	~RebVertexBuffer()
-	{
-		vertices.clear();
-	}
+	virtual void SetRenderable(bool s) = 0;
+
+	virtual bool isRenderable() = 0;
+
+	virtual UINT GetMaterialID() = 0;
+
+	virtual void Draw() = 0;
+
+	virtual void SetName(std::string sname) = 0;
+
+	virtual void SetTrans(RebMatrix set) = 0;
+
+	virtual RebMatrix * GetTrans() = 0;
+
+	virtual void SetMaterialID(UINT set) = 0;
+
+
+	
 };
 
 
-struct RebVertexCache
+class RebVertexCache
 {
-
-	std::vector<RebVertexBuffer> RVBs;
+protected:
+	std::vector<RebVertexBuffer*> RVBs;
 	RebMatrix transf;
 	std::string name;
 	RebSkin skin;
 	std::string filename;
 
-	RebVertexCache()
-	{
-		RVBs.clear();
-		transf.Identity();
-	}
+public:
 
-	void AddBuffer(RebVertexBuffer abuff)
-	{
-		RVBs.push_back(abuff);
-	}
+	virtual void AddBuffer(RebVertexBuffer * abuff) = 0;
+	
+	virtual void SetName(std::string sname) = 0;
 
-	void DeleteBuffer(UINT VBID)
-	{
-		if (VBID < RVBs.size())
-		{
-		RVBs.erase(RVBs.begin() + VBID);
-		}
-	}
+	virtual std::string GetName() = 0;
 
-	void SetRenderable(UINT VBID)
-	{
-		if (VBID < RVBs.size())
-			RVBs[VBID].Renderable = true;
-	}
+	virtual std::string GetFileName() = 0;
 
-	void SetUnRenderable(UINT VBID)
-	{
-		if (VBID < RVBs.size())
-			RVBs[VBID].Renderable = false;
-	}
+	virtual RebSkin GetSkin() = 0;
 
-	~RebVertexCache()
-	{
-		RVBs.clear();
-	}
+	virtual std::vector<RebVertexBuffer*> * GetRVBs() = 0;
+
+	virtual void SetTrans(RebMatrix set) = 0;
+
+	virtual RebMatrix * GetTrans() = 0;
+
+	virtual void SetSkin(RebSkin sskin) = 0;
+
+	virtual void SetFileName(std::string sfname) = 0;
+
+	virtual void DeleteBuffer(UINT VBID) = 0;
+
+
+	
 
 };
 

@@ -1,19 +1,33 @@
-﻿Build started 2014.02.02. 18:02:33.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" on node 4 (Rebuild target(s)).
+﻿Build started 2015.04.23. 19:22:59.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" on node 3 (Rebuild target(s)).
      1>ClCompile:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I"D:\Program Files\Assimp\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt RebGL_draw.cpp RebGL_init.cpp RebGL_skinmanager.cpp RebGL_VCM.cpp RebGL_SS.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt RebEnv.cpp RebGL_draw.cpp RebGL_init.cpp RebGL_LightSystem.cpp RebGL_skinmanager.cpp RebGL_VCM.cpp RebGL_SS.cpp RebIH.cpp RebRenderTechnic.cpp RMDeferred.cpp RSRExtended.cpp
+         RebEnv.cpp
          RebGL_draw.cpp
          RebGL_init.cpp
+         RebGL_LightSystem.cpp
+     1>RebGL_LightSystem.cpp(37): warning C4800: 'LightType' : forcing value to bool 'true' or 'false' (performance warning)
          RebGL_skinmanager.cpp
+     1>RebGL_skinmanager.cpp(75): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
          RebGL_VCM.cpp
          RebGL_SS.cpp
-     1>RebGL_SS.cpp(103): warning C4018: '<' : signed/unsigned mismatch
+         RebIH.cpp
+         RebRenderTechnic.cpp
+         RMDeferred.cpp
+     1>RMDeferred.cpp(173): warning C4800: 'unsigned int' : forcing value to bool 'true' or 'false' (performance warning)
+         RSRExtended.cpp
        Link:
-         D:\win7prog\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebGL.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"..\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\FreeImage\Dist /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib glu32.lib OpenGL32.lib FreeImage.lib glew32.lib assimp.lib Reb3D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebGL.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebGL.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebGL_draw.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebGL.dll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"..\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\FreeImage\Dist /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib glu32.lib OpenGL32.lib FreeImage.lib RebSupport.lib glew32.lib assimp.lib Reb3D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebGL.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebGL.lib" /MACHINE:X86 /SAFESEH /DLL Release\RebEnv.obj
+         Release\RebGL_draw.obj
          Release\RebGL_init.obj
+         Release\RebGL_LightSystem.obj
          Release\RebGL_skinmanager.obj
          Release\RebGL_VCM.obj
          Release\RebGL_SS.obj
+         Release\RebIH.obj
+         Release\RebRenderTechnic.obj
+         Release\RMDeferred.obj
+         Release\RSRExtended.obj
             Creating library ..\..\Bin32\RebGL.lib and object ..\..\Bin32\RebGL.exp
          Generating code
          Finished generating code
@@ -22,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.47
+Time Elapsed 00:00:16.36

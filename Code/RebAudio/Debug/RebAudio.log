@@ -1,5 +1,5 @@
-﻿Build started 2015.02.19. 18:06:29.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\RebAudio.vcxproj" on node 3 (Rebuild target(s)).
+﻿Build started 2015.04.30. 13:28:12.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebAudio\RebAudio.vcxproj" on node 4 (Rebuild target(s)).
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebAudioSystem.cpp
          RebAudioSystem.cpp
@@ -12,4 +12,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.45
+Time Elapsed 00:00:06.12

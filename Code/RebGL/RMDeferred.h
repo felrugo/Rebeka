@@ -215,6 +215,7 @@ class RMDeferred : public IRenderModel
 {
 	IRenderDevice * ird;
 	RebFileSystem * rfs;
+	RebGLLightSystem * ls;
 	
 	float * tris;
 	std::vector<RebVertexCache*> * RVCs;

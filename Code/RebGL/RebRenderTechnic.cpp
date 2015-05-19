@@ -129,39 +129,23 @@ void ShadowMap2D::ShadowPass()
 	mmloc = glGetUniformLocation(shadowProgram.GetHandle(), "cm");
 	glUniformMatrix4fv(mmloc, 1, 0, mm);
 
-	unsigned int i2;
+	
 	for (UINT i3 = 0; i3 < ird->GetVertexCacheManager()->GetRVCs()->size(); i3++)
 	{
 
 
-		for (UINT i = 0; i < ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs.size(); i++)
+		for (UINT i = 0; i < ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->size(); i++)
 		{
-			if (ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].Renderable)
+			if (ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->at(i)->isRenderable())
 			{
 
 
 
-				(ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].trans * ird->GetVertexCacheManager()->GetRVCs()->at(i3)->transf).glm(mm);
+				(*ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->at(i)->GetTrans() * *ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetTrans()).glm(mm);
 				mmloc = glGetUniformLocation(shadowProgram.GetHandle(), "mmat");
 				glUniformMatrix4fv(mmloc, 1, 0, mm);
-
-				i2 = 0;
-				while (i2 < ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].vertices.size())
-				{
-
-					ird->StartDraw(ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].met);
-					for (short t = 0; t < 3; t++)
-					{
-						if (ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].vertices.size() > i2 + t)
-							glVertex3fv(ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].vertices[i2 + t].glv());
-						/*tris[count] = RVCs->at(i3)->RVBs[i].vertices[i2+t].x;
-						tris[count+1] = RVCs->at(i3)->RVBs[i].vertices[i2+t].y;
-						tris[count+2] = RVCs->at(i3)->RVBs[i].vertices[i2+t].z;*/
-					}
-					ird->EndDraw();
-					i2 += 3;
-
-				}
+				ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->at(i)->Draw();
+				
 			}
 		}
 	}
@@ -324,39 +308,22 @@ void ShadowMapCube::ShadowPass()
 	my_PerspectiveFOV(90, 1, 1, 1000, bia);
 	mmloc = glGetUniformLocation(shadowProgram.GetHandle(), "cm");
 	glUniformMatrix4dv(mmloc, 1, 0, bia);
-	unsigned int i2;
 	for (UINT i3 = 0; i3 < ird->GetVertexCacheManager()->GetRVCs()->size(); i3++)
 	{
 
 
-		for (UINT i = 0; i < ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs.size(); i++)
+		for (UINT i = 0; i < ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->size(); i++)
 		{
-			if (ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].Renderable)
+			if (ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->at(i)->isRenderable())
 			{
 
 
 
-				(ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].trans * ird->GetVertexCacheManager()->GetRVCs()->at(i3)->transf).glm(mm);
+				(*ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->at(i)->GetTrans() * *ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetTrans()).glm(mm);
 				mmloc = glGetUniformLocation(shadowProgram.GetHandle(), "mmat");
 				glUniformMatrix4fv(mmloc, 1, 0, mm);
+				ird->GetVertexCacheManager()->GetRVCs()->at(i3)->GetRVBs()->at(i)->Draw();
 
-				i2 = 0;
-				while (i2 < ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].vertices.size())
-				{
-
-					ird->StartDraw(ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].met);
-					for (short t = 0; t < 3; t++)
-					{
-						if (ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].vertices.size() > i2 + t)
-							glVertex3fv(ird->GetVertexCacheManager()->GetRVCs()->at(i3)->RVBs[i].vertices[i2 + t].glv());
-						/*tris[count] = RVCs->at(i3)->RVBs[i].vertices[i2+t].x;
-						tris[count+1] = RVCs->at(i3)->RVBs[i].vertices[i2+t].y;
-						tris[count+2] = RVCs->at(i3)->RVBs[i].vertices[i2+t].z;*/
-					}
-					ird->EndDraw();
-					i2 += 3;
-
-				}
 			}
 		}
 	}

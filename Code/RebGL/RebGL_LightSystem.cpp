@@ -32,6 +32,16 @@ RebVector RebGLLight::GetPos()
 	return pos;
 }
 
+RebVector RebGLLight::GetColor()
+{
+	return color;
+}
+
+RebMatrix * RebGLLight::GetViewm()
+{
+	return &view;
+}
+
 bool RebGLLight::GetSop()
 {
 	return (bool)lt;

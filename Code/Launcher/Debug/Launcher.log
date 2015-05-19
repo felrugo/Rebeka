@@ -1,5 +1,5 @@
-﻿Build started 2014.12.13. 12:14:10.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 5 (Build target(s)).
+﻿Build started 2015.04.30. 13:29:28.
+     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" on node 5 (Rebuild target(s)).
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
@@ -11,8 +11,8 @@
          Launcher.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\..\..\Bin32\Launcher.exe
        BscMake:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\Launcher.bsc" /n Debug\Source.sbr
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Launcher\Launcher.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.49
+Time Elapsed 00:00:04.77

@@ -227,9 +227,9 @@ ShadowSum::~ShadowSum()
 RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 	{
 		ird = data->rd;
-		RebGLLightSystem * ls = (RebGLLightSystem *)ird->GetLightSystem();
-		ls->AddLight(RebColor(1, 1, 1), RebVector(0, 20, 0), LT_POINT, RebVector());
-		ls->AddLight(RebColor(1, 1, 1), RebVector(-3, 19, 0), LT_POINT, RebVector());
+		ls = (RebGLLightSystem *)ird->GetLightSystem();
+		ls->AddLight(RebColor(0.56, 0.6, 1), RebVector(0, 20, 0), LT_POINT, RebVector());
+		/*ls->AddLight(RebColor(1, 1, 1), RebVector(-3, 19, 0), LT_POINT, RebVector());*/
 		rfs = data->rfs;
 		nof = 0;
 		last = 0;
@@ -272,30 +272,20 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 		glEnable(GL_DEPTH_TEST);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
-
-		RebMatrix shadowmat, sha, res, bias;
-	shadowmat.Identity();
-	shadowmat.Translate(0,-10,0);
-
-	sha.Identity();
-	sha.RotyByDeg(90,0,0);
-
-	res = shadowmat * sha;
-		unsigned int i2;
+		
 		for (UINT i3 = 0; i3 < RVCs->size(); i3++)
 		{
-			RebSkin rs = RVCs->at(i3)->skin;
+			RebSkin rs = RVCs->at(i3)->GetSkin();
 			
-		for (UINT i = 0; i < RVCs->at(i3)->RVBs.size(); i++)
+		for (UINT i = 0; i < RVCs->at(i3)->GetRVBs()->size(); i++)
 		{
-			if(RVCs->at(i3)->RVBs[i].Renderable)
+			if(RVCs->at(i3)->GetRVBs()->at(i)->isRenderable())
 			{
-				RebMaterial rm = rs.materials[RVCs->at(i3)->RVBs[i].materialid];
-				ird->ChangeMatrixMode(MM_MODELVIEW);
-				ird->ResetMatrix();
+				RebMaterial rm = rs.materials[RVCs->at(i3)->GetRVBs()->at(i)->GetMaterialID()];
+				
 				
 				float mm[16];
-				(RVCs->at(i3)->RVBs[i].trans * RVCs->at(i3)->transf).glm(mm);
+				(*RVCs->at(i3)->GetTrans() * *RVCs->at(i3)->GetRVBs()->at(i)->GetTrans()).glm(mm);
 
 				
 				
@@ -306,35 +296,15 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 				mmloc = glGetUniformLocation(geoProgram.GetHandle(), "viewmat");
 				glUniformMatrix4fv(mmloc, 1, 0, mm);
 
-				res.glm(mm);
-				mmloc = glGetUniformLocation(geoProgram.GetHandle(), "shadmat");
-				glUniformMatrix4fv(mmloc, 1, 0, mm);
 
 				glUniform1i(glGetUniformLocation(geoProgram.GetHandle(), "difftext"), 0);
 
-				i2 = 0;
-				while (i2 < RVCs->at(i3)->RVBs[i].vertices.size())
-				{
+				
 					glActiveTexture(GL_TEXTURE0);
 					if(rm.diftextures.size() > 0)
 					ird->BindTexture(rm.diftextures[0].id);
-					ird->StartDraw( RVCs->at(i3)->RVBs[i].met);
-					for (short t = 0; t < 3; t++)
-					{
-					if(RVCs->at(i3)->RVBs[i].texturecoords.size() > i2+t)
-					glTexCoord3fv(RVCs->at(i3)->RVBs[i].texturecoords[i2+t].glv());
-					if(RVCs->at(i3)->RVBs[i].normals.size() > i2+t)
-					glNormal3fv(RVCs->at(i3)->RVBs[i].normals[i2+t].glv());
-					if(RVCs->at(i3)->RVBs[i].vertices.size() > i2+t)
-					glVertex3fv(RVCs->at(i3)->RVBs[i].vertices[i2+t].glv());
-					/*tris[count] = RVCs->at(i3)->RVBs[i].vertices[i2+t].x;
-					tris[count+1] = RVCs->at(i3)->RVBs[i].vertices[i2+t].y;
-					tris[count+2] = RVCs->at(i3)->RVBs[i].vertices[i2+t].z;*/
-					}
-				ird->EndDraw();
-				i2 += 3;
-				
-				}
+
+					RVCs->at(i3)->GetRVBs()->at(i)->Draw();
 			}
 		}
 		}
@@ -342,19 +312,19 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 	}
 
 
-	unsigned long int RMDeferred::getFloats()
-	{
-		unsigned long int ret = 0;
-		for (UINT i3 = 0; i3 < RVCs->size(); i3++)
-		{
-	
-		for (UINT i = 0; i < RVCs->at(i3)->RVBs.size(); i++)
-		{
-				ret += 3 * RVCs->at(i3)->RVBs[i].vertices.size();
-				}
-			}
-		return ret;
-	}
+	//unsigned long int RMDeferred::getFloats()
+	//{
+	//	unsigned long int ret = 0;
+	//	for (UINT i3 = 0; i3 < RVCs->size(); i3++)
+	//	{
+	//
+	//	for (UINT i = 0; i < RVCs->at(i3)->RVBs.size(); i++)
+	//	{
+	//			ret += 3 * RVCs->at(i3)->RVBs[i].vertices.size();
+	//			}
+	//		}
+	//	return ret;
+	//}
 
 
 
@@ -398,14 +368,18 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 				glUniformMatrix4fv(glGetUniformLocation(lightProgram.GetHandle(), "cm"), 1, 0, mm);
 
 		tt.bind(lightProgram.GetHandle());
-		GLuint nl = glGetUniformLocation(lightProgram.GetHandle(), "num_lights");
-		glUniform1ui(nl, 1);
-		GLuint nl2 = glGetUniformLocation(lightProgram.GetHandle(), "light[0].position");
-		RebVector lpos;
-		glUniform3f(nl2, 0,20,0);
-		GLuint nl3 = glGetUniformLocation(lightProgram.GetHandle(), "light[0].color");
-		glUniform3f(nl3, 1,1,1);
 
+		GLuint nl = glGetUniformLocation(lightProgram.GetHandle(), "num_lights");
+		glUniform1ui(nl, ls->GetLights()->size());
+
+		for (unsigned int i = 0; i < ls->GetLights()->size(); i++)
+		{
+			GLuint nl2 = glGetUniformLocation(lightProgram.GetHandle(), std::string("light[" + std::to_string(i) + "].position").c_str());
+			RebVector lpos;
+			glUniform3f(nl2, ls->GetLights()->at(i)->GetPos().x, ls->GetLights()->at(i)->GetPos().y, ls->GetLights()->at(i)->GetPos().z);
+			GLuint nl3 = glGetUniformLocation(lightProgram.GetHandle(), std::string("light[" + std::to_string(i) + "].color").c_str());
+			glUniform3f(nl3, ls->GetLights()->at(i)->GetColor().x, ls->GetLights()->at(i)->GetColor().y, ls->GetLights()->at(i)->GetColor().z);
+		}
 		
 
 
