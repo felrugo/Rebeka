@@ -1,0 +1,15 @@
+﻿Build started 2015.06.23. 11:48:25.
+     1>Project "D:\Users\FELRUGO\GitHub\Rebeka\Code\RebGraphic\RebGraphic.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\win7prog\Rebeka\Rebeka\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebGraphicSystem.cpp
+         RebGraphicSystem.cpp
+       Lib:
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\Libs\x32\RebGraphic.lib" Reb3D.lib /LIBPATH:..\Libs\x32\ /NOLOGO Debug\RebGraphicSystem.obj
+         RebGraphic.vcxproj -> D:\Users\FELRUGO\GitHub\Rebeka\Code\RebGraphic\..\Libs\x32\RebGraphic.lib
+       BscMake:
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\Libs\x32\RebGraphic.bsc" /n Debug\RebGraphicSystem.sbr
+     1>Done Building Project "D:\Users\FELRUGO\GitHub\Rebeka\Code\RebGraphic\RebGraphic.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.67

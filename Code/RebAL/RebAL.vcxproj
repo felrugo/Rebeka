@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Users\felrugo\Documents\GitHub\Rebeka\Code\openal-soft-1.16.0-bin\include;D:\Users\felrugo\Documents\GitHub\Rebeka\Code\ffmpeg-20141023-git-08e6832-win32-dev\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Users\felrugo\Documents\GitHub\Rebeka\Code\ffmpeg-20141023-git-08e6832-win32-dev\lib;D:\Users\felrugo\Documents\GitHub\Rebeka\Code\openal-soft-1.16.0-bin\libs\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\openal-soft-1.16.0-bin\include;..\ffmpeg-20141023-git-08e6832-win32-dev\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\ffmpeg-20141023-git-08e6832-win32-dev\lib;..\openal-soft-1.16.0-bin\libs\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

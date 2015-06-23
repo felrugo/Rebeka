@@ -1,10 +1,19 @@
-﻿Build started 2015.05.02. 17:24:27.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2015.06.23. 11:50:48.
+     1>Project "D:\Users\FELRUGO\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D GLEXP /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebGL_VCM.cpp
-         RebGL_VCM.cpp
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Assimp\include /I"..\glew-1.10.0\include" /I..\FreeImage\Dist /I"..\SDL2-2.0.0\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D REBGL_EXPORTS /D GLEXP /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_WARNINGS /D _WINDLL /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt RebEnv.cpp RebGL_draw.cpp RebGL_init.cpp RebGL_skinmanager.cpp
+         RebEnv.cpp
+     1>d:\users\felrugo\github\rebeka\code\rebgl\rebenv.cpp(28): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\felrugo\github\rebeka\code\rebgl\rebenv.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
+         RebGL_skinmanager.cpp
+     1>d:\users\felrugo\github\rebeka\code\rebgl\rebgl_skinmanager.cpp(75): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         RebGL_init.cpp
+         RebGL_draw.cpp
+         Generating Code...
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebGL.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"..\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\FreeImage\Dist /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib glu32.lib OpenGL32.lib FreeImage.lib RebSupport.lib glew32.lib assimp.lib Reb3D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebGL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebGL.lib" /MACHINE:X86 /DLL Debug\RebEnv.obj
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\RebGL.dll" /INCREMENTAL /NOLOGO /LIBPATH:..\Assimp\lib\x86 /LIBPATH:"..\glew-1.10.0\lib\Release\Win32" /LIBPATH:..\FreeImage\Dist /LIBPATH:"..\SDL2-2.0.0\lib\x86" /LIBPATH:..\Libs\x32 SDL2.lib SDL2main.lib glu32.lib OpenGL32.lib FreeImage.lib RebSupport.lib glew32.lib assimp.lib Reb3D.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"EXP.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\RebGL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\RebGL.lib" /MACHINE:X86 /DLL Debug\RebEnv.obj
          Debug\RebGL_draw.obj
          Debug\RebGL_init.obj
          Debug\RebGL_LightSystem.obj
@@ -14,12 +23,11 @@
          Debug\RebIH.obj
          Debug\RebRenderTechnic.obj
          Debug\RMDeferred.obj
-         Debug\RSRExtended.obj
-         RebGL.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\..\..\Bin32\RebGL.dll
+         RebGL.vcxproj -> D:\Users\FELRUGO\GitHub\Rebeka\Code\RebGL\..\..\Bin32\RebGL.dll
        BscMake:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\RebGL.bsc" /n Debug\RebEnv.sbr Debug\RebGL_draw.sbr Debug\RebGL_init.sbr Debug\RebGL_LightSystem.sbr Debug\RebGL_skinmanager.sbr Debug\RebGL_VCM.sbr Debug\RebGL_SS.sbr Debug\RebIH.sbr Debug\RebRenderTechnic.sbr Debug\RMDeferred.sbr Debug\RSRExtended.sbr
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" (Build target(s)).
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\..\Bin32\RebGL.bsc" /n Debug\RebEnv.sbr Debug\RebGL_draw.sbr Debug\RebGL_init.sbr Debug\RebGL_LightSystem.sbr Debug\RebGL_skinmanager.sbr Debug\RebGL_VCM.sbr Debug\RebGL_SS.sbr Debug\RebIH.sbr Debug\RebRenderTechnic.sbr Debug\RMDeferred.sbr
+     1>Done Building Project "D:\Users\FELRUGO\GitHub\Rebeka\Code\RebGL\RebGL.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:14.60
+Time Elapsed 00:00:15.29

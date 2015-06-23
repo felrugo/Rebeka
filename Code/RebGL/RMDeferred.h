@@ -227,7 +227,7 @@ RTT tt;
 ShadowSum ss;
 RebGLShaderProgram geoProgram ;
 RebGLShaderProgram lightProgram;
-RebGLShaderProgram shadowProgram;
+RebGLShaderProgram terrProgram;
 GLuint mainObjectID;
 GLuint lightVolumeID;
 
@@ -242,7 +242,7 @@ public:
 	RMDeferred(RebGDC * data);
 	~RMDeferred();
 	void PassGeom();
-	
+	void TerrainRender();
 	void Shade();
 	unsigned long int getFloats();
 	void copy();

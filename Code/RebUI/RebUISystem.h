@@ -1,7 +1,7 @@
 #ifndef REBUISYSTEM
 #define REBUISYSTEM
 
-#include "..\RebRenderer\IRenderDevice.h"
+#include "..\RebGraphic\IRenderDevice.h"
 
 class RebUISystem
 {

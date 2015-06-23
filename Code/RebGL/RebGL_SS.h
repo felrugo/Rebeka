@@ -1,7 +1,7 @@
 #ifndef REBSHADERSYSTEM_H
 #define REBSHADERSYSTEM_H
 
-#include "..\RebRenderer\IRenderDevice.h"
+#include "..\RebGraphic\IRenderDevice.h"
 #include "..\RebSupport\RebFileSystem.h"
 #include <fstream>
 #include <streambuf>
@@ -62,28 +62,7 @@ struct LMStruct
 	GLuint D, A, S;
 };
 
-class RSRExtended : public IRenderModel
-{
-	IRenderDevice * ird;
 
-	RebGLShaderProgram extended;
-
-std::vector<RebVertexCache*> * RVCs;
-	GLuint programHandle;
-	GLuint texloc;
-	GLuint texCloc;
-	LMStruct Light, Material;
-	GLuint lp;
-	GLuint shine;
-
-	GLuint positionBufferHandle;
-GLuint colorBufferHandle;
-public:
-	RSRExtended(IRenderDevice * sird);
-	void TerrainRender();
-	void Render();
-	~RSRExtended();
-};
 
 
 //class RebShaderSystem : public IShaderSystem

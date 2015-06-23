@@ -1,7 +1,7 @@
 #ifndef REBIH
 #define REBIH
 
-#include "../RebRenderer/IRenderDevice.h"
+#include "../RebGraphic/IRenderDevice.h"
 #include "FreeImage.h"
 
 class RebIH : public IImageHandler

@@ -1,4 +1,4 @@
 LIBRARY "Rebeka.dll"
 EXPORTS
-CreateGameDLL
-ReleaseGameDLL
+LoadEL
+ReleaseEL

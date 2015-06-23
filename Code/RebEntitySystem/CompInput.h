@@ -40,7 +40,7 @@ class TCompInpBasicControl : public TComponent
 {
 	IMEH * eh;
 public:
-	TCompInpBasicControl(IMEH * seh);
+	TCompInpBasicControl();
 
 	std::string GetID()
 	{
@@ -52,7 +52,7 @@ public:
 		return "CompInput";
 	}
 
-	Component * MakeComponent();
+	Component * MakeComponent(RebGDC * data);
 
 };
 

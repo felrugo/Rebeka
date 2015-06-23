@@ -32,9 +32,9 @@ void Editor::Init()
 	//mGDC->meh = winsys.GetMEH();
 
 
-	rend.CreateDevice();
-	rend.GetDevice()->Init(mGDC);
-	rd = rend.GetDevice();
+	rgs.CreateDevice();
+	rgs.GetDevice()->Init(mGDC);
+	rd = rgs.GetDevice();
 	ui.MainPerspective->makeCurrent();
 	ui.MainPerspective->SetRenderer(rd);
 	rd->SetVP(1280, 720);

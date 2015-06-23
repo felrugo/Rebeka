@@ -240,6 +240,8 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 		geoProgram.AddShaderFile(rfs->Search("fwrite.rfs", "Shaders"));
 		lightProgram.AddShaderFile(rfs->Search("read.rvs", "Shaders"));
 		lightProgram.AddShaderFile(rfs->Search("fread.rfs", "Shaders"));
+		terrProgram.AddShaderFile(rfs->Search("terrain.rfs", "Shaders"));
+		terrProgram.AddShaderFile(rfs->Search("terrain.rvs", "Shaders"));
 		/*shadowProgram.AddShaderFile(rfs->Search("vshadow.rvs", "Shaders"));
 		shadowProgram.AddShaderFile(rfs->Search("fshadow.rfs", "Shaders"));
 		shadowProgram.AddShaderFile(rfs->Search("gshadow.rgs", "Shaders"));*/
@@ -248,7 +250,7 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 
 		geoProgram.Link();
 			lightProgram.Link();
-			shadowProgram.Link();
+			terrProgram.Link();
 			
 	}
 
@@ -264,13 +266,41 @@ RMDeferred::RMDeferred(RebGDC * data) : ss(data)
 
 	}
 
+	void RMDeferred::TerrainRender()
+	{
+		terrProgram.Use();
+
+		float mm[16];
+
+
+		
+
+		ird->GetViewportMat().glm(mm);
+		
+		glUniformMatrix4fv(glGetUniformLocation(geoProgram.GetHandle(), "viewmat"), 1, 0, mm);
+
+
+		for (size_t i = 0; i < ird->GetEnv()->GetTerrains()->size(); i++)
+		{
+			ird->GetEnv()->GetTerrains()->at(i)->GetTrans().glm(mm);
+			glUniformMatrix4fv(glGetUniformLocation(terrProgram.GetHandle(), "mmat"), 1, 0, mm);
+			ird->GetEnv()->GetTerrains()->at(i)->Draw();
+		}
+		
+	}
+
 	void RMDeferred::PassGeom()
 	{
 		not = 0;
 		tt.Write();
-		geoProgram.Use();
 		glEnable(GL_DEPTH_TEST);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		TerrainRender();
+
+
+		geoProgram.Use();
+		
 		
 		
 		for (UINT i3 = 0; i3 < RVCs->size(); i3++)

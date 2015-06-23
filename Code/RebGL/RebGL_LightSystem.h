@@ -1,7 +1,7 @@
 #ifndef REBGL_LS
 #define REBGL_LS
 
-#include "..\RebRenderer\IRenderDevice.h"
+#include "..\RebGraphic\IRenderDevice.h"
 #include "RebRenderTechnic.h"
 #include <gl\GL.h>
 

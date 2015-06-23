@@ -206,7 +206,6 @@
     <ClCompile Include="RebIH.cpp" />
     <ClCompile Include="RebRenderTechnic.cpp" />
     <ClCompile Include="RMDeferred.cpp" />
-    <ClCompile Include="RSRExtended.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EXP.def" />

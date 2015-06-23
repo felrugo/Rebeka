@@ -62,9 +62,6 @@
     <ClCompile Include="RebGL_LightSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RSRExtended.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RebEnv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

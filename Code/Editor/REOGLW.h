@@ -2,7 +2,7 @@
 #define REOGLW_H
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
-#include "..\RebRenderer\IRenderer.h"
+#include "..\RebGraphic\RebGraphicSystem.h"
 
 
 class REOGLW : public QOpenGLWidget, protected QOpenGLFunctions

@@ -39,6 +39,19 @@ TEntity::TEntity(std::string sname)
 		temps.push_back(atemp);
 	}
 
+
+	Entity * TEntity::CastEntity(std::string ename, RebGDC * rgdc)
+	{
+		Entity * ent = new Entity(ename);
+		for (unsigned int i = 0; i < GetTComps()->size(); i++)
+		{
+			ent->SetComponent(GetTComps()->at(i)->MakeComponent(rgdc));
+		}
+		return ent;
+	}
+
+
+
 	void TEntity::Clear()
 	{
 		for (unsigned int i = 0; i < temps.size(); i++)

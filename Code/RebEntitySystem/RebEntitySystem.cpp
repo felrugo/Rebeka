@@ -21,16 +21,13 @@ TEntity * TemplateManager::GetTemplate(std::string tname)
 
 Entity * TemplateManager::CreateEntByTemp(std::string entname, std::string tempname)
 {
-	Entity * ret = new Entity(entname);
+	Entity * ret;
 	TEntity * te = GetTemplate(tempname);
 	if (te == 0)
 	{
 		return 0;
 	}
-	for (unsigned int i = 0; i < te->GetTComps()->size(); i++)
-	{
-		ret->SetComponent(te->GetTComps()->at(i)->MakeComponent());
-	}
+	ret = te->CastEntity(entname, res->GameData);
 	res->AddEntity(ret);
 	return ret;
 }
@@ -49,9 +46,9 @@ TComponent * TemplateManager::BuiltinComps(std::string cn, RebGDC * GameData)
 {
 	TComponent * ret = 0;
 	if(cn == "CompVisModel")
-		ret = new TCompVisModel(GameData->rd);
+		ret = new TCompVisModel();
 	if(cn == "CompVisTerrain")
-		ret = new TCompVisTerrain(GameData->rd);
+		ret = new TCompVisTerrain();
 		return ret;
 }
 

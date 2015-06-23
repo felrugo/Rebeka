@@ -187,6 +187,7 @@
     <ClInclude Include="CompInput.h" />
     <ClInclude Include="CompPhysic.h" />
     <ClInclude Include="CompVisual.h" />
+    <ClInclude Include="DefEnts.h" />
     <ClInclude Include="RebComps.h" />
     <ClInclude Include="RebEntity.h" />
     <ClInclude Include="RebEntitySystem.h" />
@@ -197,6 +198,7 @@
     <ClCompile Include="CompPhysic.cpp" />
     <ClCompile Include="CompVisTerrain.cpp" />
     <ClCompile Include="CompVisual.cpp" />
+    <ClCompile Include="DefEnts.cpp" />
     <ClCompile Include="RebEntity.cpp" />
     <ClCompile Include="RebEntitySystem.cpp" />
   </ItemGroup>

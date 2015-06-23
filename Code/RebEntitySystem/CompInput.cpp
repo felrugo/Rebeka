@@ -90,13 +90,12 @@ void CompInpBasicControl::update()
 	}
 }
 
-TCompInpBasicControl::TCompInpBasicControl(IMEH * seh)
+TCompInpBasicControl::TCompInpBasicControl()
 {
-	eh = seh;
 }
 
-Component * TCompInpBasicControl::MakeComponent()
+Component * TCompInpBasicControl::MakeComponent(RebGDC * data)
 {
-	Component * ret = new CompInpBasicControl(eh);
+	Component * ret = new CompInpBasicControl(data->meh);
 	return ret;
 }

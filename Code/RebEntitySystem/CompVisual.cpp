@@ -24,9 +24,8 @@ void CompVisModel::update()
 }
 
 
-TCompVisModel::TCompVisModel(IRenderDevice * sird)
+TCompVisModel::TCompVisModel()
 	{
-		IRD = sird;
 	}
 
 CompVisViewport::CompVisViewport(IRenderDevice * SIRD)
@@ -53,7 +52,6 @@ void CompVisViewport::SetActiveViewport()
 	*IRD->GetViewportID() = this;
 }
 
-TCompVisViewport::TCompVisViewport(IRenderDevice * sird)
+TCompVisViewport::TCompVisViewport()
 {
-	IRD = sird;
 }

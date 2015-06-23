@@ -3,8 +3,7 @@
 #define SKINMAN_H
 
 
-#include "../RebRenderer/IRenderDevice.h"
-#include "..\RebRenderer\Reb.h"
+#include "../RebGraphic/IRenderDevice.h"
 #include <GL\glew.h>
 #include <gl\GL.h>
 #include <vector>

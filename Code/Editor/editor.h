@@ -3,7 +3,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_editor.h"
-#include "../RebRenderer/IRenderer.h"
+#include "../RebGraphic/RebGraphicSystem.h"
 #include "..\RebAudio\RebAudioSystem.h"
 #include "..\RebEntitySystem\RebEntitySystem.h"
 #include "..\RebSupport\RebGDC.h"
@@ -48,7 +48,7 @@ public:
 private:
 	Ui::EditorClass ui;
 
-	Renderer rend;
+	RebGraphicSystem rgs;
 	RebAudioSystem ras;
 	IRenderDevice * rd;
 	RebEntitySystem * res;

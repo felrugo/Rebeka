@@ -12,8 +12,8 @@ newmtl 01___Default
 	Kd 0.5882 0.5882 0.5882
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka D:\Users\felrugo\Documents\GitHub\Rebeka\Game\Textures\wood text.jpg
-	map_Kd D:\Users\felrugo\Documents\GitHub\Rebeka\Game\Textures\wood text.jpg
+	map_Ka D:\Users\felrugo\GitHub\Rebeka\Game\Textures\wood text.jpg
+	map_Kd D:\Users\felrugo\GitHub\Rebeka\Game\Textures\wood text.jpg
 
 newmtl Material__47
 	Ns 10.0000
@@ -26,5 +26,5 @@ newmtl Material__47
 	Kd 0.5880 0.5880 0.5880
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka D:\Users\felrugo\Documents\GitHub\Rebeka\Game\Textures\hajnikep.jpg
-	map_Kd D:\Users\felrugo\Documents\GitHub\Rebeka\Game\Textures\hajnikep.jpg
+	map_Ka D:\Users\felrugo\GitHub\Rebeka\Game\Textures\hajnikep.jpg
+	map_Kd D:\Users\felrugo\GitHub\Rebeka\Game\Textures\hajnikep.jpg

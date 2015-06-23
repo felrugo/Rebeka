@@ -1,0 +1,15 @@
+#version 400
+
+out vec3 position;
+out vec3 normal;
+uniform mat4 mmat;
+uniform mat4 viewmat;
+
+void main()
+{
+vec4 p2 = mmat * gl_Vertex;
+position = p2.xyz;
+normal = mat3(mmat) * gl_Normal;
+gl_TexCoord[0] = gl_MultiTexCoord0;
+gl_Position = gl_ProjectionMatrix * viewmat * mmat * gl_Vertex;
+}

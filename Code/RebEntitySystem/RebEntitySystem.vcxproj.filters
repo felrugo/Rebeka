@@ -25,6 +25,9 @@
     <Filter Include="Components\Input">
       <UniqueIdentifier>{96a5727e-93d4-4e40-bcc2-efd60078bbea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BIEnts">
+      <UniqueIdentifier>{ee0a401e-8781-4919-8652-9f867b5384e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -48,6 +51,9 @@
     <ClInclude Include="CompInput.h">
       <Filter>Components\Input</Filter>
     </ClInclude>
+    <ClInclude Include="DefEnts.h">
+      <Filter>BIEnts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RebEntity.cpp">
@@ -70,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="CompVisTerrain.cpp">
       <Filter>Components\Visual</Filter>
+    </ClCompile>
+    <ClCompile Include="DefEnts.cpp">
+      <Filter>BIEnts</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

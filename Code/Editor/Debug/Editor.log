@@ -1,9 +1,7 @@
-﻿Build started 2015.05.01. 18:57:21.
-     1>Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_editor.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_editor.cpp, GeneratedFiles\Release\moc_editor.cpp.
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_REOGLW.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_REOGLW.cpp, GeneratedFiles\Release\moc_REOGLW.cpp.
+﻿Build started 2015.06.23. 11:48:45.
+     1>Project "D:\Users\FELRUGO\GitHub\Rebeka\Code\Editor\Editor.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_opengl\include /I.\GeneratedFiles\Debug /ID:\Qt\5.4\msvc2013_opengl\include\QtCore /ID:\Qt\5.4\msvc2013_opengl\include\QtGui /ID:\Qt\5.4\msvc2013_opengl\include\QtOpenGL /ID:\Qt\5.4\msvc2013_opengl\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_OPENGL_LIB /D QT_WIDGETS_LIB /D _CRT_SECURE_NO_WARNINGS /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_REOGLW.cpp GeneratedFiles\Debug\moc_editor.cpp REOGLW.cpp RebECode.cpp editor.cpp main.cpp
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\Qt\5.4\msvc2013_opengl\include /I.\GeneratedFiles\Debug /ID:\Qt\5.4\msvc2013_opengl\include\QtCore /ID:\Qt\5.4\msvc2013_opengl\include\QtGui /ID:\Qt\5.4\msvc2013_opengl\include\QtOpenGL /ID:\Qt\5.4\msvc2013_opengl\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_OPENGL_LIB /D QT_WIDGETS_LIB /D _CRT_SECURE_NO_WARNINGS /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_REOGLW.cpp GeneratedFiles\Debug\moc_editor.cpp REOGLW.cpp RebECode.cpp editor.cpp main.cpp
          moc_REOGLW.cpp
          moc_editor.cpp
          REOGLW.cpp
@@ -12,7 +10,7 @@
          main.cpp
          Generating Code...
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\\Editor.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_opengl\lib /LIBPATH:..\Libs\x32 qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib Reb3D.lib RebAudio.lib RebEntitySystem.lib RebSupport.lib RebUI.lib RebRenderer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Editor.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Editor.lib" /MACHINE:X86 /SAFESEH Debug\editor.obj
+         D:\Programfájlok (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\Bin32\\Editor.exe" /NOLOGO /LIBPATH:D:\Qt\5.4\msvc2013_opengl\lib /LIBPATH:..\Libs\x32 qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib Reb3D.lib RebAudio.lib RebEntitySystem.lib RebSupport.lib RebUI.lib RebGraphic.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\Bin32\Editor.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\Bin32\Editor.lib" /MACHINE:X86 /SAFESEH Debug\editor.obj
          Debug\moc_editor.obj
          Debug\moc_REOGLW.obj
          Debug\qrc_editor.obj
@@ -21,9 +19,9 @@
          Debug\REOGLW.obj
      1>RebAudio.lib(RebAudioSystem.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
             Creating library ..\..\Bin32\Editor.lib and object ..\..\Bin32\Editor.exp
-         Editor.vcxproj -> D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\..\..\Bin32\Editor.exe
-     1>Done Building Project "D:\Users\felrugo\Documents\GitHub\Rebeka\Code\Editor\Editor.vcxproj" (Build target(s)).
+         Editor.vcxproj -> D:\Users\FELRUGO\GitHub\Rebeka\Code\Editor\..\..\Bin32\Editor.exe
+     1>Done Building Project "D:\Users\FELRUGO\GitHub\Rebeka\Code\Editor\Editor.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:17.92
+Time Elapsed 00:00:16.18

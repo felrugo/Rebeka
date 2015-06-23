@@ -6,7 +6,7 @@
 #include <map>
 #include <typeinfo>
 #include "..\RebSupport\RebString.h"
-#include "..\RebRenderer\IRenderDevice.h"
+#include "..\RebGraphic\IRenderDevice.h"
 #include "..\RebWindowSystem\IMEH.h"
 #include "..\RebSupport\RebParam.h"
 
@@ -84,7 +84,7 @@ public:
 
 	virtual std::string GetType() = 0;
 
-	virtual Component * MakeComponent() = 0;
+	virtual Component * MakeComponent(RebGDC * data) = 0;
 };
 
 
@@ -95,7 +95,7 @@ class TEntity
 	protected:
 	std::string name;
 	std::vector<TComponent*> temps;
-	TEntity(std::string sname);
+	TEntity(std::string sname = "");
 public:
 	~TEntity();
 
@@ -108,6 +108,8 @@ public:
 	std::vector<TComponent*> * GetTComps();
 
 	void AddTemplate(TComponent * atemp);
+
+	virtual Entity * CastEntity(std::string ename, RebGDC * rgdc);
 
 	void Clear();
 
@@ -122,6 +124,7 @@ protected:
 	RebVector ori;
 	std::string name;
 	std::vector<Component*> comps;
+	std::map<std::string, RebParam> GParams;
 public:
 	Entity(std::string ID);
 

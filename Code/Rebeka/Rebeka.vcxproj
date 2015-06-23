@@ -110,7 +110,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>EXP.def</ModuleDefinitionFile>
-      <AdditionalDependencies>RebRenderer.lib;RebAudio.lib;RebWindowSystem.lib;RebEntitySystem.lib;RebSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>RebGraphic.lib;RebAudio.lib;RebWindowSystem.lib;RebEntitySystem.lib;RebSupport.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Bscmake>
@@ -187,10 +187,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="RebGame.h" />
+    <ClInclude Include="Rebeka.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RebGame.cpp" />
+    <ClCompile Include="Rebeka.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EXP.def" />

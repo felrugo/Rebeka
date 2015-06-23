@@ -4,7 +4,7 @@
 
 #include <gl\glew.h>
 #include <GL\GL.h>
-#include "..\RebRenderer\IRenderDevice.h"
+#include "..\RebGraphic\IRenderDevice.h"
 #include "assimp\Importer.hpp"
 #include "assimp\cimport.h"
 #include "assimp\postprocess.h"

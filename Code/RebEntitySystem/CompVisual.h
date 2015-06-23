@@ -38,9 +38,9 @@ public:
 
 class TCompVisModel : public TComponent
 {
-	IRenderDevice * IRD;
+	
 public:
-	TCompVisModel(IRenderDevice * sird);
+	TCompVisModel();
 
 	std::string GetID()
 	{
@@ -52,9 +52,9 @@ public:
 	return "CompVisual";
 	}
 
-	Component * MakeComponent()
+	Component * MakeComponent(RebGDC * data)
 	{
-		CompVisModel * cvt = new CompVisModel(IRD);
+		CompVisModel * cvt = new CompVisModel(data->rd);
 		return cvt;
 	}
 };
@@ -78,9 +78,8 @@ public:
 
 class TCompVisViewport : public TComponent
 {
-IRenderDevice * IRD;
 public:
-	TCompVisViewport(IRenderDevice * sird);
+	TCompVisViewport();
 
 	std::string GetID()
 	{
@@ -92,9 +91,9 @@ public:
 	return "CompVisual";
 	}
 
-	Component * MakeComponent()
+	Component * MakeComponent(RebGDC * data)
 	{
-		CompVisViewport * cvt = new CompVisViewport(IRD);
+		CompVisViewport * cvt = new CompVisViewport(data->rd);
 		return cvt;
 	}
 
@@ -127,9 +126,9 @@ class TCompVisTerrain : public TComponent
 {
 	IRenderDevice * IRD;
 public:
-	TCompVisTerrain(IRenderDevice * sird)
+	TCompVisTerrain()
 	{
-		IRD = sird;
+		
 	}
 
 	std::string GetID()
@@ -142,9 +141,9 @@ public:
 	return "CompVisual";
 	}
 
-	Component * MakeComponent()
+	Component * MakeComponent(RebGDC * data)
 	{
-		CompVisTerrain * cvt = new CompVisTerrain(IRD);
+		CompVisTerrain * cvt = new CompVisTerrain(data->rd);
 		cvt->AddParams(TParams);
 		return cvt;
 	}

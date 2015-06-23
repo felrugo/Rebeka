@@ -5,7 +5,7 @@
 #include "SDL.h"
 #include "SDL_opengl.h"
 #include <gl\GLU.h>
-#include "../RebRenderer/IRenderDevice.h"
+#include "../RebGraphic/IRenderDevice.h"
 #include "RebGL_skinmanager.h"
 #include "RebGL_VCM.h"
 #include "RebGL_SS.h"
